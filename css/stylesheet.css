@@ -1,25 +1,42 @@
 /*
 -----------------------------------------------
+Content
+-----------------------------------------------
+*/
+
+h3 {
+  font-weight: 800;
+}
+
+#welcome_img {}
+
+
+
+/*
+-----------------------------------------------
 Navigation bar
 -----------------------------------------------
 */
+
 .navbar {
   background-color: #103f54;
   z-index: 9999;
-  padding: 1em;
   font-weight: 200 !important;
   letter-spacing: 0.1em !important;
   font-size: 1.5em !important;
   word-spacing: 0.2em !important;
+  font-family: Montserrat !important;
   border: 0;
-  font-family: Montserrat;
+  padding: 1em;
+  margin-bottom: 1em;
 }
 
-.navbar li a{
+.navbar li a {
   margin: 0.1em;
 }
 
 .navbar li a, .navbar .navbar-brand {
+  background-color: #103f54 !important;
   color: #fff !important;
 }
 
@@ -46,9 +63,13 @@ Navigation bar
 Footer
 -----------------------------------------------
 */
-footer{
+
+#footer {
   background-color: #103f54;
-  color: #fff !important;
+  width: 100%;
+  color: #fff;
+  position: fixed;
   bottom: 0;
   padding: 1em;
+  margin-top: 1em;
 }
