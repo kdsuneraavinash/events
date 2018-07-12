@@ -4,6 +4,14 @@ Content
 -----------------------------------------------
 */
 
+body{
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 h2 {
   font-weight: 800;
 }
@@ -12,26 +20,43 @@ h3 {
   font-weight: 800;
 }
 
+p{
+  font-size: 18px;
+}
+
+.well{
+  margin: 5px;
+  background-color: #fff !important;
+}
+
 #home_content {
   margin-bottom: 100px;
+  opacity: 0.9;
 }
 
 #about_content {
   margin-bottom: 100px;
-  background-color: #103f54;
+}
+
+#welcome_text {
+  margin-top: 5%;
 }
 
 #about_us_text {
   width: 75%;
-  background-color: #fff;
-  border-radius: 20px;
   margin: 10%;
   opacity: 0.8;
+}
+
+#welcome_img{
+  margin-top: 5%;
+  width: 100%;
 }
 
 #logo_img{
   width: 30%;
 }
+
 /*
 -----------------------------------------------
 Navigation bar
