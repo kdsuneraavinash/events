@@ -1,0 +1,54 @@
+/*
+-----------------------------------------------
+Navigation bar
+-----------------------------------------------
+*/
+.navbar {
+  background-color: #103f54;
+  z-index: 9999;
+  padding: 1em;
+  font-weight: 200 !important;
+  letter-spacing: 0.1em !important;
+  font-size: 1.5em !important;
+  word-spacing: 0.2em !important;
+  border: 0;
+  font-family: Montserrat;
+}
+
+.navbar li a{
+  margin: 0.1em;
+}
+
+.navbar li a, .navbar .navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-nav li:hover a {
+  background-color: #fff !important;
+  color: #103f54 !important;
+}
+
+.navbar-nav li.active a {
+  background-color: #fff !important;
+  color: #b71c1c !important;
+}
+
+.navbar-toggle {
+  border-color: transparent;
+}
+
+.navbar .navbar-brand {
+  font-size: 2em !important;
+}
+
+/*
+-----------------------------------------------
+Footer
+-----------------------------------------------
+*/
+footer{
+  background-color: #103f54;
+  color: #fff !important;
+  bottom: 0;
+  padding: 1em;
+}
