@@ -38,7 +38,82 @@
 
   <!-- Content -->
   <div class="container" id="addevent_content">
+    <div class="container" id="event_form">
 
+      <div class="well">
+
+        <h2>
+          Fill this Form and Submit Event Details.
+        </h2>
+        <p>
+          <small>All fields are required.</small>
+        </p>
+
+        <hr />
+
+        <form>
+
+          <div class="form-group">
+            <label for="eventName">Event Name:</label>
+            <input type="text" class="form-control" id="eventName" placeholder="Enter name of your event here" />
+          </div>
+
+          <div class="form-group">
+            <label for="organizer">Organizer:</label>
+            <input type="text" class="form-control" id="organizer" placeholder="Enter organizing society here" />
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea rows="5" class="form-control" id="description" placeholder="Describe event and its purpose here"></textarea>
+          </div>
+
+          <br />
+
+          <div class="form-group">
+            <label for="location">Venue:</label>
+            <input type="text" class="form-control" id="location" placeholder="Enter venue of your event here" />
+          </div>
+
+          <br />
+
+          <div class="form-group">
+            <label for="startDate">Start Date:</label>
+            <input type="text" class="form-control" id="startDate" placeholder="Event start date in YYYY/MM/DD format (eg 2018/06/04)" />
+          </div>
+
+          <div class="form-group">
+            <label for="endDate">End Date:</label>
+            <input type="text" class="form-control" id="endDate" placeholder="Event end date in YYYY/MM/DD format (eg 2018/06/07)" />
+          </div>
+
+          <br />
+
+          <div class="form-group">
+            <label for="startTime">Start Time:</label>
+            <input type="text" class="form-control" id="startTime" placeholder="Event start time in HH:MM 24 hours format (eg 07:00)" />
+          </div>
+
+          <div class="form-group">
+            <label for="endTime">End Time:</label>
+            <input type="text" class="form-control" id="endTime" placeholder="Event end time in HH:MM 24 hours format (eg 17:30)" />
+          </div>
+
+          <br />
+
+          <div class="form-group">
+            <label for="images">Image Links:</label>
+            <textarea rows="5" class="form-control" id="images" placeholder="Add every image URL here.&#10;Add only direct links. (Links ending in .jpg/.png)&#10;Add each link in a new line.&#10;First Link will be event cover image link."></textarea>
+          </div>
+
+          <hr />
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+      </div>
+
+    </div>
   </div>
 
 

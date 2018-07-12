@@ -4,6 +4,11 @@ Content
 -----------------------------------------------
 */
 
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
 body{
   background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
@@ -13,11 +18,11 @@ body{
 }
 
 h2 {
-  font-weight: 800;
+  font-weight: bolder;
 }
 
 h3 {
-  font-weight: 800;
+  font-weight: bolder;
 }
 
 p{
@@ -29,13 +34,17 @@ p{
   background-color: #fff !important;
 }
 
-#home_content {
-  margin-bottom: 100px;
-  opacity: 0.9;
+.form-group label{
+  font-weight: bolder !important;
 }
 
-#about_content {
+.form-group text, .form-group textarea{
+  font-weight: lighter !important;
+}
+
+#home_content, #addevent_content, #about_content {
   margin-bottom: 100px;
+  opacity: 0.9;
 }
 
 #welcome_text {
@@ -45,7 +54,6 @@ p{
 #about_us_text {
   width: 75%;
   margin: 10%;
-  opacity: 0.8;
 }
 
 #welcome_img{
@@ -66,7 +74,11 @@ Navigation bar
 .navbar {
   background-color: #103f54;
   z-index: 9999;
-  font-weight: 200 !important;
+
+  #event_form{
+
+    }font-weight: lighter
+   !important;
   letter-spacing: 0.1em !important;
   font-size: 1.5em !important;
   word-spacing: 0.2em !important;
