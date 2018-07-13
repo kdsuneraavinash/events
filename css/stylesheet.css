@@ -34,7 +34,6 @@ Content - Classes
 .submit-text {
   /* Submit Text */
   display: none;
-  opacity: 0.9;
   animation-name: submit-message-show;
   animation-duration: 0.5s;
   animation-iteration-count: 3;
@@ -52,7 +51,6 @@ Content - Classes
 
 .card {
   padding: 1em;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 .row .card {
@@ -60,13 +58,21 @@ Content - Classes
   margin: 0.5em;
 }
 
+.content {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
 .btn-primary {
   background-color: #103f54;
 }
 
-a .btn{
+a .btn {
   width: 100%;
   margin-top: 10px;
+}
+
+form .btn {
+  margin-bottom: 10px;
 }
 
 /*
@@ -80,7 +86,7 @@ Content - ids
   /* Bottom margin to stop content from being hidden by footer */
   margin-bottom: 100px;
   /* Add content load animation */
-  opacity: 0.9;
+  opacity: 1;
   animation-name: content-load;
   animation-duration: 1s;
 }
