@@ -20,19 +20,6 @@ body {
   font-family: "Montserrat" !important;
 }
 
-/* HTML tag properties */
-h2 {
-  font-weight: bolder;
-}
-
-h3 {
-  font-weight: bolder;
-}
-
-p {
-  font-size: 18px;
-}
-
 /* Remove border around clicked links */
 a:active, a:focus {
   outline: 0;
@@ -87,15 +74,10 @@ Content - ids
   height: 100%;
 }
 
-/* About page text */
-#about_us_text {
-  width: 75%;
-  margin: 10%;
-}
-
 /* About page logo */
 #logo_img {
   width: 50%;
+  margin: 5%;
 }
 
 /*
@@ -109,10 +91,6 @@ Navigation bar
   background-color: #103f54;
   /* To appear on top */
   z-index: 9999;
-  font-weight: lighter !important;
-  letter-spacing: 0.1em !important;
-  font-size: 1.5em !important;
-  word-spacing: 0.2em !important;
   border: 0;
   padding: 1em;
   margin-bottom: 1em;
