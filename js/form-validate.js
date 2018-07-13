@@ -30,78 +30,32 @@ function validate() {
 
   var fromControls = $(".form-control");
 
-  var emptyText = $("#empty_text");
-  var successText = $("#success_text");
+  var validText = $("#valid_text");
   var invalidText = $("#invalid_text");
 
   // Hide all error messages
-  fromControls.parent().removeClass("has-error");
-  fromControls.parent().removeClass("has-warning");
-  emptyText.css("display", "none");
-  successText.css("display", "none");
+  fromControls.removeClass("is-invalid");
+  validText.css("display", "none");
   invalidText.css("display", "none");
 
-  // Check for empty field
-  var isEmptyField = false;
-  fromControls.each(function(index, element) {
-    if ($(element).val() === "") {
-      $(element).parent().addClass("has-warning");
-      emptyText.css("display", "block");
-      isEmptyField = true;
-      return false;
-    }
-  });
-  if (isEmptyField) return false;
-
-
   // Chack if 2 dates are valid
-  var startDateObj = new DateObj(startDate.val());
-  var endDateObj = new DateObj(endDate.val());
-  if (startDateObj.isGreaterThan(endDateObj)) {
+  if (startDate.val() > endDate.val()) {
     // Start Date Greater than End Date
-    startDate.parent().addClass("has-error");
-    endDate.parent().addClass("has-error");
-    invalidText.css("display", "block");
+    startDate.addClass("is-invalid");
+    endDate.addClass("is-invalid");
+    invalidText.css("display", "inline");
     return false;
   }
 
   // Chack if 2 times are valid
-  var startTimeObj = new TimeObj(startTime.val());
-  var endTimeObj = new TimeObj(endTime.val());
-  if (startTimeObj.isGreaterThan(endTimeObj)) {
+  if (startTime.val() > endTime.val()) {
     // Start Time Greater than End Time
-    startTime.parent().addClass("has-error");
-    endTime.parent().addClass("has-error");
-    invalidText.css("display", "block");
+    startTime.addClass("is-invalid");
+    endTime.addClass("is-invalid");
+    invalidText.css("display", "inline");
     return false;
   }
 
-  successText.css("display", "block");
+  validText.css("display", "inline");
   return false;
-}
-
-// Create a Date Object
-function DateObj(dateString) {
-  // [YYYY/MM/DD]
-  this.year = dateString.split('-')[0];
-  this.month = dateString.split('-')[1];
-  this.date = dateString.split('-')[2];
-
-  this.isGreaterThan = function(exp_bigger) {
-    return (this.year > exp_bigger.year ||
-      this.month > exp_bigger.month ||
-      this.date > exp_bigger.date);
-  }
-}
-
-// Create a Time Object
-function TimeObj(timeString) {
-  // [HH:MM] in 24 Hours
-  this.hour = timeString.split(':')[0];
-  this.minute = timeString.split(':')[1];
-
-  this.isGreaterThan = function(exp_bigger) {
-    return (this.hour > exp_bigger.hour ||
-      this.minute > exp_bigger.minute);
-  }
 }
