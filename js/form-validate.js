@@ -1,7 +1,8 @@
+// Event handlers
 $("#addURL").click(addAnotherUrl);
 $("#removeURL").click(removeURL);
 
-
+// Add another URL text box
 function addAnotherUrl() {
   var images = $(".images_form");
   var newText = images.first().clone();
@@ -9,6 +10,8 @@ function addAnotherUrl() {
   images.parent().append(newText);
 }
 
+// Remove last URL text box
+// If only one text box, just clear it
 function removeURL() {
   var images = $(".images_form");
   if (images.length == 1) {
@@ -18,6 +21,7 @@ function removeURL() {
   }
 }
 
+// Validate for empty fields and invalid fields
 function validate() {
   var startDate = $("#startDate");
   var endDate = $("#endDate");
@@ -76,6 +80,7 @@ function validate() {
   return false;
 }
 
+// Create a Date Object
 function DateObj(dateString) {
   // [YYYY/MM/DD]
   this.year = dateString.split('-')[0];
@@ -89,6 +94,7 @@ function DateObj(dateString) {
   }
 }
 
+// Create a Time Object
 function TimeObj(timeString) {
   // [HH:MM] in 24 Hours
   this.hour = timeString.split(':')[0];

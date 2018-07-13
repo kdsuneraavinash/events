@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Make mobile friendly-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mora Events</title>
+
+  <!-- Add bootstrap CDN-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/stylesheet.css" />
+  <style>
+  html {
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  .column {
+    float: left;
+    width: 16.66%;
+    margin-bottom: 75px;
+    padding: 0 8px;
+  }
+
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    background-color: white;
+
+  }
+
+  .container_team {
+    padding: 0 16px;
+  }
+
+  .container_team::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .title {
+    font-family: "Comic Sans MS";
+    color: grey;
+    font-size: 17px;
+    word-wrap: break-word;
+  }
+
+  .name {
+    font-family: sans-serif;
+    font-size: 20px;
+    word-wrap: break-word;
+  }
+
+  .email{
+    font-family: "Times new roman";
+    font-size: 15px;
+    font-style: italic;
+  }
+
+  .button {
+    /*border: 5px solid grey;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-family: monospace;
+  }
+
+  .button:hover {
+    background-color: #555;
+  }
+
+  img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .heading {
+    text-align: center;
+    font-family: "Arial Black";
+    font-size: 30px;
+  }
+
+  .box {
+    width: 100%;
+    height: 50px;
+    background: white;
+    opacity: 0.9;
+    border: 2px solid #0040ff;
+    border-radius: 3px;
+
+  }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation bar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand">Mora Events</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li> <a href="index.html"> Home </a> </li>
+        <li> <a href="addevent.html"> Add Event </a> </li>
+        <li class="active"> <a href="#"> About </a> </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div>
+    <div class="box">
+      <p class="heading">Team AXYS</p>
+    </div>
+    <br>
+    <img src="images/axys.jpg" alt="AXYS" style="width:100px;height:100px">
+    <br>
+  </div>
+
+
+  <!-- Content -->
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="images/sunera_avinash.jpg" alt="Sunera_Avinash" style="width:100%">
+        <div class="container_team">
+          <h2 class="name">Sunera Avinash</h2>
+          <p class="title">CTO & Lead Programmer</p>
+          <p class="email">kdsuneraavinash@gmail.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <img src="images/deepana_ishtaweera.jpg" alt="Deepana_Ishtaweera" style="width:100%;">
+        <div class="container_team">
+          <h2 class="name">Deepana Ishtaweera</h2>
+          <p class="title">CEO</p>
+          <p class="email">deepanaishtaweera174@gmail.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <img src="images/dinith_herath.jpg" alt="Dinith_Herath" style="width:100%">
+        <div class="container_team">
+          <h2 class="name">Dinith Herath</h2>
+          <p class="title">Product Manager</p>
+          <p class="email">dinithherath18332@gmail.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>    
+    <div class="column">
+      <div class="card">
+        <img src="images/ruchin_amarathunga.jpg" alt="Ruchin Amarathunga" style="width:100%">
+        <div class="container_team">
+          <h2 class="name">Ruchin Amarathunga</h2>
+          <p class="title">COO</p>
+          <p class="email">example@gmail.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>    
+    <div class="column">
+      <div class="card">
+        <img src="images/uvindu_avishka.jpg" alt="Uvindu_Avishka" style="width:100%">
+        <div class="container_team">
+          <h2 class="name">Uvindu Avishka</h2>
+          <p class="title">Head of Marketing</p>
+          <p class="email">uvinduavishka@gmail.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>    
+    <div class="column">
+      <div class="card">
+        <img src="images/ravikula_silva.jpg" alt="Ravikula_Silva" style="width:100%">
+        <div class="container_team">
+          <h2 class="name">Ravikula Silva</h2>
+          <p class="title">Head of Creative Design</p>
+          <p class="email">example@gmail.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="container-fluid text-center" id="footer">
+    <p> © 2018 by teamaxys </p>
+  </footer>
+
+  <!-- Add JQuery and JavaScript CDN -->
+  <script src="https://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
