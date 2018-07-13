@@ -62,16 +62,10 @@ Content - ids
   animation-duration: 1s;
 }
 
-/* Welcome page text */
-#welcome_text {
-  margin-top: 5%;
-}
-
 /* Welcome page image */
 #welcome_img {
   margin-top: 5%;
-  width: 100%;
-  height: 100%;
+  margin-bottom: 5%;
 }
 
 /* About page logo */
