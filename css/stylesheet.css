@@ -51,9 +51,13 @@ Content - Classes
 }
 
 .card {
-  padding: 20px;
-  margin: 20px;
+  padding: 1em;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.row .card {
+  padding: 1em;
+  margin: 0.5em;
 }
 
 .btn-primary {
