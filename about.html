@@ -4,88 +4,124 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <!-- Make mobile friendly-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mora Events</title>
-
   <!-- Add icon -->
   <link rel="icon" href="https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/calendar-512.png">
-
   <!-- Add Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
   <!-- Add bootstrap CDN-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  <!-- Font Awesome Stylesheet-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
   <!-- Add Stylesheets -->
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="css/stylesheet.css" />
-
-  <!--[if lt IE 9]>
-      <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body>
 
   <!-- Navigation bar -->
-  <nav class="navbar">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">Mora Events</a>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li> <a href="index.html"> Home </a> </li>
-        <li> <a href="addevent.html"> Add Event </a> </li>
-        <li class="active"> <a href="#"> About </a> </li>
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark justify-content-between mb-4 px-4">
+    <a class="navbar-brand" href="#">Mora Events</a>
+    <div class="navbar-nav">
+      <a class="nav-link m-1 p-3 nav-item" href="index.html">Home</a>
+      <a class="nav-link m-1 p-3 nav-item" href="addevent.html">Add Event</a>
+      <a class="nav-link m-1 p-3 nav-item active" href="#">About</a>
     </div>
   </nav>
 
 
   <!-- Content -->
   <div class="container" id="about_content">
-    <div class="well text-center" id="about_us_text">
-      <!-- Title -->
-      <h2>About Us</h2>
+    <div class="card" id="about_us_text">
+
+      <h2 class="card-title text-center">About Us</h2>
       <hr />
+
       <div class="row">
 
-        <div class="col-sm-6">
-          <!-- Axys Logo -->
-          <img id="logo_img" class=".img-responsive img-rounded" src="https://static.wixstatic.com/media/95d2d5_65efc85198be4cc2b743661147aadf69~mv2.jpg/v1/fill/w_370,h_368,al_c,q_80,usm_0.66_1.00_0.01/95d2d5_65efc85198be4cc2b743661147aadf69~mv2.jpg" alt="Axys Logo"
-          />
+        <div class="col-sm text-center">
+          <img id="logo_img" class="img-fluid" src="images/axys_logo.jpg" alt="Axys Logo" />
         </div>
 
-        <div class="col-sm-6 text-left">
-          <p>
-            <!-- Email -->
-            <span class="glyphicon glyphicon-envelope small-icon blue-icon"></span>teamaxys@gmail.com
+        <div class="col-sm jumbotron" style="background-color:white">
+          <p class="lead">
+            <span class="fas fa-at small-icon"></span>teamaxys@gmail.com
             <br />
-            <!-- Telephone Number -->
-            <span class="glyphicon glyphicon-earphone small-icon blue-icon"></span>087-11227890
+            <span class="fas fa-phone small-icon"></span>087-11227890
             <br />
-            <!-- University -->
-            <span class="glyphicon glyphicon-education small-icon blue-icon"></span>University of Moratuwa
+            <span class="fas fa-user-graduate small-icon"></span>University of Moratuwa
           </p>
+          <a href="mailto:teamaxys@gmail.com"><button class="btn btn-primary">Contact</button></a>
         </div>
 
       </div>
+      <hr />
+
+      <h2 class="card-title text-center">Team Members</h2>
+      <hr />
+
+      <div class="row">
+        <div class="col-sm card">
+          <img src="images/sunera_avinash.jpg" alt="Sunera Avinash" class="img-fluid card-img-top img-thumbnail" />
+          <h4 class="card-title">Sunera Avinash</h4>
+          <h6 class="card-subtitle mb-2 text-muted">CTO & Lead Programmer</h6>
+          <a href="mailto:kdsuneraavinash@gmail.com"><button class="btn btn-primary">Contact</button></a>
+        </div>
+        <div class="col-sm card">
+          <img src="images/deepana_ishtaweera.jpg" alt="Deepana Ishtaweera" class="img-fluid card-img-top img-thumbnail" />
+          <h4 class="card-title">Deepana Ishtaweera</h4>
+          <h6 class="card-subtitle mb-2 text-muted">CEO</h6>
+          <a href="mailto:deepanaishtaweera174@gmail.com"><button class="btn btn-primary">Contact</button></a>
+        </div>
+        <div class="col-sm card">
+          <img src="images/dinith_herath.jpg" alt="Dinith Herath" class="img-fluid card-img-top img-thumbnail" />
+          <h4 class="card-title">Dinith Herath</h4>
+          <h6 class="card-subtitle mb-2 text-muted">Product Manager</h6>
+          <a href="mailto:dinithherath18332@gmail.com"><button class="btn btn-primary">Contact</button></a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm card">
+          <img src="images/ruchin_amarathunga.jpg" alt="Ruchin Amarathunga" class="img-fluid card-img-top img-thumbnail" />
+          <h4 class="card-title">Ruchin Amarathunga</h4>
+          <h6 class="card-subtitle mb-2 text-muted">COO</h6>
+          <a href="mailto:example@gmail.com"><button class="btn btn-primary">Contact</button></a>
+        </div>
+        <div class="col-sm card">
+          <img src="images/uvindu_avishka.jpg" alt="Sunera_Avinash" class="img-fluid card-img-top img-thumbnail" />
+          <h4 class="card-title">Uvindu Avishka</h4>
+          <h6 class="card-subtitle mb-2 text-muted">Head of Marketing</h6>
+          <a href="mailto:uvinduavishka@gmail.com"><button class="btn btn-primary">Contact</button></a>
+        </div>
+        <div class="col-sm card">
+          <img src="images/ravikula_silva.jpg" alt="Ravikula Silva" class="img-fluid card-img-top img-thumbnail" />
+          <h4 class="card-title">Ravikula Silva</h4>
+          <h6 class="card-subtitle mb-2 text-muted">Head of Creative Design</h6>
+          <a href="mailto:example@gmail.com"><button class="btn btn-primary">Contact</button></a>
+        </div>
+      </div>
+
     </div>
   </div>
 
 
+
   <!-- Footer -->
-  <footer class="container-fluid text-center" id="footer">
+  <footer class="container-fluid text-center fixed-bottom py-2" id="footer">
     © 2018 by teamaxys
   </footer>
 
   <!-- Add JQuery and JavaScript CDN -->
-  <script src="https://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
   <!-- Add Script file -->
-  <script src="js/scripts.js"></script>
+  <script src="js/form-validate.js"></script>
 </body>
 
 </html>

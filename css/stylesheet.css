@@ -4,31 +4,19 @@ Content - Main Tags
 -----------------------------------------------
 */
 
-/* Show a Y scroll bar always to avoid navigation bar flikr */
-
 html {
+  /* Show a Y scroll bar always to avoid navigation bar flikr */
   overflow: scroll;
   overflow-x: hidden;
 }
 
-/* Background image and custom font */
-
 body {
+  /* Background image and custom font */
   background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  font-family: "Montserrat" !important;
-}
-
-/* Remove border around clicked links */
-
-a:active, a:focus {
-  outline: 0;
-  border: none;
-  /* Firefox */
-  -moz-outline-style: none;
 }
 
 /*
@@ -37,52 +25,44 @@ Content - Classes
 -----------------------------------------------
 */
 
-/* Add a margin and change background color of well */
-
-.well {
-  margin: 5px;
-  background-color: #fff !important;
-}
-
-/* Icons color and margin */
-
 .small-icon {
-    margin: 10px;
-}
-
-/* Blue Icon */
-
-.blue-icon {
+  /* Icons color and margin */
+  margin: 10px;
   color: #103f54;
 }
 
-/* Red Icon */
-
-.red-icon {
-  color: #b71c1c;
-}
-
-/* Yellow Icon */
-
-.yellow-icon {
-  color: #F57F17;
-}
-
-/* Green Icon */
-
-.green-icon {
-  color: #33691E;
-}
-
-/* Submit Text */
-
 .submit-text {
-    display: none;
-    opacity: 0.9;
-    animation-name: submit-message-show;
-    animation-duration: 0.5s;
-    animation-iteration-count: 3;
-    animation-direction: alternate;
+  /* Submit Text */
+  display: none;
+  opacity: 0.9;
+  animation-name: submit-message-show;
+  animation-duration: 0.5s;
+  animation-iteration-count: 3;
+  animation-direction: alternate;
+}
+
+.submit_text {
+  /* Submit text */
+  display: none;
+  animation-name: submit-message-show;
+  animation-duration: 0.5s;
+  animation-iteration-count: 3;
+  animation-direction: alternate;
+}
+
+.card {
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary {
+  background-color: #103f54;
+}
+
+a .btn{
+  width: 100%;
+  margin-top: 10px;
 }
 
 /*
@@ -91,9 +71,8 @@ Content - ids
 -----------------------------------------------
 */
 
-/* All content areas */
-
 #home_content, #addevent_content, #about_content {
+  /* All content areas */
   /* Bottom margin to stop content from being hidden by footer */
   margin-bottom: 100px;
   /* Add content load animation */
@@ -102,42 +81,18 @@ Content - ids
   animation-duration: 1s;
 }
 
-/* Welcome page image */
-
-#welcome_img {
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-
-/* About page logo */
-
 #logo_img {
+  /* About page logo */
   width: 50%;
   margin: 5%;
 }
-
-/* Submit success text */
-
-#success_text {
-  color: #33691E;
-}
-
-/* Invalid values */
 
 #invalid_text {
   color: #b71c1c;
 }
 
-/* Nothing Enetered text */
-
-#empty_text{
-    color: #F57F17;
-}
-
-/* Add margin to images in form */
-
-.images_form{
-  margin-bottom: 5px;
+#valid_text {
+  color: #33691E;
 }
 
 /*
@@ -146,49 +101,31 @@ Navigation bar
 -----------------------------------------------
 */
 
-/* Navigationbar main properties */
-
 .navbar {
+  /* Navigationbar main properties */
   background-color: #103f54;
-  /* To appear on top */
-  z-index: 9999;
-  border: 0;
-  padding: 1em;
-  margin-bottom: 1em;
 }
 
-/* Navigationbar links + brand */
-
-.navbar li a, .navbar .navbar-brand {
-  background-color: #103f54 !important;
-  color: #fff !important;
+.navbar-nav .active {
+  /* Navigationbar links - active */
+  background-color: #fff !important;
+  color: #b71c1c !important;
 }
 
-/* Navigationbar brand */
-
-.navbar .navbar-brand {
-  font-size: 2em !important;
-}
-
-/* Navigationbar links */
-
-.navbar li a {
-  margin: 0.2em;
+.nav-link {
+  /* Navigationbar links */
   transition: background-color 0.3s ease-in;
 }
 
-/* Navigationbar links - hover */
-
-.navbar-nav li:hover a {
+.nav-link:hover {
+  /* Navigationbar links - hover */
   background-color: #fff !important;
   color: #103f54 !important;
 }
 
-/* Navigationbar links - active */
-
-.navbar-nav li.active a {
-  background-color: #fff !important;
-  color: #b71c1c !important;
+.navbar-brand {
+  /* Navigationbar brand */
+  font-size: 2em !important;
 }
 
 /*
@@ -199,10 +136,5 @@ Footer
 
 #footer {
   background-color: #103f54;
-  width: 100%;
   color: #fff;
-  /* Fixed footer */
-  position: fixed;
-  bottom: 0;
-  padding: 1em;
 }

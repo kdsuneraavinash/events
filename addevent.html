@@ -4,190 +4,165 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <!-- Make mobile friendly-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mora Events</title>
-
   <!-- Add icon -->
   <link rel="icon" href="https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/calendar-512.png">
-
   <!-- Add Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
   <!-- Add bootstrap CDN-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  <!-- Font Awesome Stylesheet-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
   <!-- Add Stylesheets -->
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="css/stylesheet.css" />
-
-  <!--[if lt IE 9]>
-      <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body>
 
   <!-- Navigation bar -->
-  <nav class="navbar">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">Mora Events</a>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li> <a href="index.html"> Home </a> </li>
-        <li class="active"> <a href="#"> Add Event </a> </li>
-        <li> <a href="about.html"> About </a> </li>
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark justify-content-between mb-4 px-4">
+    <a class="navbar-brand" href="#">Mora Events</a>
+    <div class="navbar-nav">
+      <a class="nav-link m-1 p-3 nav-item" href="index.html">Home</a>
+      <a class="nav-link m-1 p-3 nav-item active" href="#">Add Event</a>
+      <a class="nav-link m-1 p-3 nav-item" href="about.html">About</a>
     </div>
   </nav>
 
 
   <!-- Content -->
   <div class="container" id="addevent_content">
-    <div class="container" id="event_form">
+    <div class="card p-3">
 
-      <div class="well">
+      <!-- Title -->
+      <h2>Fill this Form and Submit Event Details.</h2>
+      <!-- Info Text -->
+      <h4><small>All fields are required.</small></h4>
+      <hr />
 
-        <!-- Title -->
-        <h2>Fill this Form and Submit Event Details.</h2>
-        <!-- Info Text -->
-        <p><small>All fields are required.</small></p>
+      <form onsubmit="return validate()" id="event_form">
+
+        <!-- Event Name Text -->
+        <div class="form-group">
+          <label for="eventName">Event Name:</label>
+          <input type="text" class="form-control" id="eventName" placeholder="Event" required/>
+        </div>
+        <!-- Event Otganizer Text -->
+        <div class="form-group">
+          <label for="organizer">Organizer:</label>
+          <input type="text" class="form-control" id="organizer" placeholder="Organizing Society" required/>
+        </div>
+        <!-- Event Description Text Area -->
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea rows="5" class="form-control" id="description" placeholder="Describe event and its purpose here" required></textarea>
+        </div>
+
+        <br />
+
+        <!-- Event Venue Text -->
+        <div class="form-group">
+          <label for="location">Venue:</label>
+          <input type="text" class="form-control" id="location" aria-describedby="locationHelp" placeholder="Venue" required/>
+          <small class="form-text text-muted" id="locationHelp">
+              If inside the university, mention location name.
+              Otherwise include address of the location.
+            </small>
+        </div>
+
+        <br />
+
+        <!-- Event Start Date -->
+        <div class="form-group">
+          <label for="startDate">Start Date:</label>
+          <input type="date" class="form-control" id="startDate" required/>
+        </div>
+        <!-- Event End Date -->
+        <div class="form-group">
+          <label for="endDate">End Date:</label>
+          <input type="date" class="form-control" id="endDate" aria-describedby="dateHelp" required/>
+          <small class="form-text text-muted" id="dateHelp">
+              Event end date must be on or after start date.
+          </small>
+        </div>
+
+
+        <br />
+
+        <!-- Event Start Time -->
+        <div class="form-group">
+          <label for="startTime">Start Time:</label>
+          <input type="time" class="form-control" id="startTime" required/>
+        </div>
+        <!-- Event End Time -->
+        <div class="form-group">
+          <label for="endTime">End Time:</label>
+          <input type="time" class="form-control" id="endTime" aria-describedby="timeHelp" required/>
+          <small class="form-text text-muted" id="timeHelp">
+              Enter a general start/end time if time is not definite.
+              Event end time must be at or after start time.
+          </small>
+        </div>
+
+
+        <br />
+
+        <!-- Event Image URL Text Area -->
+        <div class="form-group" aria-describedby="imageHelp">
+          <label for="images">Image Links:</label>
+          <input type="url" class="form-control images_form my-2" id="images" placeholder="https://www.website.com/path/to/image.png" required/>
+        </div>
+        <button class="btn btn-default" type="button" id="addURL">Add Anther URL</button>
+        <button class="btn btn-default" type="button" id="removeURL">Remove Last URL</button>
+        <small class="form-text text-muted" id="imageHelp">
+            Enter each URL in a seperate box.
+            Add only direct links. (Links ending in .jpg/.png)
+            Input in https://website/image.jpg format.
+            First image will be cover image.
+          </small>
+
+        <br />
+
+        <div class="form-group">
+          <label for="tags">Tags:</label>
+          <input type="text" class="form-control" id="tags" placeholder="sport gaming computer" aria-describedby="tagHelp" required/>
+          <small class="form-text text-muted" id="tagHelp">
+              Add tags here seperated by spaces.
+              Tags will help others to find your event.
+              Maximum no of tags available is 15.
+              Other tags will be discarded.
+          </small>
+        </div>
+
         <hr />
 
-        <form onsubmit="return validate()">
+        <!-- Event Submit Button and Texts -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <span class="submit_text" id="invalid_text">
+          <span class="fas fa-exclamation-triangle ml-3 mr-1"></span> Invalid Field
+        </span>
+        <span class="submit_text" id="valid_text">
+            <span class="fas fa-check-circle ml-3 mr-1"></span> Submitted
+        </span>
 
-          <!-- Event Name Text -->
-          <div class="form-group">
-            <label for="eventName">Event Name:</label>
-            <input type="text" class="form-control" id="eventName" placeholder="Enter name of your event here" />
-          </div>
-          <!-- Event Otganizer Text -->
-          <div class="form-group">
-            <label for="organizer">Organizer:</label>
-            <input type="text" class="form-control" id="organizer" placeholder="Enter organizing society here" />
-          </div>
-          <!-- Event Description Text Area -->
-          <div class="form-group">
-            <label for="description">Description:</label>
-            <textarea rows="5" class="form-control" id="description" placeholder="Describe event and its purpose here"></textarea>
-          </div>
-
-          <br />
-
-          <!-- Event Venue Text -->
-          <div class="form-group">
-            <label for="location">Venue:</label>
-            <input type="text" class="form-control" id="location" placeholder="Enter venue of your event here" />
-          </div>
-          <span class="help-block">
-            If inside the university, mention location name.
-            <br />
-            Otherwise include address of the location.
-          </span>
-
-          <br />
-
-          <!-- Event Start Date -->
-          <div class="form-group">
-            <label for="startDate">Start Date:</label>
-            <input type="date" class="form-control" id="startDate" />
-          </div>
-          <!-- Event End Date -->
-          <div class="form-group">
-            <label for="endDate">End Date:</label>
-            <input type="date" class="form-control" id="endDate" />
-          </div>
-          <span class="help-block">
-            Event end date must be on or after start date.
-          </span>
-
-          <br />
-
-          <!-- Event Start Time -->
-          <div class="form-group">
-            <label for="startTime">Start Time:</label>
-            <input type="time" class="form-control" id="startTime" />
-          </div>
-          <!-- Event End Time -->
-          <div class="form-group">
-            <label for="endTime">End Time:</label>
-            <input type="time" class="form-control" id="endTime" />
-          </div>
-          <span class="help-block">
-            Enter a general start/end time if time is not definite.
-            <br />
-            Event end time must be at or after start time.
-          </span>
-
-
-          <!-- Event Image URL Text Area -->
-          <div class="form-group">
-            <label for="images">Image Links:</label>
-            <input type="url" class="form-control images_form" id="images" />
-          </div>
-          <button class="btn btn-default" type="button" id="addURL">Add Anther URL</button>
-          <button class="btn btn-default" type="button" id="removeURL">Remove Last URL</button>
-          <span class="help-block">
-            Enter each URL in a seperate box.
-            <br />
-            Add only direct links. (Links ending in .jpg/.png)
-            <br />
-            Input in https://website/image.jpg format.
-            <br />
-            First image will be cover image.
-          </span>
-
-          <br />
-
-          <div class="form-group">
-            <label for="tags">Tags:</label>
-            <input type="text" class="form-control" id="tags" placeholder="Add tags here seperated by spaces (eg: sport gaming computer)" />
-          </div>
-          <span class="help-block">
-            Tags will help others to find your event.
-            <br />
-            Maximum no of tags available is 15.
-            <br />
-            Other tags will be discarded.
-          </span>
-
-          <hr />
-
-          <!-- Event Submit Button and Texts -->
-          <div class="row">
-            <div class="col-sm-6 text-left">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-            <div class="col-sm-6 text-right">
-              <div class="text-warning submit-text" id="empty_text">
-                <span class="glyphicon glyphicon-pencil small-icon yellow-icon"></span> Empty fields
-              </div>
-              <div class="text-danger submit-text" id="invalid_text">
-                <span class="glyphicon glyphicon glyphicon-warning-sign small-icon red-icon"></span> Invalid Field
-              </div>
-              <div class="text-info submit-text" id="success_text">
-                <span class="glyphicon glyphicon glyphicon-ok-circle small-icon green-icon"></span> Submitted
-              </div>
-            </div>
-          </div>
-
-        </form>
-      </div>
-
+      </form>
     </div>
   </div>
 
 
   <!-- Footer -->
-  <footer class="container-fluid text-center" id="footer">
+  <footer class="container-fluid text-center fixed-bottom py-2" id="footer">
     © 2018 by teamaxys
   </footer>
 
   <!-- Add JQuery and JavaScript CDN -->
-  <script src="https://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
   <!-- Add Script file -->
   <script src="js/form-validate.js"></script>
 </body>
