@@ -14,7 +14,8 @@
 
   <!-- Add bootstrap CDN-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-  <!-- Add Stylesheet -->
+  <!-- Add Stylesheets -->
+  <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="css/stylesheet.css" />
 
   <!--[if lt IE 9]>
@@ -29,7 +30,7 @@
   <nav class="navbar">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand">Mora Events</a>
+        <a class="navbar-brand" href="index.html">Mora Events</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li> <a href="index.html"> Home </a> </li>
@@ -46,27 +47,27 @@
 
       <div class="well">
 
-        <h2>
-          Fill this Form and Submit Event Details.
-        </h2>
-        <p>
-          <small>All fields are required.</small>
-        </p>
-
+        <!-- Title -->
+        <h2>Fill this Form and Submit Event Details.</h2>
+        <!-- Info Text -->
+        <p><small>All fields are required.</small></p>
         <hr />
 
         <form>
 
+          <!-- Event Name Text -->
           <div class="form-group">
             <label for="eventName">Event Name:</label>
             <input type="text" class="form-control" id="eventName" placeholder="Enter name of your event here" />
           </div>
 
+          <!-- Event Otganizer Text -->
           <div class="form-group">
             <label for="organizer">Organizer:</label>
             <input type="text" class="form-control" id="organizer" placeholder="Enter organizing society here" />
           </div>
 
+          <!-- Event Description Text Area -->
           <div class="form-group">
             <label for="description">Description:</label>
             <textarea rows="5" class="form-control" id="description" placeholder="Describe event and its purpose here"></textarea>
@@ -74,6 +75,7 @@
 
           <br />
 
+          <!-- Event Venue Text -->
           <div class="form-group">
             <label for="location">Venue:</label>
             <input type="text" class="form-control" id="location" placeholder="Enter venue of your event here" />
@@ -81,11 +83,13 @@
 
           <br />
 
+          <!-- Event Start Date -->
           <div class="form-group">
             <label for="startDate">Start Date:</label>
             <input type="date" class="form-control" id="startDate"/>
           </div>
 
+          <!-- Event End Date -->
           <div class="form-group">
             <label for="endDate">End Date:</label>
             <input type="date" class="form-control" id="endDate"/>
@@ -93,11 +97,13 @@
 
           <br />
 
+          <!-- Event Start Time -->
           <div class="form-group">
             <label for="startTime">Start Time:</label>
             <input type="time" class="form-control" id="startTime"/>
           </div>
 
+          <!-- Event End Time -->
           <div class="form-group">
             <label for="endTime">End Time:</label>
             <input type="time" class="form-control" id="endTime"/>
@@ -105,14 +111,16 @@
 
           <br />
 
+          <!-- Event Image URL Text Area -->
           <div class="form-group">
             <label for="images">Image Links:</label>
-            <textarea rows="5" class="form-control" id="images" placeholder="Add every image URL here.&#10;Add only direct links. (Links ending in .jpg/.png)&#10;Add each link in a new line.&#10;First Link will be event cover image link.">
-          </textarea>
+            <textarea rows="5" class="form-control" id="images" placeholder="Add every image URL here.&#10;Add only direct links. (Links ending in .jpg/.png)&#10;Add each link in a new line.&#10;First Link will be event cover image link."></textarea>
           </div>
 
           <hr />
 
+
+          <!-- Event Submit Button -->
           <button type="submit" class="btn btn-primary">Submit</button>
 
         </form>

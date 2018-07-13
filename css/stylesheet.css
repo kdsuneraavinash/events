@@ -4,11 +4,13 @@ Content - Main Tags
 -----------------------------------------------
 */
 
+/* Show a Y scroll bar always to avoid navigation bar flikr */
 html {
   overflow: scroll;
   overflow-x: hidden;
 }
 
+/* Background image and custom font */
 body {
   background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
@@ -18,6 +20,7 @@ body {
   font-family: "Montserrat" !important;
 }
 
+/* HTML tag properties */
 h2 {
   font-weight: bolder;
 }
@@ -30,25 +33,27 @@ p {
   font-size: 18px;
 }
 
+/* Remove border around clicked links */
+a:active, a:focus {
+  outline: 0;
+  border: none;
+  /* Firefox */
+  -moz-outline-style: none;
+}
+
 /*
 -----------------------------------------------
 Content - Classes
 -----------------------------------------------
 */
 
+/* Add a margin and change background color of well */
 .well {
   margin: 5px;
   background-color: #fff !important;
 }
 
-.form-group label {
-  font-weight: bolder !important;
-}
-
-.form-group text, .form-group textarea {
-  font-weight: lighter !important;
-}
-
+/* Icons color and margin */
 .small-icon {
   margin: 10px;
   color: #103f54;
@@ -60,25 +65,35 @@ Content - ids
 -----------------------------------------------
 */
 
+/* All content areas */
 #home_content, #addevent_content, #about_content {
+/* Bottom margin to stop content from being hidden by footer */
   margin-bottom: 100px;
+  /* Add content load animation */
   opacity: 0.9;
+  animation-name: content-load;
+  animation-duration: 1s;
 }
 
+/* Welcome page text */
 #welcome_text {
   margin-top: 5%;
 }
 
+/* Welcome page image */
+#welcome_img {
+  margin-top: 5%;
+  width: 100%;
+  height: 100%;
+}
+
+/* About page text */
 #about_us_text {
   width: 75%;
   margin: 10%;
 }
 
-#welcome_img {
-  margin-top: 5%;
-  width: 100%;
-}
-
+/* About page logo */
 #logo_img {
   width: 50%;
 }
@@ -89,8 +104,10 @@ Navigation bar
 -----------------------------------------------
 */
 
+/* Navigationbar main properties */
 .navbar {
   background-color: #103f54;
+  /* To appear on top */
   z-index: 9999;
   font-weight: lighter !important;
   letter-spacing: 0.1em !important;
@@ -101,31 +118,33 @@ Navigation bar
   margin-bottom: 1em;
 }
 
-.navbar li a {
-  margin: 0.2em;
-}
-
+/* Navigationbar links + brand */
 .navbar li a, .navbar .navbar-brand {
   background-color: #103f54 !important;
   color: #fff !important;
 }
 
+/* Navigationbar brand */
+.navbar .navbar-brand {
+  font-size: 2em !important;
+}
+
+/* Navigationbar links */
+.navbar li a {
+  margin: 0.2em;
+  transition: background-color 0.3s ease-in;
+}
+
+/* Navigationbar links - hover */
 .navbar-nav li:hover a {
   background-color: #fff !important;
   color: #103f54 !important;
 }
 
+/* Navigationbar links - active */
 .navbar-nav li.active a {
   background-color: #fff !important;
   color: #b71c1c !important;
-}
-
-.navbar-toggle {
-  border-color: transparent;
-}
-
-.navbar .navbar-brand {
-  font-size: 2em !important;
 }
 
 /*
@@ -138,6 +157,7 @@ Footer
   background-color: #103f54;
   width: 100%;
   color: #fff;
+  /* Fixed footer */
   position: fixed;
   bottom: 0;
   padding: 1em;

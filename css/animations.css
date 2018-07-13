@@ -1,0 +1,10 @@
+/* Content Load Naimation - Fade in + Zoom in */
+@keyframes content-load{
+  from{
+    opacity: 0;
+    transform: scale(0);
+  }to{
+    opacity: 0.9;
+    transform: scale(1);
+  }
+}
