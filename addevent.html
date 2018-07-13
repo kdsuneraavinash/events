@@ -56,20 +56,18 @@
         <p><small>All fields are required.</small></p>
         <hr />
 
-        <form>
+        <form onsubmit="return validate()">
 
           <!-- Event Name Text -->
           <div class="form-group">
             <label for="eventName">Event Name:</label>
             <input type="text" class="form-control" id="eventName" placeholder="Enter name of your event here" />
           </div>
-
           <!-- Event Otganizer Text -->
           <div class="form-group">
             <label for="organizer">Organizer:</label>
             <input type="text" class="form-control" id="organizer" placeholder="Enter organizing society here" />
           </div>
-
           <!-- Event Description Text Area -->
           <div class="form-group">
             <label for="description">Description:</label>
@@ -83,48 +81,97 @@
             <label for="location">Venue:</label>
             <input type="text" class="form-control" id="location" placeholder="Enter venue of your event here" />
           </div>
+          <span class="help-block">
+            If inside the university, mention location name.
+            <br />
+            Otherwise include address of the location.
+          </span>
 
           <br />
 
           <!-- Event Start Date -->
           <div class="form-group">
             <label for="startDate">Start Date:</label>
-            <input type="date" class="form-control" id="startDate"/>
+            <input type="date" class="form-control" id="startDate" />
           </div>
-
           <!-- Event End Date -->
           <div class="form-group">
             <label for="endDate">End Date:</label>
-            <input type="date" class="form-control" id="endDate"/>
+            <input type="date" class="form-control" id="endDate" />
           </div>
+          <span class="help-block">
+            Event end date must be on or after start date.
+          </span>
 
           <br />
 
           <!-- Event Start Time -->
           <div class="form-group">
             <label for="startTime">Start Time:</label>
-            <input type="time" class="form-control" id="startTime"/>
+            <input type="time" class="form-control" id="startTime" />
           </div>
-
           <!-- Event End Time -->
           <div class="form-group">
             <label for="endTime">End Time:</label>
-            <input type="time" class="form-control" id="endTime"/>
+            <input type="time" class="form-control" id="endTime" />
           </div>
+          <span class="help-block">
+            Enter a general start/end time if time is not definite.
+            <br />
+            Event end time must be at or after start time.
+          </span>
 
-          <br />
 
           <!-- Event Image URL Text Area -->
           <div class="form-group">
             <label for="images">Image Links:</label>
-            <textarea rows="5" class="form-control" id="images" placeholder="Add every image URL here.&#10;Add only direct links. (Links ending in .jpg/.png)&#10;Add each link in a new line.&#10;First Link will be event cover image link."></textarea>
+            <input type="url" class="form-control images_form" id="images" />
           </div>
+          <button class="btn btn-default" type="button" id="addURL">Add Anther URL</button>
+          <button class="btn btn-default" type="button" id="removeURL">Remove Last URL</button>
+          <span class="help-block">
+            Enter each URL in a seperate box.
+            <br />
+            Add only direct links. (Links ending in .jpg/.png)
+            <br />
+            Input in https://website.com/path/to/image.jpg format.
+            <br />
+            First image will be cover image.
+          </span>
+
+          <br />
+
+          <div class="form-group">
+            <label for="tags">Tags:</label>
+            <input type="text" class="form-control" id="tags" placeholder="Add tags here seperated by spaces (eg: sport gaming computer)" />
+          </div>
+          <span class="help-block">
+            Tags will help others to find your event.
+            <br />
+            Maximum no of tags available is 15.
+            <br />
+            Other tags will be discarded.
+          </span>
 
           <hr />
 
-
-          <!-- Event Submit Button -->
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <!-- Event Submit Button and Texts -->
+          <div class="row">
+            <div class="col-sm-6 text-left">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="col-sm-6 text-right">
+              <div class="text-warning submit-text" id="empty_text">
+                <span class="glyphicon glyphicon-pencil small-icon yellow-icon"></span> Empty fields
+              </div>
+              <div class="text-danger submit-text" id="invalid_text">
+                <span class="glyphicon glyphicon glyphicon-warning-sign small-icon red-icon"></span> Invalid Field
+              </div>
+              <div class="text-info submit-text" id="success_text">
+                <span class="glyphicon glyphicon glyphicon-ok-circle small-icon green-icon"></span> Submitted
+              </div>
+            </div>
+          </div>
 
         </form>
       </div>
@@ -142,7 +189,7 @@
   <script src="https://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <!-- Add Script file -->
-  <script src="js/scripts.js"></script>
+  <script src="js/form-validate.js"></script>
 </body>
 
 </html>

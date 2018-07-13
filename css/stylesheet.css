@@ -5,12 +5,14 @@ Content - Main Tags
 */
 
 /* Show a Y scroll bar always to avoid navigation bar flikr */
+
 html {
   overflow: scroll;
   overflow-x: hidden;
 }
 
 /* Background image and custom font */
+
 body {
   background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
@@ -21,6 +23,7 @@ body {
 }
 
 /* Remove border around clicked links */
+
 a:active, a:focus {
   outline: 0;
   border: none;
@@ -35,15 +38,51 @@ Content - Classes
 */
 
 /* Add a margin and change background color of well */
+
 .well {
   margin: 5px;
   background-color: #fff !important;
 }
 
 /* Icons color and margin */
+
 .small-icon {
-  margin: 10px;
+    margin: 10px;
+}
+
+/* Blue Icon */
+
+.blue-icon {
   color: #103f54;
+}
+
+/* Red Icon */
+
+.red-icon {
+  color: #b71c1c;
+}
+
+/* Yellow Icon */
+
+.yellow-icon {
+  color: #F57F17;
+}
+
+/* Green Icon */
+
+.green-icon {
+  color: #33691E;
+}
+
+/* Submit Text */
+
+.submit-text {
+    display: none;
+    opacity: 0.9;
+    animation-name: submit-message-show;
+    animation-duration: 0.5s;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
 }
 
 /*
@@ -53,8 +92,9 @@ Content - ids
 */
 
 /* All content areas */
+
 #home_content, #addevent_content, #about_content {
-/* Bottom margin to stop content from being hidden by footer */
+  /* Bottom margin to stop content from being hidden by footer */
   margin-bottom: 100px;
   /* Add content load animation */
   opacity: 0.9;
@@ -63,15 +103,41 @@ Content - ids
 }
 
 /* Welcome page image */
+
 #welcome_img {
   margin-top: 5%;
   margin-bottom: 5%;
 }
 
 /* About page logo */
+
 #logo_img {
   width: 50%;
   margin: 5%;
+}
+
+/* Submit success text */
+
+#success_text {
+  color: #33691E;
+}
+
+/* Invalid values */
+
+#invalid_text {
+  color: #b71c1c;
+}
+
+/* Nothing Enetered text */
+
+#empty_text{
+    color: #F57F17;
+}
+
+/* Add margin to images in form */
+
+.images_form{
+  margin-bottom: 5px;
 }
 
 /*
@@ -81,6 +147,7 @@ Navigation bar
 */
 
 /* Navigationbar main properties */
+
 .navbar {
   background-color: #103f54;
   /* To appear on top */
@@ -91,29 +158,34 @@ Navigation bar
 }
 
 /* Navigationbar links + brand */
+
 .navbar li a, .navbar .navbar-brand {
   background-color: #103f54 !important;
   color: #fff !important;
 }
 
 /* Navigationbar brand */
+
 .navbar .navbar-brand {
   font-size: 2em !important;
 }
 
 /* Navigationbar links */
+
 .navbar li a {
   margin: 0.2em;
   transition: background-color 0.3s ease-in;
 }
 
 /* Navigationbar links - hover */
+
 .navbar-nav li:hover a {
   background-color: #fff !important;
   color: #103f54 !important;
 }
 
 /* Navigationbar links - active */
+
 .navbar-nav li.active a {
   background-color: #fff !important;
   color: #b71c1c !important;
