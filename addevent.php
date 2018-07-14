@@ -115,4 +115,5 @@
   </div>
 </div>
 
+<script src="js/form-validate.js"></script>
 <?php include("footer.php"); ?>

@@ -30,7 +30,6 @@ function validate() {
 
   var fromControls = $(".form-control");
 
-  var emptyText = $("#empty_text");
   var validText = $("#valid_text");
   var invalidText = $("#invalid_text");
 
