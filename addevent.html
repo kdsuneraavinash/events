@@ -24,7 +24,7 @@
 <body>
 
   <!-- Navigation bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark justify-content-between mb-4 px-4">
+  <nav class="navbar navbar-expand-lg navbar-dark mb-4 px-4">
     <a class="navbar-brand" href="#">Mora Events</a>
     <div class="navbar-nav">
       <a class="nav-link m-1 p-3 nav-item" href="index.html">Home</a>
@@ -49,17 +49,17 @@
         <!-- Event Name Text -->
         <div class="form-group">
           <label for="eventName">Event Name:</label>
-          <input type="text" class="form-control" id="eventName" placeholder="Event" required/>
+          <input type="text" class="form-control" id="eventName" placeholder="Event"/>
         </div>
         <!-- Event Otganizer Text -->
         <div class="form-group">
           <label for="organizer">Organizer:</label>
-          <input type="text" class="form-control" id="organizer" placeholder="Organizing Society" required/>
+          <input type="text" class="form-control" id="organizer" placeholder="Organizing Society"/>
         </div>
         <!-- Event Description Text Area -->
         <div class="form-group">
           <label for="description">Description:</label>
-          <textarea rows="5" class="form-control" id="description" placeholder="Describe event and its purpose here" required></textarea>
+          <textarea rows="5" class="form-control" id="description" placeholder="Describe event and its purpose here"></textarea>
         </div>
 
         <br />
@@ -67,7 +67,7 @@
         <!-- Event Venue Text -->
         <div class="form-group">
           <label for="location">Venue:</label>
-          <input type="text" class="form-control" id="location" aria-describedby="locationHelp" placeholder="Venue" required/>
+          <input type="text" class="form-control" id="location" aria-describedby="locationHelp" placeholder="Venue"/>
           <small class="form-text text-muted" id="locationHelp">
               If inside the university, mention location name.
               Otherwise include address of the location.
@@ -79,12 +79,12 @@
         <!-- Event Start Date -->
         <div class="form-group">
           <label for="startDate">Start Date:</label>
-          <input type="date" class="form-control" id="startDate" required/>
+          <input type="date" class="form-control" id="startDate"/>
         </div>
         <!-- Event End Date -->
         <div class="form-group">
           <label for="endDate">End Date:</label>
-          <input type="date" class="form-control" id="endDate" aria-describedby="dateHelp" required/>
+          <input type="date" class="form-control" id="endDate" aria-describedby="dateHelp"/>
           <small class="form-text text-muted" id="dateHelp">
               Event end date must be on or after start date.
           </small>
@@ -96,12 +96,12 @@
         <!-- Event Start Time -->
         <div class="form-group">
           <label for="startTime">Start Time:</label>
-          <input type="time" class="form-control" id="startTime" required/>
+          <input type="time" class="form-control" id="startTime"/>
         </div>
         <!-- Event End Time -->
         <div class="form-group">
           <label for="endTime">End Time:</label>
-          <input type="time" class="form-control" id="endTime" aria-describedby="timeHelp" required/>
+          <input type="time" class="form-control" id="endTime" aria-describedby="timeHelp"/>
           <small class="form-text text-muted" id="timeHelp">
               Enter a general start/end time if time is not definite.
               Event end time must be at or after start time.
@@ -114,7 +114,7 @@
         <!-- Event Image URL Text Area -->
         <div class="form-group" aria-describedby="imageHelp">
           <label for="images">Image Links:</label>
-          <input type="url" class="form-control images_form my-2" id="images" placeholder="https://www.website.com/path/to/image.png" required/>
+          <input type="url" class="form-control images_form my-2" id="images" placeholder="https://www.website.com/path/to/image.png"/>
         </div>
         <button class="btn btn-default" type="button" id="addURL">Add Another URL</button>
         <button class="btn btn-default" type="button" id="removeURL">Remove Last URL</button>
@@ -129,7 +129,7 @@
 
         <div class="form-group">
           <label for="tags">Tags:</label>
-          <input type="text" class="form-control" id="tags" placeholder="sport gaming computer" aria-describedby="tagHelp" required/>
+          <input type="text" class="form-control" id="tags" placeholder="sport gaming computer" aria-describedby="tagHelp"/>
           <small class="form-text text-muted" id="tagHelp">
               Add tags here seperated by spaces.
               Tags will help others to find your event.
