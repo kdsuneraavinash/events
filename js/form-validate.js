@@ -41,7 +41,7 @@ function validate() {
 
   // Check for empty field
   var isEmptyField = false;
-  fromControls.each(function(index, element) {
+  fromControls.each(function (index, element) {
     if ($(element).val() === "") {
       $(element).addClass("is-invalid");
       invalidText.css("display", "inline");

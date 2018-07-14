@@ -12,10 +12,13 @@
   <!-- Add Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <!-- Add bootstrap CDN-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
   <!-- Font Awesome Stylesheet-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG"
+    crossorigin="anonymous">
   <!-- Add Stylesheets -->
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="css/stylesheet.css" />
@@ -41,7 +44,9 @@
       <!-- Title -->
       <h2>Fill this Form and Submit Event Details.</h2>
       <!-- Info Text -->
-      <h4><small>All fields are required.</small></h4>
+      <h4>
+        <small>All fields are required.</small>
+      </h4>
       <hr />
 
       <form onsubmit="return validate()" id="event_form">
@@ -49,12 +54,12 @@
         <!-- Event Name Text -->
         <div class="form-group">
           <label for="eventName">Event Name:</label>
-          <input type="text" class="form-control" id="eventName" placeholder="Event"/>
+          <input type="text" class="form-control" id="eventName" placeholder="Event" />
         </div>
         <!-- Event Otganizer Text -->
         <div class="form-group">
           <label for="organizer">Organizer:</label>
-          <input type="text" class="form-control" id="organizer" placeholder="Organizing Society"/>
+          <input type="text" class="form-control" id="organizer" placeholder="Organizing Society" />
         </div>
         <!-- Event Description Text Area -->
         <div class="form-group">
@@ -67,11 +72,10 @@
         <!-- Event Venue Text -->
         <div class="form-group">
           <label for="location">Venue:</label>
-          <input type="text" class="form-control" id="location" aria-describedby="locationHelp" placeholder="Venue"/>
+          <input type="text" class="form-control" id="location" aria-describedby="locationHelp" placeholder="Venue" />
           <small class="form-text text-muted" id="locationHelp">
-              If inside the university, mention location name.
-              Otherwise include address of the location.
-            </small>
+            If inside the university, mention location name. Otherwise include address of the location.
+          </small>
         </div>
 
         <br />
@@ -79,14 +83,14 @@
         <!-- Event Start Date -->
         <div class="form-group">
           <label for="startDate">Start Date:</label>
-          <input type="date" class="form-control" id="startDate"/>
+          <input type="date" class="form-control" id="startDate" />
         </div>
         <!-- Event End Date -->
         <div class="form-group">
           <label for="endDate">End Date:</label>
-          <input type="date" class="form-control" id="endDate" aria-describedby="dateHelp"/>
+          <input type="date" class="form-control" id="endDate" aria-describedby="dateHelp" />
           <small class="form-text text-muted" id="dateHelp">
-              Event end date must be on or after start date.
+            Event end date must be on or after start date.
           </small>
         </div>
 
@@ -96,15 +100,14 @@
         <!-- Event Start Time -->
         <div class="form-group">
           <label for="startTime">Start Time:</label>
-          <input type="time" class="form-control" id="startTime"/>
+          <input type="time" class="form-control" id="startTime" />
         </div>
         <!-- Event End Time -->
         <div class="form-group">
           <label for="endTime">End Time:</label>
-          <input type="time" class="form-control" id="endTime" aria-describedby="timeHelp"/>
+          <input type="time" class="form-control" id="endTime" aria-describedby="timeHelp" />
           <small class="form-text text-muted" id="timeHelp">
-              Enter a general start/end time if time is not definite.
-              Event end time must be at or after start time.
+            Enter a general start/end time if time is not definite. Event end time must be at or after start time.
           </small>
         </div>
 
@@ -114,27 +117,24 @@
         <!-- Event Image URL Text Area -->
         <div class="form-group" aria-describedby="imageHelp">
           <label for="images">Image Links:</label>
-          <input type="url" class="form-control images_form my-2" id="images" placeholder="https://www.website.com/path/to/image.png"/>
+          <input type="url" class="form-control images_form my-2" id="images" placeholder="https://www.website.com/path/to/image.png"
+          />
         </div>
         <button class="btn btn-default" type="button" id="addURL">Add Another URL</button>
         <button class="btn btn-default" type="button" id="removeURL">Remove Last URL</button>
         <small class="form-text text-muted" id="imageHelp">
-            Enter each URL in a seperate box.
-            Add only direct links. (Links ending in .jpg/.png)
-            Input in https://website/image.jpg format.
-            First image will be cover image.
-          </small>
+          Enter each URL in a seperate box. Add only direct links. (Links ending in .jpg/.png) Input in https://website/image.jpg format.
+          First image will be cover image.
+        </small>
 
         <br />
 
         <div class="form-group">
           <label for="tags">Tags:</label>
-          <input type="text" class="form-control" id="tags" placeholder="sport gaming computer" aria-describedby="tagHelp"/>
+          <input type="text" class="form-control" id="tags" placeholder="sport gaming computer" aria-describedby="tagHelp" />
           <small class="form-text text-muted" id="tagHelp">
-              Add tags here seperated by spaces.
-              Tags will help others to find your event.
-              Maximum no of tags available is 15.
-              Other tags will be discarded.
+            Add tags here seperated by spaces. Tags will help others to find your event. Maximum no of tags available is 15. Other tags
+            will be discarded.
           </small>
         </div>
 
@@ -146,7 +146,7 @@
           <span class="fas fa-exclamation-triangle ml-3 mr-1"></span> Invalid Field
         </span>
         <span class="submit_text" id="valid_text">
-            <span class="fas fa-check-circle ml-3 mr-1"></span> Submitted
+          <span class="fas fa-check-circle ml-3 mr-1"></span> Submitted
         </span>
 
       </form>
@@ -160,9 +160,12 @@
   </footer>
 
   <!-- Add JQuery and JavaScript CDN -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+    crossorigin="anonymous"></script>
   <!-- Add Script file -->
   <script src="js/form-validate.js"></script>
 </body>
