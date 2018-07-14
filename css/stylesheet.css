@@ -115,12 +115,12 @@ Navigation bar
 -----------------------------------------------
 */
 
-.navbar {
+.navbar, .nav-link {
   /* Navigationbar main properties */
   background-color: #103f54;
 }
 
-.navbar-nav .active {
+.navbar-nav .active .nav-link {
   /* Navigationbar links - active */
   background-color: #fff !important;
   color: #b71c1c !important;
@@ -129,6 +129,7 @@ Navigation bar
 .nav-link {
   /* Navigationbar links */
   transition: background-color 0.3s ease-in;
+  color: #ffffff !important;
 }
 
 .nav-link:hover {
@@ -137,9 +138,10 @@ Navigation bar
   color: #103f54 !important;
 }
 
-.navbar-brand {
+.navbar-brand{
   /* Navigationbar brand */
   font-size: 2em !important;
+  color: #ffffff !important;
 }
 
 /*
