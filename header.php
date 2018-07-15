@@ -65,9 +65,7 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <div class="row my-3">
-          <div class="col-sm px-3">
-
+        <div class="row my-3 mx-2">
             <!-- Switch between Login and Logout button depending on 
             user login information -->
             <?php 
@@ -75,17 +73,14 @@
                 echo "<button class='form-inline btn btn-outline-light btn-block mx-0 mb-1' type='button' data-toggle='modal' data-target='#logoutForm'>
                         <span class='fas fa-sign-out-alt m-2'></span>
                           $user (logout)
-                        </span>
                       </button>";
               }else{
                 echo "<button class='form-inline btn btn-outline-light btn-block mx-0 mb-1' type='button' data-toggle='modal' data-target='#loginForm'>
                         <span class='fas fa-sign-in-alt m-2'></span>
                           Sign In
-                        </span>
                       </button>";
               }
             ?>
-
           </div>
       </ul>
       </div>
