@@ -33,15 +33,6 @@ Content - Classes
   color: #103f54;
 }
 
-.submit-text {
-  /* Submit Text */
-  display: none;
-  animation-name: submit-message-show;
-  animation-duration: 0.5s;
-  animation-iteration-count: 3;
-  animation-direction: alternate;
-}
-
 .submit_text {
   /* Submit text */
   display: none;
@@ -106,6 +97,10 @@ Content - ids
 
 #valid_text {
   color: #33691E;
+}
+
+#wrong_login{
+  display: none;
 }
 
 /*

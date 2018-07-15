@@ -16,17 +16,17 @@
       <!-- Event Name Text -->
       <div class="form-group">
         <label for="eventName">Event Name:</label>
-        <input type="text" class="form-control" id="eventName" placeholder="Event" />
+        <input type="text" class="form-control addevent" id="eventName" placeholder="Event" />
       </div>
       <!-- Event Otganizer Text -->
       <div class="form-group">
         <label for="organizer">Organizer:</label>
-        <input type="text" class="form-control" id="organizer" placeholder="Organizing Society" />
+        <input type="text" class="form-control addevent" id="organizer" placeholder="Organizing Society" />
       </div>
       <!-- Event Description Text Area -->
       <div class="form-group">
         <label for="description">Description:</label>
-        <textarea rows="5" class="form-control" id="description" placeholder="Describe event and its purpose here"></textarea>
+        <textarea rows="5" class="form-control addevent" id="description" placeholder="Describe event and its purpose here"></textarea>
       </div>
 
       <br />
@@ -34,7 +34,7 @@
       <!-- Event Venue Text -->
       <div class="form-group">
         <label for="location">Venue:</label>
-        <input type="text" class="form-control" id="location" aria-describedby="locationHelp" placeholder="Venue" />
+        <input type="text" class="form-control addevent" id="location" aria-describedby="locationHelp" placeholder="Venue" />
         <small class="form-text text-muted" id="locationHelp">
           If inside the university, mention location name. Otherwise include address of the location.
         </small>
@@ -45,12 +45,12 @@
       <!-- Event Start Date -->
       <div class="form-group">
         <label for="startDate">Start Date:</label>
-        <input type="date" class="form-control" id="startDate" />
+        <input type="date" class="form-control addevent" id="startDate" />
       </div>
       <!-- Event End Date -->
       <div class="form-group">
         <label for="endDate">End Date:</label>
-        <input type="date" class="form-control" id="endDate" aria-describedby="dateHelp" />
+        <input type="date" class="form-control addevent" id="endDate" aria-describedby="dateHelp" />
         <small class="form-text text-muted" id="dateHelp">
           Event end date must be on or after start date.
         </small>
@@ -62,12 +62,12 @@
       <!-- Event Start Time -->
       <div class="form-group">
         <label for="startTime">Start Time:</label>
-        <input type="time" class="form-control" id="startTime" />
+        <input type="time" class="form-control addevent" id="startTime" />
       </div>
       <!-- Event End Time -->
       <div class="form-group">
         <label for="endTime">End Time:</label>
-        <input type="time" class="form-control" id="endTime" aria-describedby="timeHelp" />
+        <input type="time" class="form-control addevent" id="endTime" aria-describedby="timeHelp" />
         <small class="form-text text-muted" id="timeHelp">
           Enter a general start/end time if time is not definite. Event end time must be at or after start time.
         </small>
@@ -79,7 +79,7 @@
       <!-- Event Image URL Text Area -->
       <div class="form-group" aria-describedby="imageHelp">
         <label for="images">Image Links:</label>
-        <input type="url" class="form-control images_form my-2" id="images_url0" placeholder="https://www.website.com/path/to/image.png" novalidate
+        <input type="url" class="form-control images_form my-2 addevent" id="images_url0" placeholder="https://www.website.com/path/to/image.png" novalidate
         />
       </div>
       <button class="btn btn-default" type="button" id="addURL">Add Another URL</button>
@@ -93,7 +93,7 @@
 
       <div class="form-group">
         <label for="tags">Tags:</label>
-        <input type="text" class="form-control" id="tags" placeholder="sport gaming computer" aria-describedby="tagHelp" />
+        <input type="text" class="form-control addevent" id="tags" placeholder="sport gaming computer" aria-describedby="tagHelp" />
         <small class="form-text text-muted" id="tagHelp">
           Add tags here seperated by spaces. Tags will help others to find your event. Maximum no of tags available is 15. Other tags
           will be discarded.

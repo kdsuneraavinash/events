@@ -13,7 +13,9 @@ $("#removeURL").click(removeURL);
  **/
 function addAnotherUrl() {
   var images = $(".images_form");
-  var newText = images.first().clone();
+  var newText = images.last().clone();
+  var id = Number(images.last().attr("id").slice(-1)) + 1;
+  newText.attr("id","images_url" + id);
   newText.val("");
   images.parent().append(newText);
 }
@@ -49,7 +51,7 @@ function validate() {
   var urlFields = $('[id^="images_url"]');
   var tags = $("#tags");
 
-  var formControls = $(".form-control");
+  var formControls = $(".form-control.addevent");
 
   var validText = $("#valid_text");
   var invalidText = $("#invalid_text");
@@ -83,7 +85,6 @@ function validateEmptyFields(formControls, invalidText) {
   formControls.each(function (_, element) {
     if ($(element).val() === "") {
       $(element).addClass("is-invalid");
-      $(element).parent().get(0).scrollIntoView();
       isEmptyField = true;
       changeSubmitObjText(invalidText, "Empty Field");
       return false;
