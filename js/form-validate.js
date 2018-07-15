@@ -83,7 +83,7 @@ function validateEmptyFields(formControls, invalidText) {
   formControls.each(function (_, element) {
     if ($(element).val() === "") {
       $(element).addClass("is-invalid");
-      $(element).get(0).scrollIntoView();
+      $(element).parent().get(0).scrollIntoView();
       isEmptyField = true;
       changeSubmitObjText(invalidText, "Empty Field");
       return false;
