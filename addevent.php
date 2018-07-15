@@ -21,7 +21,8 @@
       <!-- Event Otganizer Text -->
       <div class="form-group">
         <label for="organizer">Organizer:</label>
-        <input type="text" class="form-control addevent" id="organizer" placeholder="Organizing Society" />
+        <input type="text" class="form-control addevent" id="organizer" value='<?php echo $loggedIn ? $society : ' '; ?>' placeholder="Organizing Society"
+          disabled>
       </div>
       <!-- Event Description Text Area -->
       <div class="form-group">
@@ -59,28 +60,40 @@
 
       <br />
 
-      <!-- Event Start Time -->
       <div class="form-group">
-        <label for="startTime">Start Time:</label>
-        <input type="time" class="form-control addevent" id="startTime" />
-      </div>
-      <!-- Event End Time -->
-      <div class="form-group">
-        <label for="endTime">End Time:</label>
-        <input type="time" class="form-control addevent" id="endTime" aria-describedby="timeHelp" />
-        <small class="form-text text-muted" id="timeHelp">
-          Enter a general start/end time if time is not definite. Event end time must be at or after start time.
-        </small>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input addevent" id="isAllDay" data-toggle="collapse" data-target="#collapseTimeSelect"
+            aria-expanded="false" aria-controls="collapseTimeSelect" checked="true"/>
+          <label for="isAllDay" class="custom-control-label">This is an all day event</label>
+          <small class="form-text text-muted" id="allDayHelp">
+            Check this if the item is an allday event and time cannot be specified exactly. If you uncheck this you can provide exact time. 
+          </small>
+        </div>
       </div>
 
+      <div class="collapse" id="collapseTimeSelect">
+        <!-- Event Start Time -->
+        <div class="form-group">
+          <label for="startTime">Start Time:</label>
+          <input type="time" class="form-control addevent-isallday" id="startTime" />
+        </div>
+        <!-- Event End Time -->
+        <div class="form-group">
+          <label for="endTime">End Time:</label>
+          <input type="time" class="form-control addevent-isallday" id="endTime" aria-describedby="timeHelp" />
+          <small class="form-text text-muted" id="timeHelp">
+            Enter a general start/end time if time is not definite. Event end time must be at or after start time.
+          </small>
+        </div>
+      </div>
 
       <br />
 
       <!-- Event Image URL Text Area -->
       <div class="form-group" aria-describedby="imageHelp">
         <label for="images">Image Links:</label>
-        <input type="url" class="form-control images_form my-2 addevent" id="images_url0" placeholder="https://www.website.com/path/to/image.png" novalidate
-        />
+        <input type="url" class="form-control images_form my-2 addevent" id="images_url0" placeholder="https://www.website.com/path/to/image.png"
+          novalidate />
       </div>
       <button class="btn btn-default" type="button" id="addURL">Add Another URL</button>
       <button class="btn btn-default" type="button" id="removeURL">Remove Last URL</button>
@@ -93,7 +106,8 @@
 
       <div class="form-group">
         <label for="tags">Tags:</label>
-        <input type="text" class="form-control addevent" id="tags" placeholder="sport gaming computer" aria-describedby="tagHelp" />
+        <input type="text" class="form-control addevent" id="tags" placeholder="sport gaming computer" aria-describedby="tagHelp"
+        />
         <small class="form-text text-muted" id="tagHelp">
           Add tags here seperated by spaces. Tags will help others to find your event. Maximum no of tags available is 15. Other tags
           will be discarded.

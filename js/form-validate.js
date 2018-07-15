@@ -50,14 +50,17 @@ function validate() {
   var endTime = $("#endTime");
   var urlFields = $('[id^="images_url"]');
   var tags = $("#tags");
+  var isAllDay = $("#isAllDay");
 
   var formControls = $(".form-control.addevent");
+  var timeControls = $(".form-control.addevent-isallday");
 
   var validText = $("#valid_text");
   var invalidText = $("#invalid_text");
 
   // Hide all error messages
   formControls.removeClass("is-invalid");
+  timeControls.removeClass("is-invalid");
   validText.css("display", "none");
   invalidText.css("display", "none");
 
@@ -65,8 +68,11 @@ function validate() {
   if (!validateEmptyFields(formControls, invalidText)) return false;
   // Check for invalid date field
   if (!validateDateFields(startDate, endDate, invalidText)) return false;
-  // Check for invalid time field
-  if (!validateTimeFields(startTime, endTime, invalidText)) return false;
+  // Check for invalid time 
+  if (!isAllDay.is(":checked")) {
+    if (!validateEmptyFields(timeControls, invalidText)) return false;
+    if (!validateTimeFields(startTime, endTime, invalidText)) return false;
+  }
   // Check for invalid URL field
   if (!validateURLFields(urlFields, invalidText)) return false;
   // Check for invalid no of tags

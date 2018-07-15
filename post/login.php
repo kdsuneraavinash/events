@@ -17,6 +17,7 @@
       // send whether passed or failed to Ajax
       if($count == 1) {
          $_SESSION['user'] = $username;
+         $_SESSION['society'] = "Team Axys";
          echo "pass";
       }else {
          echo "fail";

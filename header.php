@@ -6,7 +6,8 @@
 <?php
   // get whether or not to addactive tag depending on current page
   function getActiveTag($check){
-    echo $_SERVER['PHP_SELF'] == "/$check.php" ? ' active' : '';
+    $str = $_SERVER['PHP_SELF'] == "/$check.php" ? ' active' : '';
+    return $str;
   }
 ?>
 
@@ -15,6 +16,7 @@
   $loggedIn = isset($_SESSION["user"]);
   if ($loggedIn){
     $user = $_SESSION["user"];
+    $society = $_SESSION["society"];
   }
 ?>
 
@@ -53,14 +55,20 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item <?php getActiveTag('index');?>">
+        <li class="nav-item <?php echo getActiveTag('index');?>">
           <a class="nav-link mx-2 px-2 my-1" href="index.php">Home
           </a>
         </li>
-        <li class="nav-item <?php getActiveTag('addevent');?>">
-          <a class="nav-link mx-2 px-2 my-1" href="addevent.php">Add Event</a>
-        </li>
-        <li class="nav-item <?php getActiveTag('about');?>">
+        <?php
+          if ($loggedIn){
+            $activeTag = getActiveTag("addevent");
+            echo '<li class="nav-item '.$activeTag.'">
+                    <a class="nav-link mx-2 px-2 my-1" href="addevent.php">Add Event</a>
+                  </li>';
+          }
+        ?>
+        
+        <li class="nav-item <?php echo getActiveTag('about');?>">
           <a class="nav-link mx-2 px-2 my-1" href="about.php">About</a>
         </li>
       </ul>
