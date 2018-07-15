@@ -2,14 +2,12 @@
 
 <div class="container" id="home_content">
   <div class="card p-3 content">
+    <h2>What is this ?</h2>
+    <hr/>
     <div class="row">
       <div class="col-sm" id="welcome_highlight">
-        <!-- Content Highlight-->
-        <h3>What is this ?</h3>
-        <!-- Welocme Image -->
         <img id="welcome_img" class="img-fluid rounded my-2" src="https://picsum.photos/400/300/?25" width="96%" height="72%" />
       </div>
-      <!-- Content Text -->
       <div class="col-sm text-justify" id="welcome_text">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum sollicitudin ipsum vitae ornare. Fusce tincidunt rhoncus
@@ -27,6 +25,61 @@
           eget. Donec condimentum scelerisque mi, nec pretium libero tincidunt at. Aliquam vitae libero massa. Aliquam dignissim
           ultricies pharetra. Quisque rutrum leo ut ex dapibus, et malesuada leo vehicula. ​
         </p>
+      </div>
+    </div>
+
+    <hr />
+    <h2>Our App</h2>
+    <hr />
+    <div class="row">
+      <div class="col-sm-4 text-justify">
+        <p>
+          et varius ac, pharetra ut mauris. Nunc fermentum tincidunt neque vel blandit. Curabitur vel orci dolor. Mauris at risus eu
+          metus egestas efficitur. Duis pulvinar leo sit amet dignissim hendrerit. Class aptent taciti sociosqu ad litora
+          torquent per conubia nostra, per inceptos himenaeos. Maecenas dapibus venenatis erat, ut feugiat purus pharetra
+          eget. Donec condimentum scelerisque mi, nec pretium libero tincidunt at. Aliquam vitae libero massa. Aliquam dignissim
+          ultricies pharetra. Quisque rutrum leo ut ex dapibus, et malesuada leo vehicula. ​
+        </p>
+      </div>
+      <div class="col-sm-8">
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="https://picsum.photos/800/600/?45" alt="First Image">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>First Image</h5>
+                <p>Describe First Image</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="https://picsum.photos/800/600/?32" alt="Second Image">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Second Image</h5>
+                <p>Describe Second Image</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="https://picsum.photos/800/600/?76" alt="Third Image">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third Image</h5>
+                <p>Describe Third Image</p>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
       </div>
     </div>
 
