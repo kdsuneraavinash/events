@@ -1,9 +1,9 @@
 from shutil import copyfile
 
 files = ["index.php", "about.php", "addevent.php",
-         "footer.php", "header.php",
+         "footer.php", "header.php", "login.php",
          "css\\animations.css", "css\\stylesheet.css",
-         "js\\form-validate.js"
+         "js\\form-validate.js", "js\\events.js"
          ]
 
 for f in files:

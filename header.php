@@ -30,32 +30,35 @@
     <link rel="stylesheet" href="css/stylesheet.css" />
   </head>
 
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark mb-4 px-4 justify-content-between fixed-top" id="navbar">
+    <a class="navbar-brand" href="#">Mora Events</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item <?php getActiveTag('index');?>">
+          <a class="nav-link mx-2 px-2 my-1" href="index.php">Home
+          </a>
+        </li>
+        <li class="nav-item <?php getActiveTag('addevent');?>">
+          <a class="nav-link mx-2 px-2 my-1" href="addevent.php">Add Event</a>
+        </li>
+        <li class="nav-item <?php getActiveTag('about');?>">
+          <a class="nav-link mx-2 px-2 my-1" href="about.php">About</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <div class="row my-3">
+          <div class="col-sm px-3">
+            <button class="form-inline btn btn-outline-light btn-block mx-0 mb-1" type="button" data-toggle="modal" data-target="#loginForm">Sign In</button>
+          </div>
+      </ul>
+      </div>
+  </nav>
+
   <body>
-    <!-- Navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark mb-4 px-4 justify-content-between">
-      <a class="navbar-brand" href="#">Mora Events</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item <?php getActiveTag('index');?>">
-            <a class="nav-link mx-2 px-2 my-1" href="index.php">Home
-            </a>
-          </li>
-          <li class="nav-item <?php getActiveTag('addevent');?>">
-            <a class="nav-link mx-2 px-2 my-1" href="addevent.php">Add Event</a>
-          </li>
-          <li class="nav-item <?php getActiveTag('about');?>">
-            <a class="nav-link mx-2 px-2 my-1" href="about.php">About</a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <div class="row my-3">
-            <div class="col-sm px-3">
-              <button class="form-inline btn btn-outline-light btn-block mx-0 mb-1" type="button">Sign In</button>
-            </div>
-        </ul>
-        </div>
-    </nav>
+
+    <?php include("login.php"); ?>

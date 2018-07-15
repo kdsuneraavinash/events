@@ -6,17 +6,19 @@ Content - Main Tags
 
 html {
   /* Show a Y scroll bar always to avoid navigation bar flikr */
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 body {
+  padding-top: 120px;
   /* Background image and custom font */
   background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  /* Bottom margin to stop content from being hidden by footer */
+  padding-bottom: 120px;
 }
 
 /*
@@ -87,10 +89,7 @@ Content - ids
 
 #home_content, #addevent_content, #about_content {
   /* All content areas */
-  /* Bottom margin to stop content from being hidden by footer */
-  margin-bottom: 100px;
   /* Add content load animation */
-  opacity: 1;
   animation-name: content-load;
   animation-duration: 1s;
 }

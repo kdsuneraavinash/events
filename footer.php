@@ -1,3 +1,5 @@
+</body>
+
 <!-- Footer -->
 <footer class="container-fluid text-center fixed-bottom py-2" id="footer">
   © 2018 by teamaxys
@@ -12,6 +14,7 @@
   crossorigin="anonymous"></script>
 <!-- Add Script file -->
 <script src="js/form-validate.js"></script>
-</body>
+<script src="js/events.js"></script>
+
 
 </html>
