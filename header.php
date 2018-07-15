@@ -20,6 +20,11 @@
     <!-- Add bootstrap CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
       crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp"
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG"
+      crossorigin="anonymous">
     <!-- Add Stylesheets -->
     <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/stylesheet.css" />
@@ -50,9 +55,6 @@
           <div class="row my-3">
             <div class="col-sm px-3">
               <button class="form-inline btn btn-outline-light btn-block mx-0 mb-1" type="button">Sign In</button>
-            </div>
-            <div class="col-sm px-3">
-              <button class="form-inline btn btn-outline-light btn-block mx-0" type="button">Sign Up</button>
             </div>
         </ul>
         </div>

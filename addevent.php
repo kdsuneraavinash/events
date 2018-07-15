@@ -79,7 +79,7 @@
       <!-- Event Image URL Text Area -->
       <div class="form-group" aria-describedby="imageHelp">
         <label for="images">Image Links:</label>
-        <input type="url" class="form-control images_form my-2" id="images" placeholder="https://www.website.com/path/to/image.png"
+        <input type="url" class="form-control images_form my-2" id="images_url0" placeholder="https://www.website.com/path/to/image.png" novalidate
         />
       </div>
       <button class="btn btn-default" type="button" id="addURL">Add Another URL</button>
@@ -105,15 +105,16 @@
       <!-- Event Submit Button and Texts -->
       <button type="submit" class="btn btn-primary">Submit</button>
       <span class="submit_text" id="invalid_text">
-        <span class="fas fa-exclamation-triangle ml-3 mr-1"></span> Invalid Field
+        <span class="fas fa-exclamation-triangle ml-3 mr-1"></span>
+        <span class="text">Invalid Field</span>
       </span>
       <span class="submit_text" id="valid_text">
-        <span class="fas fa-check-circle ml-3 mr-1"></span> Submitted
+        <span class="fas fa-check-circle ml-3 mr-1"></span>
+        <span class="text">Submitted</span>
       </span>
 
     </form>
   </div>
 </div>
 
-<script src="js/form-validate.js"></script>
 <?php include("footer.php"); ?>
