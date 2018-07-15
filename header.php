@@ -4,12 +4,14 @@
 ?>
 
 <?php
+  // get whether or not to addactive tag depending on current page
   function getActiveTag($check){
     echo $_SERVER['PHP_SELF'] == "/$check.php" ? ' active' : '';
   }
 ?>
 
 <?php
+  // get login information
   $loggedIn = isset($_SESSION["user"]);
   if ($loggedIn){
     $user = $_SESSION["user"];
@@ -66,6 +68,8 @@
         <div class="row my-3">
           <div class="col-sm px-3">
 
+            <!-- Switch between Login and Logout button depending on 
+            user login information -->
             <?php 
               if ($loggedIn){
                 echo "<button class='form-inline btn btn-outline-light btn-block mx-0 mb-1' type='button' data-toggle='modal' data-target='#logoutForm'>
@@ -89,10 +93,11 @@
 
   <body>
 
+  <!-- Include only necessary file depending on whether user is logged in or not -->
   <?php 
     if (!$loggedIn){
-      include("login.php"); 
+      include("login_form.php"); 
     }else{
-      include("logout.php"); 
+      include("logout_form.php"); 
     }
   ?>

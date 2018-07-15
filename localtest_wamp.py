@@ -1,7 +1,7 @@
 from shutil import copyfile
 
 files = ["index.php", "about.php", "addevent.php",
-         "footer.php", "header.php", "login.php", "logout.php",
+         "footer.php", "header.php", "login_form.php", "logout_form.php",
          "post\\login.php", "post\\logout.php",
          "css\\animations.css", "css\\stylesheet.css",
          "js\\form-validate.js", "js\\events.js"

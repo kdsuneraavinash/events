@@ -14,6 +14,7 @@
         $count = 0; 
       }
 
+      // send whether passed or failed to Ajax
       if($count == 1) {
          $_SESSION['user'] = $username;
          echo "pass";
