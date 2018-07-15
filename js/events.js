@@ -31,3 +31,9 @@ function onLoginButtonClicked(){
     // Must return false to avoid form from submitting
     return false;
 }
+
+$("#isAllDay").click(onIsAllDayClicked);
+
+function onIsAllDayClicked(){
+    $("#collapseTimeSelect.collapse").collapse('toggle');
+}

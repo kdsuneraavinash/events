@@ -11,7 +11,7 @@
     </h4>
     <hr />
 
-    <form onsubmit="return validate()" id="event_form">
+    <form onsubmit="return validate()" id="event_form" action="index.php">
 
       <!-- Event Name Text -->
       <div class="form-group">
@@ -62,11 +62,11 @@
 
       <div class="form-group">
         <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input addevent" id="isAllDay" data-toggle="collapse" data-target="#collapseTimeSelect"
-            aria-expanded="false" aria-controls="collapseTimeSelect" checked="true"/>
+          <input type="checkbox" class="custom-control-input addevent" id="isAllDay" checked="checked"/>
           <label for="isAllDay" class="custom-control-label">This is an all day event</label>
           <small class="form-text text-muted" id="allDayHelp">
-            Check this if the item is an allday event and time cannot be specified exactly. If you uncheck this you can provide exact time. 
+            Check this if the item is an allday event and time cannot be specified exactly. If you uncheck this you can provide exact
+            time.
           </small>
         </div>
       </div>
@@ -90,17 +90,13 @@
       <br />
 
       <!-- Event Image URL Text Area -->
-      <div class="form-group" aria-describedby="imageHelp">
-        <label for="images">Image Links:</label>
-        <input type="url" class="form-control images_form my-2 addevent" id="images_url0" placeholder="https://www.website.com/path/to/image.png"
-          novalidate />
+      <div class="form-group uploader">
+        <a href="#" id="uploadImages">Please wait...</a>
+        <small class="form-text text-muted" id="tagHelp">
+          Upload images to use in app. First image will be used as Cover Image.
+        </small>
+        <div class="feature_thumb"></div>
       </div>
-      <button class="btn btn-default" type="button" id="addURL">Add Another URL</button>
-      <button class="btn btn-default" type="button" id="removeURL">Remove Last URL</button>
-      <small class="form-text text-muted" id="imageHelp">
-        Enter each URL in a seperate box. Add only direct links. (Links ending in .jpg/.png) Input in https://website/image.jpg format.
-        First image will be cover image.
-      </small>
 
       <br />
 

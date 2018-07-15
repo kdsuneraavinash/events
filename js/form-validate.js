@@ -1,41 +1,5 @@
 /**
  * ************************************
- * FORM FUNCTIONS
- *  ***********************************
- */
-
-// Event handlers
-$("#addURL").click(addAnotherUrl);
-$("#removeURL").click(removeURL);
-
-/** 
- * Add another URL text box
- **/
-function addAnotherUrl() {
-  var images = $(".images_form");
-  var newText = images.last().clone();
-  var id = Number(images.last().attr("id").slice(-1)) + 1;
-  newText.attr("id","images_url" + id);
-  newText.val("");
-  images.parent().append(newText);
-}
-
-/** 
- * ARemove last URL text box
- * If only one text box, just clear it
- **/
-function removeURL() {
-  var images = $(".images_form");
-  if (images.length == 1) {
-    images.last().val("");
-  } else {
-    images.last().remove();
-  }
-}
-
-
-/**
- * ************************************
  * FORM VALIDATION
  *  ***********************************
  */
@@ -66,6 +30,8 @@ function validate() {
 
   // Check for empty field
   if (!validateEmptyFields(formControls, invalidText)) return false;
+  // Check for no images
+  if (!validateNoImages(invalidText)) return false;
   // Check for invalid date field
   if (!validateDateFields(startDate, endDate, invalidText)) return false;
   // Check for invalid time 
@@ -97,6 +63,17 @@ function validateEmptyFields(formControls, invalidText) {
     }
   });
   return (!isEmptyField);
+}
+
+/**
+ * Validate no images
+ */
+function validateNoImages(invalidText){
+  var isValid = ($('input[name^="uploaded_images"]').length != 0);
+  if (!isValid){
+    changeSubmitObjText(invalidText, "No Images Selected");
+  }
+  return isValid;
 }
 
 /**

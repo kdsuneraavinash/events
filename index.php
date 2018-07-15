@@ -6,7 +6,7 @@
     <hr/>
     <div class="row">
       <div class="col-sm" id="welcome_highlight">
-        <img id="welcome_img" class="img-fluid rounded my-2" src="https://picsum.photos/400/300/?25" width="96%" height="72%" />
+        <img id="welcome_img" class="img-fluid rounded my-2 w-100" src="https://picsum.photos/400/300/?25" alt="Welcome Image" />
       </div>
       <div class="col-sm text-justify" id="welcome_text">
         <p>
