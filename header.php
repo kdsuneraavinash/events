@@ -80,23 +80,33 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right row my-3 mx-2">
-              <li>
                 <!-- Switch between Login and Logout button depending on 
             user login information -->
                 <?php 
               if ($loggedIn){
-                echo "<button class='form-inline btn btn-outline-light btn-block mx-0 mb-1' type='button' data-toggle='modal' data-target='#logoutForm'>
-                        <span class='fas fa-sign-out-alt m-2'></span>
+                echo "<li>
+                        <button class='form-inline btn btn-outline-light btn-block mx-0 mb-1' type='button' data-toggle='modal' data-target='#logoutForm'>
+                          <span class='fas fa-sign-out-alt m-2'></span>
                           $user (logout)
-                      </button>";
+                        </button>
+                       </li>
+                      ";
               }else{
-                echo "<button class='form-inline btn btn-outline-light btn-block mx-0 mb-1' type='button' data-toggle='modal' data-target='#loginForm'>
-                        <span class='fas fa-sign-in-alt m-2'></span>
+                echo "<li class='mx-1'>
+                        <button class='form-inline btn btn-outline-light btn-block mb-1' type='button' data-toggle='modal' data-target='#loginForm'>
+                          <span class='fas fa-sign-in-alt m-2'></span>
                           Sign In
-                      </button>";
+                        </button>
+                      </li>
+                      <li class='mx-1'>
+                        <button class='form-inline btn btn-outline-light btn-block mb-1' type='button' data-toggle='modal' data-target='#signupNotice'>
+                          <span class='fas fa-user-plus m-2'></span>
+                          Sign Up
+                        </button>
+                      </li>
+                      ";
               }
             ?>
-                <li>
             </ul>
           </div>
         </nav>
@@ -105,6 +115,7 @@
         <?php 
     if (!$loggedIn){
       include("login_form.php"); 
+      include("signup_notice.php");
     }else{
       include("logout_form.php"); 
     }

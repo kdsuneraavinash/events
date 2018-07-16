@@ -16,9 +16,9 @@
             <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
             <button type="submit" class="btn btn-primary">Yes</button>
           </div>
-
         </form>
       </div>
+      
     </div>
   </div>
 </div>
