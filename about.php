@@ -3,7 +3,7 @@
 <?php
 function createCard($name, $position, $email, $image){
   echo "<div class='col-sm card'>
-        <img src='$image.' alt='$name' class='img-fluid card-img-top rounded-circle img-thumbnail' />
+        <img src='$image' alt='$name' class='img-fluid card-img-top rounded-circle img-thumbnail' />
         <h4 class='card-title'>$name</h4>
         <h6 class='card-subtitle mb-2 text-muted'>$position</h6>
         <button class='btn btn-primary' onclick=\"location.href='mailto:$email';\" >Contact</button>
