@@ -38,3 +38,8 @@ $("#isAllDay").click(onIsAllDayClicked);
 function onIsAllDayClicked(){
     $("#collapseTimeSelect.collapse").collapse('toggle');
 }
+
+function onImagePreviewClicked(elem){
+    $("#imagebox").attr('src', '');
+    $("#imagebox").attr('src', $(elem).prop('value'));
+}

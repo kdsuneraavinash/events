@@ -66,7 +66,9 @@
                     <?php 
                         foreach ($images as $ind => $val) {
                             // TODO: Open link in a modal window
-                            echo "<p><a href=$val target='_blank'>Image $ind</a></p>";
+                            $tip = $ind == 0 ? "Cover Image" : "Image [$ind]";
+                            echo "<button type='button' class='btn btn-outline-dark m-1 image-preview' 
+                            value='$val' onClick='onImagePreviewClicked(this)'  data-toggle='modal' data-target='#imageView'>$tip</button>";
                         }
                     ?>
                     </td>

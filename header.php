@@ -114,5 +114,9 @@
       }else{
         include("model_forms/logout_form.php"); 
       }
+
+      if (isOnPage("post")){
+        include("model_forms/imageview.php"); 
+      }
     ?>
     
