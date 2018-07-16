@@ -39,8 +39,6 @@ function validate() {
     if (!validateEmptyFields(timeControls, invalidText)) return false;
     if (!validateTimeFields(startTime, endTime, invalidText)) return false;
   }
-  // Check for invalid URL field
-  if (!validateURLFields(urlFields, invalidText)) return false;
   // Check for invalid no of tags
   if (!validateTags(tags, invalidText)) return false;
 
@@ -113,23 +111,6 @@ function validateTimeFields(startTime, endTime, invalidText) {
     return false;
   }
   return true;
-}
-
-/**
- * Validate for url fields by matching extension
- */
-function validateURLFields(urlFields, invalidText) {
-  var isValidField = true;
-  urlFields.each(function (_, element) {
-    var extMatch = new RegExp("(\.jpg|\.png|\.jpeg)$").test($(element).val());
-    if (!extMatch) {
-      $(element).addClass("is-invalid");
-      changeSubmitObjText(invalidText, "Invalid URL : URL is not a valid direct image link.");
-      isValidField = false;
-      return false;
-    }
-  });
-  return isValidField;
 }
 
 /**

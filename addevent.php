@@ -89,7 +89,7 @@
 
       <br />
 
-      <!-- Event Image URL Text Area -->
+      <!-- Event Image Uploader -->
       <div class="form-group uploader">
         <a href="#" id="uploadImages">Please wait...</a>
         <small class="form-text text-muted" id="tagHelp">

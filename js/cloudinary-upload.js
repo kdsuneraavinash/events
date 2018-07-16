@@ -29,8 +29,6 @@ $("#uploadImages").cloudinary_upload_widget({
       },
     },
   },
-  function (error, result) {
-    console.log(error, result);
-  }
+  function (error, result) {}
 );
 
