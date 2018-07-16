@@ -31,7 +31,7 @@
         <h2>Submitted Form</h2>
         <hr />
 
-        <table class="table table-striped table-bordered table-hover table-responsive">
+        <table class="table table-striped table-bordered table-hover">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">Field</th>
@@ -108,14 +108,13 @@
             organizer: '$organizer',
             description: '$description',
             location: '$location',
-            startDate: '$startDate',
-            endDate: '$endDate',
+            startDate: new Date('$startDate'),
+            endDate: new Date('$endDate'),
             isAllDay: !!$isAllDay,
-            startTime: '$startTime',
-            endTime: '$endTime',
+            startTime: new Date('$startTime'),
+            endTime: new Date('$endTime'),
             tags: $tags,
-            images: $images
-        };
+            images: $images };
         addRecord(eventData);
         ";
     ?>

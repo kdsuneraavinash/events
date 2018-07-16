@@ -7,31 +7,31 @@ const config = {
     storageBucket: "",
     messagingSenderId: "517052158638"
 };
-  
+
 const settings = {
     timestampsInSnapshots: true
 };
-  
+
 
 // Initialize Cloud Firestore through Firebase
 firebase.initializeApp(config);
 const firestore = firebase.firestore();
 firestore.settings(settings);
 
-function addRecord(eventData){
+function addRecord(eventData) {
     firestore.collection("events").add(eventData)
-    .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function(error) {
-        console.error("Error adding document: ", error);
-    });
+        .then(function (docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function (error) {
+            console.error("Error adding document: ", error);
+        });
 }
 
-function viewAllRecords(){
+function viewAllRecords() {
     console.log("Reading all records");
-    firestore.collection("events").get().then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
+    firestore.collection("events").get().then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
             // doc.data() is never undefined for query doc snapshots
             console.log(doc.id, " => ", doc.data());
         });

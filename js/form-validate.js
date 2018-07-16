@@ -28,7 +28,6 @@ function validate() {
   validText.css("display", "none");
   invalidText.css("display", "none");
 
-  /*
   // Check for empty field
   if (!validateEmptyFields(formControls, invalidText)) return false;
   // Check for no images
@@ -42,7 +41,6 @@ function validate() {
   }
   // Check for invalid no of tags
   if (!validateTags(tags, invalidText)) return false;
-*/
 
   // Validated
   validText.css("display", "inline");
