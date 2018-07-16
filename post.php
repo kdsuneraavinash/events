@@ -1,6 +1,6 @@
+<?php include("header.php"); ?>
 <!-- TODO: Add some rules to make sure form is not resubmitted -->
 <?php if ($_SERVER["REQUEST_METHOD"] != "POST") header("index.php") ?>
-<?php include("header.php"); ?>
 
 <?php 
         function tableCell($key, $value){
@@ -24,6 +24,8 @@
         foreach ($images as $ind => $val) {
             $images[$ind] = "https://res.cloudinary.com/kdsuneraavinash/$val";
         }
+        $startTime = $isAllDay ? '00:00' : $startTime;
+        $endTime = $isAllDay ? '23:59' : $endTime;
 ?>
 
 <div class="container">
@@ -102,17 +104,18 @@
     $tags = json_encode($tags);
     $images = json_encode($images);
     $description = str_replace(array("\r","\n"), "", $description);
+    $isAllDay = $isAllDay == 1 ? "true" : "false";
+    $startDateTime = date('Y-m-d H:i:s', strtotime("$startDate $startTime:00"));
+    $endDateTime = date('Y-m-d H:i:s', strtotime("$endDate $endTime:00"));
     echo "
         var eventData = {
             eventName: '$eventName',
             organizer: '$organizer',
             description: '$description',
             location: '$location',
-            startDate: new Date('$startDate'),
-            endDate: new Date('$endDate'),
-            isAllDay: !!$isAllDay,
-            startTime: new Date('$startTime'),
-            endTime: new Date('$endTime'),
+            start: new Date('$startDateTime'),
+            end: new Date('$endDateTime'),
+            isAllDay: $isAllDay,
             tags: $tags,
             images: $images };
         addRecord(eventData);
