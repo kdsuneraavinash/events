@@ -10,7 +10,7 @@ function onLoginButtonClicked(){
     wrongLogin.css("display", "none");
 
     var request =  $.ajax({
-        url: 'post/login.php',
+        url: 'user_login/login.php',
         method: 'POST',
         data: {
             username: $('#username').val(),
@@ -31,6 +31,7 @@ function onLoginButtonClicked(){
     // Must return false to avoid form from submitting
     return false;
 }
+
 
 $("#isAllDay").click(onIsAllDayClicked);
 

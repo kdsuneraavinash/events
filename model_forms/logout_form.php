@@ -10,7 +10,7 @@
       </div>
 
       <div class="modal-body">
-        <form action = "post/logout.php" method = "post">
+        <form action = "user_login/logout.php" method = "post">
           <p>Are you sure you want to Sign Out?</p>
           <div class="text-right">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>

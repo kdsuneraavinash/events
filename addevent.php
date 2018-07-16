@@ -5,10 +5,7 @@
 
     <!-- Title -->
     <h2>Fill this Form and Submit Event Details.</h2>
-    <!-- Info Text -->
-    <h4>
-      <small>All fields are required.</small>
-    </h4>
+    <h4><small>All fields are required.</small></h4>
     <hr />
 
     <form onsubmit="return validate()" id="event_form" action="post.php" method="post">
@@ -18,12 +15,14 @@
         <label for="eventName">Event Name:</label>
         <input type="text" class="form-control addevent" id="eventName" name="eventName" placeholder="Event" />
       </div>
+
       <!-- Event Otganizer Text -->
       <div class="form-group">
         <label for="organizer">Organizer:</label>
         <input type="text" class="form-control addevent" id="organizer" name="organizer" value='<?php echo $loggedIn ? $society : ''
         ; ?>' placeholder="Organizing Society" readonly>
       </div>
+
       <!-- Event Description Text Area -->
       <div class="form-group">
         <label for="description">Description:</label>
@@ -49,6 +48,7 @@
         <label for="startDate">Start Date:</label>
         <input type="date" class="form-control addevent" id="startDate" name="startDate" />
       </div>
+
       <!-- Event End Date -->
       <div class="form-group">
         <label for="endDate">End Date:</label>
@@ -57,7 +57,6 @@
           Event end date must be on or after start date.
         </small>
       </div>
-
 
       <br />
 

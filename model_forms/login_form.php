@@ -1,5 +1,3 @@
-
-
 <div class="modal fade" id="loginForm">
   <div class="modal-dialog modal-dialog-centered modal-sm">
     <div class="modal-content">
@@ -16,7 +14,7 @@
           <img src="images/user.png" class="img-fluid w-50 my-3" />
         </div>
 
-        <form onsubmit = "return onLoginButtonClicked()">
+        <form onsubmit = "return onLoginButtonClicked()" action="index.php" method="post">
           <div class="form-group">
             <input type="text" class="form-control" id="username" placeholder="User Name" required/>
           </div>
