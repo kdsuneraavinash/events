@@ -12,7 +12,7 @@ function validate() {
   var endDate = $("#endDate");
   var startTime = $("#startTime");
   var endTime = $("#endTime");
-  var urlFields = $('[id^="images_url"]');
+  var urlFields = $('input[name^="uploaded_images"]');
   var tags = $("#tags");
   var isAllDay = $("#isAllDay");
 
@@ -28,10 +28,11 @@ function validate() {
   validText.css("display", "none");
   invalidText.css("display", "none");
 
+  /*
   // Check for empty field
   if (!validateEmptyFields(formControls, invalidText)) return false;
   // Check for no images
-  if (!validateNoImages(invalidText)) return false;
+  if (!validateNoImages(urlFields, invalidText)) return false;
   // Check for invalid date field
   if (!validateDateFields(startDate, endDate, invalidText)) return false;
   // Check for invalid time 
@@ -41,10 +42,11 @@ function validate() {
   }
   // Check for invalid no of tags
   if (!validateTags(tags, invalidText)) return false;
+*/
 
   // Validated
   validText.css("display", "inline");
-  return false;
+  return true;
 }
 
 /**
@@ -66,8 +68,8 @@ function validateEmptyFields(formControls, invalidText) {
 /**
  * Validate no images
  */
-function validateNoImages(invalidText){
-  var isValid = ($('input[name^="uploaded_images"]').length != 0);
+function validateNoImages(urlFields, invalidText){
+  var isValid = (urlFields.length != 0);
   if (!isValid){
     changeSubmitObjText(invalidText, "No Images Selected");
   }

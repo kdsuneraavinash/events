@@ -7,7 +7,7 @@ $("#uploadImages").cloudinary_upload_widget({
     minImageHeight: 200,
     minImageWidth: 100,
     form: "#event_form",
-    fieldName: "uploaded_images",
+    fieldName: "uploaded_images[]",
     buttonCaption: "Upload Images",
     thumbnails: ".feature_thumb",
     thumbnail_transformation: { width: 100, height: 100, crop: "fit" },

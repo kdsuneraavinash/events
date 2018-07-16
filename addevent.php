@@ -11,23 +11,23 @@
     </h4>
     <hr />
 
-    <form onsubmit="return validate()" id="event_form" action="index.php">
+    <form onsubmit="return validate()" id="event_form" action="post.php" method="post">
 
       <!-- Event Name Text -->
       <div class="form-group">
         <label for="eventName">Event Name:</label>
-        <input type="text" class="form-control addevent" id="eventName" placeholder="Event" />
+        <input type="text" class="form-control addevent" id="eventName" name="eventName" placeholder="Event" />
       </div>
       <!-- Event Otganizer Text -->
       <div class="form-group">
         <label for="organizer">Organizer:</label>
-        <input type="text" class="form-control addevent" id="organizer" value='<?php echo $loggedIn ? $society : ' '; ?>' placeholder="Organizing Society"
-          disabled>
+        <input type="text" class="form-control addevent" id="organizer" name="organizer" value='<?php echo $loggedIn ? $society : ''
+        ; ?>' placeholder="Organizing Society" readonly>
       </div>
       <!-- Event Description Text Area -->
       <div class="form-group">
         <label for="description">Description:</label>
-        <textarea rows="5" class="form-control addevent" id="description" placeholder="Describe event and its purpose here"></textarea>
+        <textarea rows="5" class="form-control addevent" id="description" name="description" placeholder="Describe event and its purpose here"></textarea>
       </div>
 
       <br />
@@ -35,7 +35,8 @@
       <!-- Event Venue Text -->
       <div class="form-group">
         <label for="location">Venue:</label>
-        <input type="text" class="form-control addevent" id="location" aria-describedby="locationHelp" placeholder="Venue" />
+        <input type="text" class="form-control addevent" id="location" name="location" aria-describedby="locationHelp" placeholder="Venue"
+        />
         <small class="form-text text-muted" id="locationHelp">
           If inside the university, mention location name. Otherwise include address of the location.
         </small>
@@ -46,12 +47,12 @@
       <!-- Event Start Date -->
       <div class="form-group">
         <label for="startDate">Start Date:</label>
-        <input type="date" class="form-control addevent" id="startDate" />
+        <input type="date" class="form-control addevent" id="startDate" name="startDate" />
       </div>
       <!-- Event End Date -->
       <div class="form-group">
         <label for="endDate">End Date:</label>
-        <input type="date" class="form-control addevent" id="endDate" aria-describedby="dateHelp" />
+        <input type="date" class="form-control addevent" id="endDate" name="endDate" aria-describedby="dateHelp" />
         <small class="form-text text-muted" id="dateHelp">
           Event end date must be on or after start date.
         </small>
@@ -62,7 +63,7 @@
 
       <div class="form-group">
         <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input addevent" id="isAllDay" checked="checked"/>
+          <input type="checkbox" class="custom-control-input addevent" id="isAllDay" name="isAllDay" checked="checked" />
           <label for="isAllDay" class="custom-control-label">This is an all day event</label>
           <small class="form-text text-muted" id="allDayHelp">
             Check this if the item is an allday event and time cannot be specified exactly. If you uncheck this you can provide exact
@@ -75,12 +76,12 @@
         <!-- Event Start Time -->
         <div class="form-group">
           <label for="startTime">Start Time:</label>
-          <input type="time" class="form-control addevent-isallday" id="startTime" />
+          <input type="time" class="form-control addevent-isallday" id="startTime" name="startTime" />
         </div>
         <!-- Event End Time -->
         <div class="form-group">
           <label for="endTime">End Time:</label>
-          <input type="time" class="form-control addevent-isallday" id="endTime" aria-describedby="timeHelp" />
+          <input type="time" class="form-control addevent-isallday" id="endTime" name="endTime" aria-describedby="timeHelp" />
           <small class="form-text text-muted" id="timeHelp">
             Enter a general start/end time if time is not definite. Event end time must be at or after start time.
           </small>
@@ -102,7 +103,7 @@
 
       <div class="form-group">
         <label for="tags">Tags:</label>
-        <input type="text" class="form-control addevent" id="tags" placeholder="sport gaming computer" aria-describedby="tagHelp"
+        <input type="text" class="form-control addevent" id="tags" name="tags" placeholder="sport gaming computer" aria-describedby="tagHelp"
         />
         <small class="form-text text-muted" id="tagHelp">
           Add tags here seperated by spaces. Tags will help others to find your event. Maximum no of tags available is 15. Other tags
