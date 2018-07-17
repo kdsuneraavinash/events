@@ -14,7 +14,7 @@
           <img src="images/user.png" class="img-fluid w-50 my-3" />
         </div>
 
-        <form onsubmit = "return onLoginButtonClicked()" action="index.php" method="post">
+        <form onsubmit = "onLoginButtonClicked(); return false;">
           <div class="form-group">
             <input type="email" class="form-control" id="email" placeholder="username@website.com" required/>
           </div>
@@ -22,7 +22,7 @@
             <input type="password" class="form-control" id="password" placeholder="Password" required/>
           </div>
 
-          <div id="wrong_login" class=" text-danger">
+          <div id="wrong_login" class=" text-danger text-justify">
               <span class="fas fa-exclamation-triangle ml-3 mr-1"></span>
               <span class="text">Invalid username or password</span>
           </div>

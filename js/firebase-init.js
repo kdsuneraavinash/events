@@ -14,4 +14,5 @@ const settings = {
 
 
 // Initialize Cloud Firestore through Firebase
+console.log("Initialized firebase");
 firebase.initializeApp(config);

@@ -3,23 +3,18 @@
    session_start();
 
    if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form 
-      $email = $_POST['email'];
-      $displayName = $_POST['displayName'];
-      $photoURL = $_POST['photoURL'];
-      $uid = $_POST['uid'];
-
-      if (isset($_SESSION['user'])){
-        // Login an already logged in user (Maybe first log in)
+      // username and details sent from ajax 
+      if (isset($_SESSION['user']) && $_POST['email'] == $_SESSION['user']){
+        // Login an already logged in user 
+        // This user is same as previously logged in user
         // Dont Refresh or set _SESSION
-        // TODO: Check whether _SESSION user and post user is same
         echo "no-refresh";
       }else{
-        // Login a not logged in user
-        $_SESSION['user'] = $email;
-        $_SESSION['society'] = $displayName;
-        $_SESSION['photo'] = $photoURL;
-        $_SESSION['uid'] = $uid;
+        // Login a not logged in user or this user is different from logged in user
+        $_SESSION['user'] = $_POST['email'];
+        $_SESSION['society'] = $_POST['displayName'];
+        $_SESSION['photo'] = $_POST['photoURL'];
+        $_SESSION['uid'] = $_POST['uid'];
         echo "refresh";
       }
       

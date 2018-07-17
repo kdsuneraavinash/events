@@ -44,6 +44,7 @@ function validate() {
 
   // Validated
   validText.css("display", "inline");
+  console.log("Form validated");
   return true;
 }
 

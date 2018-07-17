@@ -8,10 +8,8 @@ function onLoginButtonClicked() {
     var email = $('#email').val();
     var password = $('#password').val();
 
+    console.log("Login button clicked");
     signIn(email, password, wrongLogin);
-
-    // Must return false to avoid form from submitting
-    return false;
 }
 
 
@@ -19,10 +17,14 @@ function onLoginButtonClicked() {
 $("#isAllDay").click(onIsAllDayClicked);
 
 function onIsAllDayClicked() {
+    // Collapse and uncollapse time select
     $("#collapseTimeSelect.collapse").collapse('toggle');
 }
 
+
 function onImagePreviewClicked(elem) {
+    // Tag image view modal
     $("#imagebox").attr('src', '');
     $("#imagebox").attr('src', $(elem).prop('value'));
+    console.log("#imagebox property set to " + $(elem).prop('value'));
 }

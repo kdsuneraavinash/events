@@ -1,6 +1,7 @@
 const firestore = firebase.firestore();
 firestore.settings(settings);
 
+// Add a record to database
 function addRecord(eventData) {
     firestore.collection("events").add(eventData)
         .then(function (docRef) {
@@ -11,6 +12,7 @@ function addRecord(eventData) {
         });
 }
 
+// Show all records
 function viewAllRecords() {
     console.log("Reading all records");
     firestore.collection("events").get().then(function (querySnapshot) {
