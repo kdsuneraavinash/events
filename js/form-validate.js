@@ -8,50 +8,59 @@
  * Validate for empty fields and invalid fields
  */
 function validate() {
-  if (!firebase.auth().currentUser){
-    // User not logged in
-    $("#signupNotice").modal('show');
+  try{
+    if (!firebase.auth().currentUser){
+      // User not logged in
+      $("#signupNotice").modal('show');
+      return false;
+    }
+
+    var startDate = $("#startDate");
+    var endDate = $("#endDate");
+    var startTime = $("#startTime");
+    var endTime = $("#endTime");
+    var urlFields = $('input[name^="uploaded_images"]');
+    var tags = $("#tags");
+    var isAllDay = $("#isAllDay");
+
+    var formControls = $(".form-control.addevent");
+    var timeControls = $(".form-control.addevent-isallday");
+
+    var validText = $("#valid_text");
+    var invalidText = $("#invalid_text");
+
+    // Hide all error messages
+    formControls.removeClass("is-invalid");
+    timeControls.removeClass("is-invalid");
+    validText.css("display", "none");
+    invalidText.css("display", "none");
+
+    // Check for empty field
+    if (!validateEmptyFields(formControls, invalidText)) return false;
+    // Check for no images
+    if (!validateNoImages(urlFields, invalidText)) return false;
+    // Check for invalid time 
+    if (!isAllDay.is(":checked")) {
+      // Check for invalid date field
+      if (!validateDateFields(startDate, endDate, startTime.val(), endTime.val(), invalidText)) return false;
+      if (!validateEmptyFields(timeControls, invalidText)) return false;
+    }else{
+      // Check for invalid date field
+      if (!validateDateFields(startDate, endDate, "00:00", "23:59", invalidText)) return false;
+    }
+    // Check for invalid no of tags
+    if (!validateTags(tags, invalidText)) return false;
+
+    // Validated
+    validText.css("display", "inline");
+    console.log("Form validated");
+    // TODO: Change to return true
+    return false;
+  //return true;
+  }catch(e){
+    console.log(e);
     return false;
   }
-
-  var startDate = $("#startDate");
-  var endDate = $("#endDate");
-  var startTime = $("#startTime");
-  var endTime = $("#endTime");
-  var urlFields = $('input[name^="uploaded_images"]');
-  var tags = $("#tags");
-  var isAllDay = $("#isAllDay");
-
-  var formControls = $(".form-control.addevent");
-  var timeControls = $(".form-control.addevent-isallday");
-
-  var validText = $("#valid_text");
-  var invalidText = $("#invalid_text");
-
-  // Hide all error messages
-  formControls.removeClass("is-invalid");
-  timeControls.removeClass("is-invalid");
-  validText.css("display", "none");
-  invalidText.css("display", "none");
-
-  // Check for empty field
-  if (!validateEmptyFields(formControls, invalidText)) return false;
-  // Check for no images
-  if (!validateNoImages(urlFields, invalidText)) return false;
-  // Check for invalid date field
-  if (!validateDateFields(startDate, endDate, invalidText)) return false;
-  // Check for invalid time 
-  if (!isAllDay.is(":checked")) {
-    if (!validateEmptyFields(timeControls, invalidText)) return false;
-    if (!validateTimeFields(startTime, endTime, invalidText)) return false;
-  }
-  // Check for invalid no of tags
-  if (!validateTags(tags, invalidText)) return false;
-
-  // Validated
-  validText.css("display", "inline");
-  console.log("Form validated");
-  return true;
 }
 
 /**
@@ -84,10 +93,13 @@ function validateNoImages(urlFields, invalidText){
 /**
  * Validate for date fields
  */
-function validateDateFields(startDate, endDate, invalidText) {
-  var startDateVal = new Date(startDate.val());
-  var endDateVal = new Date(endDate.val());
+function validateDateFields(startDate, endDate, startTimeVal, endTimeVal, invalidText) {
+  // Important
+  
+  var startDateVal = new Date(startDate.val() + " " + startTimeVal);
+  var endDateVal = new Date(endDate.val() + " " + endTimeVal);
   var today = new Date()
+
   if (today > endDateVal) {
     // Today Greater than End Date
     endDate.addClass("is-invalid");
@@ -100,21 +112,6 @@ function validateDateFields(startDate, endDate, invalidText) {
     startDate.addClass("is-invalid");
     endDate.addClass("is-invalid");
     changeSubmitObjText(invalidText, "Invalid Date : Event should end after starting date.");
-    return false;
-  }
-  return true;
-}
-
-/**
- * validate for time fields
- */
-function validateTimeFields(startTime, endTime, invalidText) {
-  // Chack if 2 times are valid
-  if (startTime.val() > endTime.val()) {
-    // Start Time Greater than End Time
-    startTime.addClass("is-invalid");
-    endTime.addClass("is-invalid");
-    changeSubmitObjText(invalidText, "Invalid Time : Event should end after starting time.");
     return false;
   }
   return true;

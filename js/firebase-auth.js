@@ -33,7 +33,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         });
         request.done(function (msg) {
             console.log("AJAX login returns: " + msg);
-            if (msg==="refresh") window.location.reload(false); 
+            if (msg === "refresh") window.location.reload(false);
         });
     } else {
         console.log("No signed in user");
@@ -45,7 +45,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         });
         request.done(function (msg) {
             console.log("AJAX logout returns: " + msg);
-            if (msg==="refresh") window.location.reload(false); 
+            if (msg === "refresh") window.location.reload(false);
         });
     }
 });

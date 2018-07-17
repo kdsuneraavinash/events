@@ -77,7 +77,7 @@
 
         <hr />
 
-        <form action = "index.php">
+        <form action="index.php">
           <div class="text-right">
             <button type="submit" class="btn btn-primary">OK</button>
           </div>

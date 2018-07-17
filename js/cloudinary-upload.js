@@ -10,7 +10,11 @@ $("#uploadImages").cloudinary_upload_widget({
     fieldName: "uploaded_images[]",
     buttonCaption: "Upload Images",
     thumbnails: ".feature_thumb",
-    thumbnail_transformation: { width: 100, height: 100, crop: "fit" },
+    thumbnail_transformation: {
+      width: 100,
+      height: 100,
+      crop: "fit"
+    },
     styles: {
       palette: {
         "window": "#000000",
@@ -31,4 +35,3 @@ $("#uploadImages").cloudinary_upload_widget({
   },
   function (error, result) {}
 );
-
