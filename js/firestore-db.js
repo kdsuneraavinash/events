@@ -3,8 +3,6 @@ firestore.settings(settings);
 
 // Add a record to database
 function addRecord(eventData) {
-    // TODO: Remove this line
-    return 
     firestore.collection("events").add(eventData)
         .then(function (docRef) {
             console.log("Document written with ID: ", docRef.id);

@@ -8,7 +8,7 @@
     <h4><small>All fields are required.</small></h4>
     <hr />
 
-    <form onsubmit="return validate()" id="event_form" action="post.php" method="post">
+    <form onsubmit="return validate();" id="event_form" action="post.php" method="post">
 
       <!-- Event Name Text -->
       <div class="form-group">

@@ -1,6 +1,5 @@
-<?php include("header.php"); ?>
+<?php include("header.php"); 
 
-<?php
 function createCard($name, $position, $email, $image){
   echo "<div class='col-sm card'>
         <img src='$image' alt='$name' class='img-fluid card-img-top rounded-circle img-thumbnail' />

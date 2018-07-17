@@ -1,31 +1,34 @@
-<?php include("header.php"); ?>
-<!-- TODO: Add some rules to make sure form is not resubmitted -->
-<?php if ($_SERVER["REQUEST_METHOD"] != "POST") header("index.php") ?>
-
 <?php 
-        function tableCell($key, $value){
-            echo "<tr>
-                    <td>$key</td>
-                    <td>$value</td>
-                </tr>";
-        }
+include("header.php"); 
+// TODO: Add some rules to make sure form is not resubmitted 
+ if ($_SERVER["REQUEST_METHOD"] != "POST") header("index.php"); 
 
-        $eventName = $_POST['eventName'];
-        $organizer = $_POST['organizer'];
-        $description = $_POST['description'];
-        $location = $_POST['location'];
-        $startDate = $_POST['startDate'];
-        $endDate = $_POST['endDate'];
-        $isAllDay = array_key_exists('isAllDay', $_POST);
-        $startTime = $_POST['startTime'];
-        $endTime = $_POST['endTime'];
-        $tags = explode(' ', strtolower($_POST['tags']));
-        $images = !array_key_exists('uploaded_images', $_POST) ?  array() : $_POST['uploaded_images'];
-        foreach ($images as $ind => $val) {
-            $images[$ind] = "https://res.cloudinary.com/kdsuneraavinash/$val";
-        }
-        $startTime = $isAllDay ? '00:00' : $startTime;
-        $endTime = $isAllDay ? '23:59' : $endTime;
+    function tableCell($key, $value){
+        echo "<tr>
+                <td>$key</td>
+                <td>$value</td>
+            </tr>";
+    }
+
+    // Preprocess
+    $eventName = $_POST['eventName'];
+    $organizer = $_POST['organizer'];
+    $description = $_POST['description'];
+    $location = $_POST['location'];
+
+    $startDate = $_POST['startDate'];
+    $endDate = $_POST['endDate'];
+    $isAllDay = array_key_exists('isAllDay', $_POST);
+    $startTime = $_POST['startTime'];
+    $endTime = $_POST['endTime'];
+    $startTime = $isAllDay ? '00:00' : $startTime;
+    $endTime = $isAllDay ? '23:59' : $endTime;
+
+    $tags = explode(' ', strtolower($_POST['tags']));
+    $images = !array_key_exists('uploaded_images', $_POST) ?  array() : $_POST['uploaded_images'];
+    foreach ($images as $ind => $val) {
+        $images[$ind] = "https://res.cloudinary.com/kdsuneraavinash/$val";
+    }
 ?>
 
 <div class="container">
@@ -53,7 +56,7 @@
                 <tr>
                     <td>Tags</td>
                     <td>
-                    <?php 
+                        <?php 
                         foreach ($tags as $ind => $val) {
                             echo "<kbd>$val</kbd> ";
                         }
@@ -63,7 +66,7 @@
                 <tr>
                     <td>Images</td>
                     <td>
-                    <?php 
+                        <?php 
                         foreach ($images as $ind => $val) {
                             $tip = $ind == 0 ? "Cover Image" : "Image [$ind]";
                             echo "<button type='button' class='btn btn-outline-dark m-1 image-preview' 
@@ -78,9 +81,9 @@
         <hr />
 
         <form action="index.php">
-          <div class="text-right">
-            <button type="submit" class="btn btn-primary">OK</button>
-          </div>
+            <div class="text-right">
+                <button type="submit" class="btn btn-primary">OK</button>
+            </div>
         </form>
 
     </div>
@@ -96,6 +99,7 @@
     $isAllDay = $isAllDay == 1 ? "true" : "false";
     $startDateTime = date('Y-m-d H:i:s', strtotime("$startDate $startTime:00"));
     $endDateTime = date('Y-m-d H:i:s', strtotime("$endDate $endTime:00"));
+    // TODO: Add /n /r in description
     echo "
         var eventData = {
             eventName: '$eventName',
@@ -110,6 +114,6 @@
         addRecord(eventData);
         ";
     ?>
-</script>   
+</script>
 
 <?php include("footer.php"); ?>

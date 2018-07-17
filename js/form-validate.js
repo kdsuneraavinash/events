@@ -42,20 +42,21 @@ function validate() {
     // Check for invalid time 
     if (!isAllDay.is(":checked")) {
       // Check for invalid date field
-      if (!validateDateFields(startDate, endDate, startTime.val(), endTime.val(), invalidText)) return false;
       if (!validateEmptyFields(timeControls, invalidText)) return false;
     }else{
-      // Check for invalid date field
-      if (!validateDateFields(startDate, endDate, "00:00", "23:59", invalidText)) return false;
+      // Change time fields
+      startTime.val( "00:00");
+      endTime.val( "23:59");
     }
+    if (!validateDateFields(startDate, endDate, startTime, endTime, invalidText)) return false;
+    
     // Check for invalid no of tags
     if (!validateTags(tags, invalidText)) return false;
 
     // Validated
     validText.css("display", "inline");
     console.log("Form validated");
-    // TODO: Change to return true
-    return false;
+    return true;
   //return true;
   }catch(e){
     console.log(e);
@@ -93,11 +94,11 @@ function validateNoImages(urlFields, invalidText){
 /**
  * Validate for date fields
  */
-function validateDateFields(startDate, endDate, startTimeVal, endTimeVal, invalidText) {
+function validateDateFields(startDate, endDate, startTime, endTime, invalidText) {
   // Important
-  
-  var startDateVal = new Date(startDate.val() + " " + startTimeVal);
-  var endDateVal = new Date(endDate.val() + " " + endTimeVal);
+  // TODO: Not sure if this algo is correct
+  var startDateVal = new Date(startDate.val() + " " + startTime.val());
+  var endDateVal = new Date(endDate.val() + " " + endTime.val());
   var today = new Date()
 
   if (today > endDateVal) {
@@ -111,6 +112,8 @@ function validateDateFields(startDate, endDate, startTimeVal, endTimeVal, invali
     // Start Date Greater than End Date
     startDate.addClass("is-invalid");
     endDate.addClass("is-invalid");
+    startTime.addClass("is-invalid");
+    endTime.addClass("is-invalid");
     changeSubmitObjText(invalidText, "Invalid Date : Event should end after starting date.");
     return false;
   }

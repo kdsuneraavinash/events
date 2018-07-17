@@ -1,9 +1,14 @@
 <?php
   // Start the session
   session_start();
-?>
 
-  <?php
+  // get login information
+  $loggedIn = isset($_SESSION["user"]);
+  if ($loggedIn){
+    $user = $_SESSION["user"];
+    $society = $_SESSION["society"];
+  }
+
   // get whether or not to in a page
   function isOnPage($check){
     return $_SERVER['PHP_SELF'] == "/$check.php";
@@ -16,17 +21,8 @@
   }
 ?>
 
-<?php
-  // get login information
-  $loggedIn = isset($_SESSION["user"]);
-  if ($loggedIn){
-    $user = $_SESSION["user"];
-    $society = $_SESSION["society"];
-  }
-?>
-
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
 
   <head>
     <meta charset="utf-8">
@@ -48,25 +44,14 @@
     <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/stylesheet.css" />
 
-    <!-- Firestore - Must come before all script tags-->
+    <!-- Firebase - Must come before all script tags-->
     <!-- Firebase App is always required and must be first -->
     <script src="js/api-keys.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
     <!-- Add additional services that we want to use -->
-    <?php 
-    if (isOnPage('post')) echo "<script src='https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js'></script>"; 
-    ?>
+    <?php if (isOnPage('post')) echo "<script src='https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js'></script>"; ?>
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-auth.js"></script>
-    <!-- NOT NEEDED
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-messaging.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-functions.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-database.js"></script>
-    -->
     <script src="js/firebase-init.js"></script>
-    
   </head>
 
   <body>
@@ -84,16 +69,16 @@
             </a>
           </li>
           <li class="nav-item <?php echo getActiveTag('addevent');?>">
-              <a class="nav-link mx-2 px-2 my-1" href="addevent.php">Add Event</a>
+            <a class="nav-link mx-2 px-2 my-1" href="addevent.php">Add Event</a>
           </li>
           <li class="nav-item <?php echo getActiveTag('about');?>">
             <a class="nav-link mx-2 px-2 my-1" href="about.php">About</a>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right row my-3 mx-2">
-            <!-- Switch between Login and Logout button depending on 
+          <!-- Switch between Login and Logout button depending on 
               user login information -->
-            <?php 
+          <?php 
               if ($loggedIn){
                 echo "<li>
                         <button class='form-inline btn btn-outline-light btn-block mx-0 mb-1' type='button' data-toggle='modal' data-target='#logoutForm'>
@@ -133,4 +118,3 @@
         include("model_forms/imageview.php"); 
       }
     ?>
-    
