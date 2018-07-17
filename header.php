@@ -82,18 +82,12 @@
             <a class="nav-link mx-2 px-2 my-1" href="index.php">Home
             </a>
           </li>
-          <?php
-            // Show Add Event Page iff logged in
-            if ($loggedIn){
-              $activeTag = getActiveTag("addevent");
-              echo '<li class="nav-item '.$activeTag.'">
-                      <a class="nav-link mx-2 px-2 my-1" href="addevent.php">Add Event</a>
-                    </li>';
-                  }
-            ?>
-            <li class="nav-item <?php echo getActiveTag('about');?>">
-              <a class="nav-link mx-2 px-2 my-1" href="about.php">About</a>
-            </li>
+          <li class="nav-item <?php echo getActiveTag('addevent');?>">
+              <a class="nav-link mx-2 px-2 my-1" href="addevent.php">Add Event</a>
+          </li>
+          <li class="nav-item <?php echo getActiveTag('about');?>">
+            <a class="nav-link mx-2 px-2 my-1" href="about.php">About</a>
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right row my-3 mx-2">
             <!-- Switch between Login and Logout button depending on 

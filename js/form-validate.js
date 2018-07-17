@@ -8,6 +8,12 @@
  * Validate for empty fields and invalid fields
  */
 function validate() {
+  if (!firebase.auth().currentUser){
+    // User not logged in
+    $("#signupNotice").modal('show');
+    return false;
+  }
+
   var startDate = $("#startDate");
   var endDate = $("#endDate");
   var startTime = $("#startTime");

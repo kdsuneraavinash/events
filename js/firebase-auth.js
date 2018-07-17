@@ -19,7 +19,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     console.log("Firebase login state change detected");
     if (user) {
         // User is signed in.
-        console.log("An user is already signed in");
+        console.log("An user is signed in");
         console.log("Sending AJAX to store session");
         var request = $.ajax({
             url: 'user_login/login.php',
