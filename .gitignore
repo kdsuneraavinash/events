@@ -3,3 +3,9 @@ js/api-keys.js
 
 # VS Code config
 .vscode
+
+# File copy utility
+localtest.py
+
+# TODO: Imple,emt facebook event import
+parsers

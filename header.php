@@ -11,7 +11,8 @@
 
   // get whether or not to in a page
   function isOnPage($check){
-    return $_SERVER['PHP_SELF'] == "/$check.php";
+    return $_SERVER['PHP_SELF'] == "/$check.php" || 
+    $_SERVER['PHP_SELF'] == "/moraevents/$check.php";
   }
 
   // get whether or not to addactive tag depending on current page
@@ -19,6 +20,7 @@
     $str = isOnPage($check) ? ' active' : '';
     return $str;
   }
+
 ?>
 
   <!DOCTYPE html>

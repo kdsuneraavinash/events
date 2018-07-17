@@ -1,5 +1,6 @@
 const firestore = firebase.firestore();
 firestore.settings(settings);
+console.log("Firestore initialized");
 
 // Add a record to database
 function addRecord(eventData) {

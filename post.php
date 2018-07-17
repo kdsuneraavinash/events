@@ -13,8 +13,10 @@ include("header.php");
     // Preprocess
     $eventName = $_POST['eventName'];
     $organizer = $_POST['organizer'];
-    $description = $_POST['description'];
     $location = $_POST['location'];
+
+    $description = $_POST['description'];
+    $description = str_replace("'", '"', $description);
 
     $startDate = $_POST['startDate'];
     $endDate = $_POST['endDate'];
@@ -24,11 +26,19 @@ include("header.php");
     $startTime = $isAllDay ? '00:00' : $startTime;
     $endTime = $isAllDay ? '23:59' : $endTime;
 
+    // Remove spaces from elements
     $tags = explode(' ', strtolower($_POST['tags']));
+    $tags = array_diff($tags, [' ']);
+    $tags = array_values($tags);
+
     $images = !array_key_exists('uploaded_images', $_POST) ?  array() : $_POST['uploaded_images'];
     foreach ($images as $ind => $val) {
         $images[$ind] = "https://res.cloudinary.com/kdsuneraavinash/$val";
     }
+
+    // User not authorized to post
+    if (!isset($user)) header("index.php");
+    $user = $_SESSION["user"];
 ?>
 
 <div class="container">
@@ -50,7 +60,7 @@ include("header.php");
                 <?php tableCell("Venue", $location); ?>
                 <?php tableCell("Start Date", $startDate); ?>
                 <?php tableCell("End Date", $endDate); ?>
-                <?php tableCell("Is all Day", $isAllDay ? "Yes" : "No"); ?>
+                <?php tableCell("Is this all day?", $isAllDay ? "Yes" : "No"); ?>
                 <?php tableCell("Start Time", $isAllDay ? '-Not applicable-' : $startTime); ?>
                 <?php tableCell("End Time", $isAllDay ? '-Not applicable-' : $endTime); ?>
                 <tr>
@@ -75,6 +85,7 @@ include("header.php");
                     ?>
                     </td>
                 </tr>
+                <?php tableCell("User", "<div><samp>$user</samp></div>"); ?>
             </tbody>
         </table>
 
@@ -91,29 +102,32 @@ include("header.php");
 
 <!-- Store in firestore -->
 <script src="js/firestore-db.js"></script>
-<script>
-    <?php 
+<?php 
     $tags = json_encode($tags);
     $images = json_encode($images);
-    $description = str_replace(array("\r","\n"), "", $description);
-    $isAllDay = $isAllDay == 1 ? "true" : "false";
+    $isAllDay = json_encode($isAllDay == 1);
+    $description = json_encode($description);
+    
+    // TODO: Add /n /r in description
     $startDateTime = date('Y-m-d H:i:s', strtotime("$startDate $startTime:00"));
     $endDateTime = date('Y-m-d H:i:s', strtotime("$endDate $endTime:00"));
-    // TODO: Add /n /r in description
-    echo "
-        var eventData = {
-            eventName: '$eventName',
-            organizer: '$organizer',
-            description: '$description',
-            location: '$location',
-            start: new Date('$startDateTime'),
-            end: new Date('$endDateTime'),
-            isAllDay: $isAllDay,
-            tags: $tags,
-            images: $images };
-        addRecord(eventData);
-        ";
-    ?>
-</script>
+?>
 
+<script>
+    console.log("<?php echo $eventName?>");
+    console.log("Pre-formatting done");
+    var eventData = {
+        eventName: "<?php echo $eventName;?>",
+        organizer: "<?php echo $organizer;?>",
+        description: <?php echo $description;?>,
+        location: "<?php echo $location;?>",
+        start: new Date("<?php echo $startDateTime;?>"),
+        end: new Date("<?php echo $endDateTime;?>"),
+        isAllDay: <?php echo $isAllDay;?>,
+        tags: <?php echo $tags;?>,
+        user: '<?php echo $user;?>',
+        images: <?php echo $images;?>
+    };
+     addRecord(eventData);
+</script>
 <?php include("footer.php"); ?>
