@@ -16,7 +16,7 @@
 
         <form onsubmit = "return onLoginButtonClicked()" action="index.php" method="post">
           <div class="form-group">
-            <input type="text" class="form-control" id="username" placeholder="User Name" required/>
+            <input type="email" class="form-control" id="email" placeholder="username@website.com" required/>
           </div>
           <div class="form-group">
             <input type="password" class="form-control" id="password" placeholder="Password" required/>

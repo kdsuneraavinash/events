@@ -19,8 +19,7 @@
       <!-- Event Otganizer Text -->
       <div class="form-group">
         <label for="organizer">Organizer:</label>
-        <input type="text" class="form-control addevent" id="organizer" name="organizer" value='<?php echo $loggedIn ? $society : ''
-        ; ?>' placeholder="Organizing Society" readonly>
+        <input type="text" class="form-control addevent" id="organizer" name="organizer" placeholder="Organizing Society">
       </div>
 
       <!-- Event Description Text Area -->

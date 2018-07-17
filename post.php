@@ -87,19 +87,7 @@
     </div>
 </div>
 
-<!-- Firestore - Must come before all script tags-->
-<!-- Firebase App is always required and must be first -->
-<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
-<!-- Add additional services that we want to use -->
-<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
-<!-- NOT NEEDED
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-messaging.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-functions.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-database.js"></script>
-    -->
+<!-- Store in firestore -->
 <script src="js/firestore-db.js"></script>
 <script>
     <?php 
@@ -123,5 +111,6 @@
         addRecord(eventData);
         ";
     ?>
-</script>        
+</script>   
+
 <?php include("footer.php"); ?>

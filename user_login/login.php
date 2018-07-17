@@ -4,23 +4,24 @@
 
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
-      $username = $_POST['username'];
-      $password = $_POST['password']; 
+      $email = $_POST['email'];
+      $displayName = $_POST['displayName'];
+      $photoURL = $_POST['photoURL'];
+      $uid = $_POST['uid'];
 
-      // TODO: Connect so that count = 1 iff username and password is correct
-      if ($username == "Sunera" && $password == "pass123"){
-        $count = 1; 
+      if (isset($_SESSION['user'])){
+        // Login an already logged in user (Maybe first log in)
+        // Dont Refresh or set _SESSION
+        // TODO: Check whether _SESSION user and post user is same
+        echo "no-refresh";
       }else{
-        $count = 0; 
+        // Login a not logged in user
+        $_SESSION['user'] = $email;
+        $_SESSION['society'] = $displayName;
+        $_SESSION['photo'] = $photoURL;
+        $_SESSION['uid'] = $uid;
+        echo "refresh";
       }
-
-      // send whether passed or failed to Ajax
-      if($count == 1) {
-         $_SESSION['user'] = $username;
-         $_SESSION['society'] = "Team Axys";
-         echo "pass";
-      }else {
-         echo "fail";
-      }
+      
    }
 ?>
