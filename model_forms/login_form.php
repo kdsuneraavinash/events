@@ -11,7 +11,7 @@
 
       <div class="modal-body">
         <div class="text-center">
-          <img src="images/user.png" class="img-fluid w-50 my-3" />
+          <img src="images/user.png" class="img-fluid w-50 my-3" id="user_login_image" />
         </div>
 
         <form onsubmit = "onLoginButtonClicked(); return false;">

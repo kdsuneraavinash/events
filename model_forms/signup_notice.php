@@ -3,7 +3,7 @@
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title">Sign Up</h5>
+        <h5 class="modal-title">How to Sign Up</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -13,8 +13,12 @@
         <!-- https://www.rapidtables.com/web/html/mailto.html
         TODO: Add an email body
          -->
+        <div class="text-center">
+          <img src="images/signup.png" class="img-fluid w-75 my-3" />
+        </div>
         <form action = "mailto:teamaxys@gmail.com?subject=Event%20App%20-%20Sign%20Up%20Request" method = "post">
           <p>You have to send an email to teamaxys and request an user account in order to get permission to post in Event App.</p>
+          <hr />
           <div class="text-right">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             <button type="submit" class="btn btn-primary">Send Email</button>

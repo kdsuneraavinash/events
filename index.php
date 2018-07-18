@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="card p-3 content">
-    <h2>What is this ?</h2>
+    <h2>About</h2>
     <hr/>
     <div class="row">
       <div class="col-sm" id="welcome_highlight">
@@ -49,27 +49,13 @@
             <li data-target="#carousel" data-slide-to="2"></li>
           </ol>
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="https://picsum.photos/800/600/?45" alt="First Image">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>First Image</h5>
-                <p>Describe First Image</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="https://picsum.photos/800/600/?32" alt="Second Image">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Second Image</h5>
-                <p>Describe Second Image</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="https://picsum.photos/800/600/?76" alt="Third Image">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Third Image</h5>
-                <p>Describe Third Image</p>
-              </div>
-            </div>
+            
+            <?php 
+              createCarousalItem("https://picsum.photos/800/600/?25", "First Image", "Describe First Image", "active");
+              createCarousalItem("https://picsum.photos/800/600/?32", "Second Image", "Describe Second Image", "");
+              createCarousalItem("https://picsum.photos/800/600/?76", "Third Image", "Describe Third Image", "");
+            ?>
+            
           </div>
           <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

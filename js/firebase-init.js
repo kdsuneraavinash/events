@@ -1,10 +1,14 @@
-// Initialize Firebase
+// DEPENDANCY: apikeys
+// DEPENDANCY: firebase-app-google
 
+
+// Initialize Firebase
 const settings = {
+    // Fix to giving a deprecation warning
     timestampsInSnapshots: true
 };
 
 
 // Initialize Cloud Firestore through Firebase
-console.log("Initialized firebase");
 firebase.initializeApp(firebase_api);
+console.log("FIREBASE-INIT: Initialized firebase");

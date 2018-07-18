@@ -10,8 +10,13 @@
       </div>
 
       <div class="modal-body">
-        <form onsubmit="signOut(); return false;">
+      
+      <div class="text-center">
+          <img src="images/signout.jpg" class="img-fluid w-75 my-3" id="user_logout_image" />
+        </div>
+        <form onsubmit="onLogoutButtonClicked(); return false;">
           <p>Are you sure you want to Sign Out?</p>
+          <hr />
           <div class="text-right">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
             <button type="submit" class="btn btn-primary">Yes</button>

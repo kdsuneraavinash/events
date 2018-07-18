@@ -2,25 +2,8 @@
   // Start the session
   session_start();
 
-  // get login information
-  $loggedIn = isset($_SESSION["user"]);
-  if ($loggedIn){
-    $user = $_SESSION["user"];
-    $society = $_SESSION["society"];
-  }
-
-  // get whether or not to in a page
-  function isOnPage($check){
-    return $_SERVER['PHP_SELF'] == "/$check.php" || 
-    $_SERVER['PHP_SELF'] == "/moraevents/$check.php";
-  }
-
-  // get whether or not to addactive tag depending on current page
-  function getActiveTag($check){
-    $str = isOnPage($check) ? ' active' : '';
-    return $str;
-  }
-
+  // Class to store session info in more convienient manner
+  require('public_functions.php');
 ?>
 
   <!DOCTYPE html>
@@ -34,6 +17,7 @@
     <title>Mora Events</title>
     <!-- Add icon -->
     <link rel="icon" href="https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/calendar-512.png">
+
     <!-- Add bootstrap CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
       crossorigin="anonymous">
@@ -46,16 +30,40 @@
     <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/stylesheet.css" />
 
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
     <!-- Firebase - Must come before all script tags-->
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
-    <script src='https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js'></script>
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-auth.js"></script>
+    <?php if ($loadFirestore) echo "<script src='https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js'></script>"; ?>
     <script src="js/api-keys.js"></script>
     <script src="js/firebase-init.js"></script>
   </head>
 
   <body>
+
+    <noscript>
+      <style type="text/css">
+        .content,
+        .account-button {
+          display: none;
+        }
+      </style>
+      <div class="container">
+        <div class="card p-3">
+          <h2>You need to have Javascript Enabled</h2>
+          <hr />
+          <p>You have disabled Javascript in your web browser. Java script enabled web browser is needed to view content properly.</p>
+          <p class="font-weight-bold">Sorry for the inconvienience.</p>
+        </div>
+      </div>
+      
+
+    </noscript>
+
+
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark mb-4 px-4 justify-content-between fixed-top" id="navbar">
       <a class="navbar-brand" href="#">Mora Events</a>
@@ -65,43 +73,27 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item <?php echo getActiveTag('index');?>">
-            <a class="nav-link mx-2 px-2 my-1" href="index.php">Home
-            </a>
-          </li>
-          <li class="nav-item <?php echo getActiveTag('addevent');?>">
-            <a class="nav-link mx-2 px-2 my-1" href="addevent.php">Add Event</a>
-          </li>
-          <li class="nav-item <?php echo getActiveTag('about');?>">
-            <a class="nav-link mx-2 px-2 my-1" href="about.php">About</a>
-          </li>
+
+          <?php
+            createNavBarItem('index', 'Home');
+            createNavBarItem('addevent', 'Add Event');
+            createNavBarItem('about', 'About');
+          ?>
+
         </ul>
         <ul class="nav navbar-nav navbar-right row my-3 mx-2">
           <!-- Switch between Login and Logout button depending on 
               user login information -->
           <?php 
               if ($loggedIn){
-                echo "<li>
-                        <button class='form-inline btn btn-outline-light btn-block mx-0 mb-1' type='button' data-toggle='modal' data-target='#logoutForm'>
-                          <span class='fas fa-sign-out-alt m-2'></span>
-                          $user (logout)
-                        </button>
-                        </li>";
+                $email = $user["email"];
+                createAccountButton('fas fa-sign-out-alt', '#logoutForm', "$email");
               }else{
-                echo "<li class='mx-1'>
-                        <button class='form-inline btn btn-outline-light btn-block mb-1' type='button' data-toggle='modal' data-target='#loginForm'>
-                          <span class='fas fa-sign-in-alt m-2'></span>
-                          Sign In
-                        </button>
-                      </li>
-                      <li class='mx-1'>
-                        <button class='form-inline btn btn-outline-light btn-block mb-1' type='button' data-toggle='modal' data-target='#signupNotice'>
-                          <span class='fas fa-user-plus m-2'></span>
-                          Sign Up
-                        </button>
-                      </li>";
+                createAccountButton('fas fa-sign-in-alt', '#loginForm', 'Sign In');
+                createAccountButton('fas fa-user-plus', '#signupNotice', 'Sign Up');
               }
             ?>
+
         </ul>
       </div>
     </nav>
@@ -114,8 +106,5 @@
       }else{
         include("model_forms/logout_form.php"); 
       }
-
-      if (isOnPage("post")){
-        include("model_forms/imageview.php"); 
-      }
+      if ($loadImageView)include("model_forms/imageview.php"); 
     ?>
