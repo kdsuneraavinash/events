@@ -1,6 +1,6 @@
 <?php include("header.php"); ?>
 
-<div class="container" id="home_content">
+<div class="container">
   <div class="card p-3 content">
     <h2>What is this ?</h2>
     <hr/>

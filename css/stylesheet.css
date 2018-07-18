@@ -53,6 +53,10 @@ Content - Classes
 
 .content {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  /* All content areas */
+  /* Add content load animation */
+  animation-name: content-load;
+  animation-duration: 1s;
 }
 
 .btn-primary {
@@ -77,13 +81,6 @@ form .btn {
 Content - ids
 -----------------------------------------------
 */
-
-#home_content, #addevent_content, #about_content {
-  /* All content areas */
-  /* Add content load animation */
-  animation-name: content-load;
-  animation-duration: 1s;
-}
 
 #logo_img {
   /* About page logo */

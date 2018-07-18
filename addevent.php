@@ -1,11 +1,13 @@
 <?php include("header.php"); ?>
 
-<div class="container" id="addevent_content">
+<div class="container">
   <div class="card p-3 content">
 
     <!-- Title -->
     <h2>Fill this Form and Submit Event Details.</h2>
-    <h4><small>All fields are required.</small></h4>
+    <h4>
+      <small>All fields are required.</small>
+    </h4>
     <hr />
 
     <form onsubmit="return validate();" id="event_form" action="post.php" method="post">

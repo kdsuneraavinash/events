@@ -41,7 +41,7 @@ include("header.php");
     $user = $_SESSION["user"];
 ?>
 
-<div class="container">
+<div class="container" id="post_content">
     <div class="card p-3 content">
         <h2>Submitted Form</h2>
         <hr />

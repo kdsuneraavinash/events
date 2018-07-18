@@ -14,13 +14,17 @@ function addRecord(eventData) {
 }
 
 // Show all records
-function viewAllRecords() {
-    console.log("Reading all records");
+function readAllData(wrappedFunction) {
+    console.log("Record read stream initialized");
     firestore.collection("events").get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
             // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
+            console.log("Document with " + doc.id + " ID read");
+            if (wrappedFunction==null) return;
+            // Pass doc to inner function
+            wrappedFunction(doc);
         });
+    }).catch(function (error) {
+        console.error("Error adding document: ", error);
     });
-    console.log("All records read");
 }

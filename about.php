@@ -10,7 +10,7 @@ function createCard($name, $position, $email, $image){
   }
 ?>
 
-<div class="container" id="about_content">
+<div class="container">
   <div class="card content" id="about_us_text">
 
     <h2 class="card-title text-center">About Us</h2>
