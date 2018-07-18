@@ -10,7 +10,9 @@
       </div>
 
       <div class="modal-body">
+        <a target="_target" id="imagelink">
           <img src="" class="img-fluid w-100" id="imagebox"/> 
+        </a>
       </div>
       
       <div class="modal-footer">

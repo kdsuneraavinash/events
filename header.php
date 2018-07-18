@@ -37,7 +37,9 @@
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-auth.js"></script>
-    <?php if ($loadFirestore) echo "<script src='https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js'></script>"; ?>
+    <?php if ($currentPage == "showevent" || $currentPage == "post")
+      echo "<script src='https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js'></script>"; 
+    ?>
     <script src="js/api-keys.js"></script>
     <script src="js/firebase-init.js"></script>
   </head>
@@ -45,6 +47,7 @@
   <body>
 
     <noscript>
+      <!-- Hide other elements -->
       <style type="text/css">
         .content,
         .account-button {
@@ -52,15 +55,16 @@
         }
       </style>
       <div class="container">
-        <div class="card p-3">
+        <div class="card p-3" style="background-color: #f7df1d;">
           <h2>You need to have Javascript Enabled</h2>
           <hr />
           <p>You have disabled Javascript in your web browser. Java script enabled web browser is needed to view content properly.</p>
           <p class="font-weight-bold">Sorry for the inconvienience.</p>
+          <div class="text-right">
+            <img src="images/no-javascript.jpg" class="img-fluid w-50 p-3" />
+          </div>
         </div>
       </div>
-      
-
     </noscript>
 
 
@@ -106,5 +110,12 @@
       }else{
         include("model_forms/logout_form.php"); 
       }
-      if ($loadImageView)include("model_forms/imageview.php"); 
+      
+      if ($currentPage == "showevent") {
+        include("model_forms/imageview.php"); 
+        include("model_forms/loading_data.php"); 
+      }else if ($currentPage == "post") {
+        include("model_forms/loading_data.php"); 
+        echo '<script src="js/firestore-db.js"></script>';
+      }
     ?>

@@ -13,10 +13,13 @@
 <script src="js/firebase-auth.js"></script>
 <?php
     // TODO: Add pollyfills for date time pickers
-    if ($loadFormTools){
+    if ($currentPage == "addevent"){
       echo '<script src="js/form-validate.js"></script>
             <script src="https://widget.cloudinary.com/v2.0/global/all.js"></script>
             <script src="js/cloudinary-upload.js"></script>';
+    }else if ($currentPage == "showevent"){
+      echo '<script src="js/firestore-db.js"></script>
+            <script src="js/event-view.js"></script>';
     }
   ?>
   <script src="js/event_trigger.js"></script>

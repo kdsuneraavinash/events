@@ -100,10 +100,14 @@ Content - ids
   display: none;
 }
 
-#user_login_image, #user_logout_image {
+#user_login_image, #user_logout_image, #loading_data_image {
   animation: pulse 1s linear infinite;
+}
+
+#user_login_image, #user_logout_image {
   animation-play-state: paused;
 }
+
 /*
 -----------------------------------------------
 Navigation bar

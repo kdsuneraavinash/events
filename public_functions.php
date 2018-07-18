@@ -14,9 +14,7 @@
   $endIndex = strpos($fullPath, '.php');
   $startIndex = strrpos($fullPath, '/');
   $currentPage = substr($fullPath, $startIndex + 1, $endIndex - $startIndex - 1);
-  $loadFirestore = ($currentPage == "addevent" || $currentPage == "events");
-  $loadImageView = ($currentPage == "post");
-  $loadFormTools = ($currentPage == "addevent");
+
   
   // Dynamically create Navigation Bar Item
   function createNavBarItem($page, $title){

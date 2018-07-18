@@ -1,26 +1,26 @@
 <?php
 class Event{
-    public $eventName;
-    public $organizer;
-    public $location;
-    public $description;
-    public $startDate;
-    public $endDate;
-    public $startTime;
-    public $endTime;
-    public $isAllDay;
-    public $tags;
-    public $images;
-    public $user;
-    public $userid;
+    public $eventName = null;
+    public $organize = null;
+    public $location = null;
+    public $description = null;
+    public $startDate = null;
+    public $endDate = null;
+    public $startTime = null;
+    public $endTime = null;
+    public $isAllDay = null;
+    public $tags = null;
+    public $images = null;
+    public $user = null;
+    public $userid = null;
 
-    public $tagsJSON;
-    public $imagesJSON;
-    public $isAllDayJSON;
-    public $descriptionJSON;
+    public $tagsJSON = null;
+    public $imagesJSON = null;
+    public $isAllDayJSON = null;
+    public $descriptionJSON = null;
 
-    public $startDateTime;
-    public $endDateTime;
+    public $startDateTime = null;
+    public $endDateTime = null;
 
     function __construct($post, $session){
         $this->eventName = $post['eventName'];

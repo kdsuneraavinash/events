@@ -1,20 +1,27 @@
 <?php 
-    include("header.php");
-    function tableCell($key, $value){
-        echo "<tr>
-                <td>$key</td>
-                <td>$value</td>
-            </tr>";
-    }
+if (!isset($_GET["eventid"])) {
+    echo "<script>window.location.href = 'index.php';</script>";
+    exit();
+}
 
-    
+include("header.php");
+$docID = $_GET["eventid"];
 ?>
 
-<div class="container" id="post_content">
-    <div class="card p-3 content">
-        <h2>Submitted Event</h2>
-        <hr />
+<script>
+    var docID = '<?php echo $docID;?>';
+    $(document).ready(function () {
+        loadIntoEventView(docID);
+    });
+</script>
 
+<div class="container">
+    <div class="card p-3 content">
+        <h2>Submitted Form</h2>
+        <hr />
+        <h4 class="text-info" id="docID">
+        </h4>
+        <hr />
         <table class="table table-striped table-bordered table-hover">
             <thead class="thead-dark">
                 <tr>
@@ -23,38 +30,48 @@
                 </tr>
             </thead>
             <tbody>
-                <?php tableCell("Event Name", $event->eventName); ?>
-                <?php tableCell("Organizer", $event->organizer); ?>
-                <?php tableCell("Description", $event->description); ?>
-                <?php tableCell("Venue", $event->location); ?>
-                <?php tableCell("Start Date", $event->startDate); ?>
-                <?php tableCell("End Date", $event->endDate); ?>
-                <?php tableCell("Is this all day?", $event->isAllDay ? "Yes" : "No"); ?>
-                <?php tableCell("Start Time", $event->isAllDay ? '-Not applicable-' : $event->startTime); ?>
-                <?php tableCell("End Time", $event->isAllDay ? '-Not applicable-' : $event->endTime); ?>
+                <tr>
+                    <td>Event Name</td>
+                    <td id="eventName"></td>
+                </tr>
+                <tr>
+                    <td>Organizer</td>
+                    <td id="organizer"></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td id="description"></td>
+                </tr>
+                <tr>
+                    <td>Venue</td>
+                    <td id="location"></td>
+                </tr>
+                <tr>
+                    <td>Start Date</td>
+                    <td id="start"></td>
+                </tr>
+                <tr>
+                    <td>End Date</td>
+                    <td id="end"></td>
+                </tr>
+                <tr>
+                    <td>Is this all day?</td>
+                    <td id="isAllDay">No</td>
+                </tr>
+                </tr>
                 <tr>
                     <td>Tags</td>
-                    <td>
-                        <?php 
-                        foreach ($event->tags as $ind => $val) {
-                            echo "<kbd>$val</kbd> ";
-                        }
-                    ?>
-                    </td>
+                    <td id="tags"></td>
                 </tr>
                 <tr>
                     <td>Images</td>
-                    <td>
-                        <?php 
-                        foreach ($event->images as $ind => $val) {
-                            $tip = $ind == 0 ? "Cover Image" : "Image [$ind]";
-                            echo "<button type='button' class='btn btn-outline-dark m-1 image-preview' 
-                            value='$val' onClick='onImagePreviewClicked(this)'  data-toggle='modal' data-target='#imageView'>$tip</button>";
-                        }
-                    ?>
-                    </td>
+                    <td id="images"></td>
                 </tr>
-                <?php tableCell("User", "$event->user"); ?>
+                <tr>
+                    <td>User</td>
+                    <td id="user">
+                        </td>
+                </tr>
             </tbody>
         </table>
 
@@ -70,7 +87,4 @@
 </div>
 
 
-<?php 
-include("footer.php"); 
-unset($_SESSION["event"]);
-?>
+<?php include("footer.php"); ?>

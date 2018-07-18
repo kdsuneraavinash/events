@@ -10,7 +10,7 @@
     </h4>
     <hr />
 
-    <form onsubmit="return validate();" id="event_form" action="post/post.php" method="post">
+    <form onsubmit="return validate();" id="event_form" action="post.php" method="post">
 
       <!-- Event Name Text -->
       <div class="form-group">
