@@ -15,7 +15,7 @@ $docID = $_GET["eventid"];
     });
 </script>
 
-<div class="container">
+<div class="container" id="showevent_content">
     <div class="card p-3 content">
         <h2>Submitted Form</h2>
         <hr />

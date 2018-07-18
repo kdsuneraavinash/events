@@ -108,6 +108,10 @@ Content - ids
   animation-play-state: paused;
 }
 
+#showevent_content {
+  display: none;
+}
+
 /*
 -----------------------------------------------
 Navigation bar
