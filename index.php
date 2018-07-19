@@ -5,10 +5,10 @@
     <h2>About</h2>
     <hr/>
     <div class="row">
-      <div class="col-sm" id="welcome_highlight">
+      <div class="col-lg" id="welcome_highlight">
         <img id="welcome_img" class="img-fluid rounded my-2 w-100" src="https://picsum.photos/400/300/?25" alt="Welcome Image" />
       </div>
-      <div class="col-sm text-justify" id="welcome_text">
+      <div class="col-lg text-justify" id="welcome_text">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum sollicitudin ipsum vitae ornare. Fusce tincidunt rhoncus
           efficitur. Sed tempus arcu eleifend dolor imperdiet eleifend. Mauris ac egestas mi. Nullam rhoncus, massa malesuada
@@ -32,7 +32,7 @@
     <h2>Our App</h2>
     <hr />
     <div class="row">
-      <div class="col-sm-4 text-justify">
+      <div class="col-lg-4 text-justify">
         <p>
           et varius ac, pharetra ut mauris. Nunc fermentum tincidunt neque vel blandit. Curabitur vel orci dolor. Mauris at risus eu
           metus egestas efficitur. Duis pulvinar leo sit amet dignissim hendrerit. Class aptent taciti sociosqu ad litora
@@ -41,7 +41,7 @@
           ultricies pharetra. Quisque rutrum leo ut ex dapibus, et malesuada leo vehicula. ​
         </p>
       </div>
-      <div class="col-sm-8">
+      <div class="col-lg-8">
         <div id="carousel" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carousel" data-slide-to="0" class="active"></li>

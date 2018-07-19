@@ -1,7 +1,7 @@
 function loadIntoEventView(docID) {
     $("#docID").text("Document ID: " + docID);
     $("#loadingDataModel").show();
-    $(".content").hide();
+    $("#showevent_content").hide();
     readDocument(docID, applyDataToViewData);
 }
 
@@ -41,9 +41,9 @@ function applyDataToViewData(doc) {
         var images = imagesHTML.join(" ");
         $("#images").html(images);
     }
-    
+
+    $("#showevent_content").show();
     $("#loadingDataModel").hide();
-    $(".content").show();
 }
 
 function defined(variable) {

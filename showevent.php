@@ -77,7 +77,7 @@ $docID = $_GET["eventid"];
 
         <hr />
 
-        <form action="index.php">
+        <form action="events.php">
             <div class="text-right">
                 <button type="submit" class="btn btn-primary">OK</button>
             </div>

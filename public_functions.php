@@ -17,17 +17,27 @@
 
   
   // Dynamically create Navigation Bar Item
-  function createNavBarItem($page, $title){
+  function createNavBarItem($pages, $title){
     global $currentPage;
-    $isActivePage = ($currentPage == $page);
-    $activeTag = $isActivePage ? "active" : "";
-    $link = $isActivePage ? "#" : "$page.php";
+    $activeTag = "";
+    $link = "{$pages[0]}.php";
+
+    for ($i = 0; $i < count($pages); $i++) {
+      $page = $pages[$i];
+      $isActivePage = ($currentPage == $page);
+      if ($isActivePage){
+        $activeTag = "active";
+        if ($i == 0) $link =  "#";
+        break;
+      }
+    }
     echo "
     <li class='nav-item $activeTag'>
       <a class='nav-link mx-2 px-2 my-1' href='$link'>$title
       </a>
     </li>
     ";
+    
   }
 
   function createAccountButton($icon, $modal, $text){
@@ -42,7 +52,7 @@
   }
 
   function createContactCard($name, $position, $email, $image){
-    echo "<div class='col-sm card'>
+    echo "<div class='col-lg card'>
           <img src='$image' alt='$name' class='img-fluid card-img-top rounded-circle img-thumbnail' />
           <h4 class='card-title'>$name</h4>
           <h6 class='card-subtitle mb-2 text-muted'>$position</h6>

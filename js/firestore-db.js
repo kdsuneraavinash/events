@@ -11,30 +11,34 @@ console.log("FIREBASE-DB: Firestore initialized");
 function addRecord(eventData, wrappedFunction) {
     firestore.collection("events").add(eventData)
         .then(function (docRef) {
-            console.log("FIREBASE-DB: Document written with ID: ", docRef.id);
+            console.log("FIREBASE-DB: Document written with ID ", docRef.id);
             if (wrappedFunction==null) return;
             // Pass doc to inner function
             wrappedFunction(docRef);
         })
         .catch(function (error) {
-            console.error("FIREBASE-DB: Error adding document: [" + error.code + "] " + error.message);
+            console.error("FIREBASE-DB: Error adding document [" + error.code + "] " + error.message);
         });
 }
 
 // Show all records
-function readAllData(wrappedFunction) {
+function readAllData(wrappedReadOneDocumentFunction, wrappedDoneFunction, wrappedErrorFunction) {
     console.log("FIREBASE-DB: Record read stream initialized");
     firestore.collection("events").get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
             // doc.data() is never undefined for query doc snapshots
             console.log("FIREBASE-DB: Document with " + doc.id + " ID read");
-            if (wrappedFunction==null) return;
+            if (wrappedReadOneDocumentFunction==null) return;
             // Pass doc to inner function
-            wrappedFunction(doc);
+            wrappedReadOneDocumentFunction(doc);
         });
+        if (wrappedDoneFunction==null) return;
+        wrappedDoneFunction();
     }).catch(function (error) {
-        console.error("FIREBASE-DB: Error reading document: [" + error.code + "] " + error.message);
+        console.error("FIREBASE-DB: Error reading document [" + error.code + "] " + error.message);
+        wrappedErrorFunction();
     });
+
 }
 
 function readDocument(docID, wrappedExistFunction, wrappedNotExistFunction, wrappedErrorFunction){
@@ -42,12 +46,12 @@ function readDocument(docID, wrappedExistFunction, wrappedNotExistFunction, wrap
     var docRef = firestore.collection("events").doc(docID);
     docRef.get().then(function(doc) {
         if (doc.exists) {
-            console.log("FIREBASE-DB: Document ID: " + doc.id + " read");
+            console.log("FIREBASE-DB: Document ID " + doc.id + " read");
             if (wrappedExistFunction==null) return;
             // Pass doc to inner function
             wrappedExistFunction(doc);
         } else {
-            console.log("FIREBASE-DB: No such document: " + doc.id);
+            console.log("FIREBASE-DB: No such document " + doc.id);
             if (wrappedNotExistFunction==null) return;
             wrappedNotExistFunction();
             // doc.data() will be undefined in this case

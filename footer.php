@@ -20,6 +20,12 @@
     }else if ($currentPage == "showevent"){
       echo '<script src="js/firestore-db.js"></script>
             <script src="js/event-view.js"></script>';
+    }else if ($currentPage == "events"){
+      echo '<script src="js/firestore-db.js"></script>
+            <script src="js/all-events.js"></script>';
+    }else if ($currentPage == "post"){
+      
+      echo '<script src="js/firestore-db.js"></script>';
     }
   ?>
   <script src="js/event_trigger.js"></script>

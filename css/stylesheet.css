@@ -72,6 +72,18 @@ form .btn {
   margin-bottom: 2em;
 }
 
+.event_image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  transition: .3s ease-in-out;
+  opacity: 1;
+}
+
+.event_image:hover {
+  opacity: 0.75;
+}
+
 /*
 -----------------------------------------------
 Content - ids
@@ -84,19 +96,23 @@ Content - ids
   margin: 5%;
 }
 
-#wrong_login{
+#wrong_login {
   display: none;
 }
 
-#user_login_image, #user_logout_image, #loading_data_image {
+#user_login_image,
+#user_logout_image,
+#loading_data_image {
   animation: pulse 1s linear infinite;
 }
 
-#user_login_image, #user_logout_image {
+#user_login_image,
+#user_logout_image {
   animation-play-state: paused;
 }
 
-#showevent_content {
+#showevent_content,
+#events_content {
   display: none;
 }
 
@@ -106,7 +122,8 @@ Navigation bar
 -----------------------------------------------
 */
 
-.navbar, .nav-link {
+.navbar,
+.nav-link {
   /* Navigationbar main properties */
   background-color: #103f54;
 }
@@ -129,7 +146,7 @@ Navigation bar
   color: #103f54 !important;
 }
 
-.navbar-brand{
+.navbar-brand {
   /* Navigationbar brand */
   font-size: 2em !important;
   color: #ffffff !important;

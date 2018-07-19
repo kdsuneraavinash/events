@@ -37,7 +37,7 @@
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-auth.js"></script>
-    <?php if ($currentPage == "showevent" || $currentPage == "post")
+    <?php if ($currentPage == "showevent" || $currentPage == "post" || $currentPage == "events")
       echo "<script src='https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js'></script>"; 
     ?>
     <script src="js/api-keys.js"></script>
@@ -61,9 +61,10 @@
         <ul class="navbar-nav mr-auto">
 
           <?php
-            createNavBarItem('index', 'Home');
-            createNavBarItem('addevent', 'Add Event');
-            createNavBarItem('about', 'About');
+            createNavBarItem(['index'], 'Home');
+            createNavBarItem(['events', 'showevent'], 'Events');
+            createNavBarItem(['addevent'], 'Add Event');
+            createNavBarItem(['about'], 'About');
           ?>
 
         </ul>
@@ -98,9 +99,9 @@
           include_once("model_forms/imageview.html"); 
           include_once("model_forms/loading_data.html"); 
           break;
+        case "events":
         case "post":
           include_once("model_forms/loading_data.html"); 
-          echo '<script src="js/firestore-db.js"></script>';
           break;
         case "addevent":
           include_once("model_forms/msgbox.html"); 

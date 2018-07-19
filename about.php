@@ -7,10 +7,10 @@
     <hr />
 
     <div class="row">
-      <div class="col-sm text-center">
+      <div class="col-lg text-center">
         <img id="logo_img" class="img-fluid" src="images/axys_logo.jpg" alt="Axys Logo" />
       </div>
-      <div class="col-sm jumbotron" style="background-color:white">
+      <div class="col-lg jumbotron" style="background-color:white">
         <p class="lead">
           <span class="fas fa-at small-icon"></span>teamaxys@gmail.com
           <br />
