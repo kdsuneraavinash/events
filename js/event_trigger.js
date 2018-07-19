@@ -34,6 +34,7 @@ function onLogoutButtonClicked() {
  */
 $("#isAllDay").click(onIsAllDayClicked);
 
+
 function onIsAllDayClicked() {
     // Collapse and uncollapse time select
     $("#collapseTimeSelect.collapse").collapse('toggle');

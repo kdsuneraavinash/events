@@ -1,5 +1,3 @@
-const firebase_auth = firebase.auth();
-
 // Sign out an user
 function signOut() {
     if (firebase_auth.currentUser) {

@@ -1,6 +1,6 @@
 <!-- TODO: Change page layout -->
 <?php 
-if (!isset($_GET["eventid"])) {
+if (!($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["eventid"]))) {
     // Not a get request
     // Redirect (header does not work)
     echo "<script>window.location.href = 'index.php';</script>";

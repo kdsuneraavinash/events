@@ -1,8 +1,3 @@
-const firestore = firebase.firestore();
-firestore.settings(settings);
-console.log("FIREBASE-DB: Firestore initialized");
-
-
 // Add a record to database
 function addRecord(eventData, wrappedFunction) {
     firestore.collection("events").add(eventData)
