@@ -17,11 +17,4 @@
     </div>
 </div>
 
-<div id="users-device-size">
-  <div id="1" class="d-none d-sm-block d-md-none"></div>
-  <div id="2" class="d-none d-md-block d-lg-none"></div>
-  <div id="3" class=".d-none d-lg-block d-xl-none"></div>
-  <div id="3" class="d-none d-xl-block"></div>
-</div>
-
 <?php include("footer.php"); ?>

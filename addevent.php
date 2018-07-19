@@ -93,7 +93,7 @@
       <!-- Event Image Uploader -->
       <div class="form-group uploader">
         <a href="#" id="uploadImages">Please wait...</a>
-        <small class="form-text text-muted" id="tagHelp">
+        <small class="form-text text-muted" id="imagesHelp">
           Upload images to use in app. First image will be used as Cover Image.
         </small>
         <div class="feature_thumb"></div>
@@ -103,9 +103,9 @@
 
       <div class="form-group">
         <label for="tags">Tags:</label>
-        <input type="text" class="form-control addevent" id="tags" name="tags" placeholder="sport gaming computer" aria-describedby="tagHelp"
+        <input type="text" class="form-control addevent" id="tags" name="tags" placeholder="sport gaming computer" aria-describedby="tagHelpTags"
         />
-        <small class="form-text text-muted" id="tagHelp">
+        <small class="form-text text-muted" id="tagHelpTags">
           Add tags here seperated by spaces. Tags will help others to find your event. Maximum no of tags available is 15. Other tags
           will be discarded.
         </small>

@@ -19,7 +19,7 @@ $docID = $_GET["eventid"];
     <div class="card p-3 content">
         <h2>Submitted Form</h2>
         <hr />
-        <h4 class="text-info" id="docID">
+        <h4 class="text-info" id="docID"> DOCID
         </h4>
         <hr />
         <table class="table table-striped table-bordered table-hover">
@@ -58,7 +58,6 @@ $docID = $_GET["eventid"];
                     <td>Is this all day?</td>
                     <td id="isAllDay">No</td>
                 </tr>
-                </tr>
                 <tr>
                     <td>Tags</td>
                     <td id="tags"></td>
@@ -69,8 +68,7 @@ $docID = $_GET["eventid"];
                 </tr>
                 <tr>
                     <td>User</td>
-                    <td id="user">
-                        </td>
+                    <td id="user"></td>
                 </tr>
             </tbody>
         </table>

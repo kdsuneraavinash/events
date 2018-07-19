@@ -45,10 +45,10 @@
   </head>
 
   <body>
-
     <noscript>
       <?php include("error/no-javascript.html");?>
     </noscript>
+
 
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark mb-4 px-4 justify-content-between fixed-top" id="navbar">

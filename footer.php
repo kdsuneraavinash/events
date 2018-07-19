@@ -1,6 +1,6 @@
 <!-- Footer -->
 <footer class="container-fluid text-center fixed-bottom py-2" id="footer">
-  © 2018 by teamaxys
+&#9400; 2018 by teamaxys
 </footer>
 
 <!-- TODO: Decide whether to add these to head -->
