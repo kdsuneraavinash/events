@@ -47,26 +47,8 @@
   <body>
 
     <noscript>
-      <!-- Hide other elements -->
-      <style type="text/css">
-        .content,
-        .account-button {
-          display: none;
-        }
-      </style>
-      <div class="container">
-        <div class="card p-3" style="background-color: #f7df1d;">
-          <h2>You need to have Javascript Enabled</h2>
-          <hr />
-          <p>You have disabled Javascript in your web browser. Java script enabled web browser is needed to view content properly.</p>
-          <p class="font-weight-bold">Sorry for the inconvienience.</p>
-          <div class="text-right">
-            <img src="images/no-javascript.jpg" class="img-fluid w-50 p-3" />
-          </div>
-        </div>
-      </div>
+      <?php include("error/no-javascript.html");?>
     </noscript>
-
 
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark mb-4 px-4 justify-content-between fixed-top" id="navbar">
@@ -105,17 +87,24 @@
     <!-- Include only necessary file depending on whether user is logged in or not -->
     <?php 
       if (!$loggedIn){
-        include("model_forms/login_form.php"); 
-        include("model_forms/signup_notice.php");
+        include_once("model_forms/login_form.html"); 
+        include_once("model_forms/signup_notice.html");
       }else{
-        include("model_forms/logout_form.php"); 
+        include_once("model_forms/logout_form.html"); 
       }
-      
-      if ($currentPage == "showevent") {
-        include("model_forms/imageview.php"); 
-        include("model_forms/loading_data.php"); 
-      }else if ($currentPage == "post") {
-        include("model_forms/loading_data.php"); 
-        echo '<script src="js/firestore-db.js"></script>';
+
+      switch ($currentPage){
+        case "showevent":
+          include_once("model_forms/imageview.html"); 
+          include_once("model_forms/loading_data.html"); 
+          break;
+        case "post":
+          include_once("model_forms/loading_data.html"); 
+          echo '<script src="js/firestore-db.js"></script>';
+          break;
+        case "addevent":
+          include_once("model_forms/msgbox.html"); 
+          break;
       }
+
     ?>

@@ -36,10 +36,6 @@ Content - Classes
 .submit_text {
   /* Submit text */
   display: none;
-  animation-name: submit-message-show;
-  animation-duration: 0.5s;
-  animation-iteration-count: 3;
-  animation-direction: alternate;
 }
 
 .card {
@@ -86,14 +82,6 @@ Content - ids
   /* About page logo */
   width: 50%;
   margin: 5%;
-}
-
-#invalid_text {
-  color: #b71c1c;
-}
-
-#valid_text {
-  color: #33691E;
 }
 
 #wrong_login{

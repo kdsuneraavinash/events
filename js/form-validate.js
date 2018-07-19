@@ -15,14 +15,10 @@ function validate() {
     var isAllDay = $("#isAllDay");
     var formControls = $(".form-control.addevent");
     var timeControls = $(".form-control.addevent-isallday");
-    var validText = $("#valid_text");
-    var invalidText = $("#invalid_text");
 
     // Hide all error messages
     formControls.removeClass("is-invalid");
     timeControls.removeClass("is-invalid");
-    validText.css("display", "none");
-    invalidText.css("display", "none");
 
     // Check for empty field
     if (!validateEmptyFields(formControls)) return false;
@@ -40,16 +36,15 @@ function validate() {
     if (!validateDateFields()) return false;
 
     // Check for invalid no of tags
-    if (!validateTags(tags, invalidText)) return false;
+    if (!validateTags(tags)) return false;
 
     // Validated
-    validText.css("display", "inline");
     console.log("Form validated");
 
     return true;
     //return true;
   } catch (error) {
-    console.error(error.description);
+    console.error(error.message);
     return false;
   }
 }
@@ -64,7 +59,7 @@ function validateEmptyFields(controlsArray) {
     if ($(element).val() === "") {
       $(element).addClass("is-invalid");
       isEmptyField = true;
-      setErrorMessage("Empty Field");
+      setErrorMessage("You have to fill all of the fields.", "Empty Field");
       return false;
     }
   });
@@ -80,7 +75,7 @@ function validateNoImages() {
   var urlFields = $('input[name^="uploaded_images"]');
 
   var isValid = (urlFields.length != 0);
-  if (!isValid) setErrorMessage("No Images Selected");
+  if (!isValid) setErrorMessage("Select at least one image to be shown.", "No Images Selected");
   return isValid;
 }
 
@@ -104,7 +99,7 @@ function validateDateFields() {
   if (today > endDateVal) {
     // Today Greater than End Date
     $(endDate).addClass("is-invalid");
-    setErrorMessage("Invalid Date : Event cannot have already ended.");
+    setErrorMessage("Event cannot have already ended. Please check your end date.", "Invalid Date");
     return false;
   }
 
@@ -114,7 +109,7 @@ function validateDateFields() {
     endDate.addClass("is-invalid");
     startTime.addClass("is-invalid");
     endTime.addClass("is-invalid");
-    setErrorMessage("Invalid Date : Event should end after starting date.");
+    setErrorMessage("Event should end after starting date. Please check your end date and start date.", "Invalid Date");
     return false;
   }
 
@@ -131,7 +126,7 @@ function validateTags() {
 
   if (tags.val().split(" ").length > 15) {
     tags.addClass("is-invalid");
-    setErrorMessage("Invalid Tags : No of Tags exceed 15.");
+    setErrorMessage("No of Tags exceed 15. Remove unnecessary tags.", "Invalid Tags");
     return false;
   }
 
@@ -139,11 +134,11 @@ function validateTags() {
 }
 
 
-/**
+/*
  * Helper function to change submitted text
  */
-function setErrorMessage(text) {
-  var element = $("#invalid_text");
-  element.find(".text").text(text);
-  element.css("display", "inline");
+function setErrorMessage(text, title) {
+  $("#msgbox_title").text(title);
+  $("#msgbox_text").text(text);
+  $("#msgbox").modal("show");
 }
