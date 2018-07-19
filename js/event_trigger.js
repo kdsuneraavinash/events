@@ -1,6 +1,3 @@
-// DEPENDANCY: JQuery
-// DEPENDANCY: firebase-auth
-
 /*
  ************************************************************
  * SIGN IN BUTTON

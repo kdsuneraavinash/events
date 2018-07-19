@@ -1,3 +1,4 @@
+// Load the docID into page - called after GET
 function loadIntoEventView(docID) {
     $("#docID").text("Document ID: " + docID);
     $("#loadingDataModel").show();
@@ -5,6 +6,10 @@ function loadIntoEventView(docID) {
     readDocument(docID, applyDataToViewData);
 }
 
+// Apply data to the page
+// Every field is checked before using
+// TODO: Add a good way to format date and time
+// TODO: Add a good way to view images
 function applyDataToViewData(doc) {
     var data = doc.data();
     if (defined(data.eventName)) $("#eventName").text(data.eventName);

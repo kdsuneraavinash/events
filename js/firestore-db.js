@@ -1,7 +1,3 @@
-// DEPENDANCY: firebase-app-google
-// DEPENDANCY: firebase-store-google
-// DEPENDANCY: firebase-init
-
 const firestore = firebase.firestore();
 firestore.settings(settings);
 console.log("FIREBASE-DB: Firestore initialized");

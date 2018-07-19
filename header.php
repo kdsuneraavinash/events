@@ -36,12 +36,23 @@
     <!-- Firebase - Must come before all script tags-->
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+    <!-- Firebase App -->
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-auth.js"></script>
-    <?php if ($currentPage == "showevent" || $currentPage == "post" || $currentPage == "events")
-      echo "<script src='https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js'></script>"; 
-    ?>
+    <!-- Firebase Auth -->
     <script src="js/api-keys.js"></script>
+    <!-- API Keys [Not Sensitive Data] -->
     <script src="js/firebase-init.js"></script>
+    <!-- Firebase initialize -->
+    <script src="js/firebase-auth.js"></script>
+    <!-- Firebase auth functions -->
+    <?php 
+      // Include firestore modules
+      if ($currentPage == "showevent" || $currentPage == "post" || $currentPage == "events"){
+        echo "<script src='https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js'></script>"; // Firebase firestore
+        echo '<script src="js/firestore-db.js"></script>'; // Firebase firestore functions
+      }  
+    ?>
+
   </head>
 
   <body>
@@ -96,7 +107,7 @@
 
       switch ($currentPage){
         case "showevent":
-          include_once("model_forms/imageview.html"); 
+          include_once("model_forms/image_view.html"); 
           include_once("model_forms/loading_data.html"); 
           break;
         case "events":

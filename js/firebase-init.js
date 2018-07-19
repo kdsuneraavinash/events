@@ -1,7 +1,3 @@
-// DEPENDANCY: apikeys
-// DEPENDANCY: firebase-app-google
-
-
 // Initialize Firebase
 const settings = {
     // Fix to giving a deprecation warning

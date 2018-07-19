@@ -17,16 +17,20 @@
 
   
   // Dynamically create Navigation Bar Item
+  // Give pages as arrays, First element will be the page to redirect
+  // Button will be highlighted for other pages as well
   function createNavBarItem($pages, $title){
     global $currentPage;
-    $activeTag = "";
-    $link = "{$pages[0]}.php";
+    $activeTag = ""; // Default active tag
+    $link = "{$pages[0]}.php"; // Default navigation page
 
     for ($i = 0; $i < count($pages); $i++) {
       $page = $pages[$i];
       $isActivePage = ($currentPage == $page);
       if ($isActivePage){
+        // This is active page. Add active class
         $activeTag = "active";
+        // Make link empty iff on the main page
         if ($i == 0) $link =  "#";
         break;
       }
@@ -40,6 +44,7 @@
     
   }
 
+  // Dynamically create Signup, Signin, Signout buttons
   function createAccountButton($icon, $modal, $text){
     echo "
       <li class='mx-1'>
@@ -51,6 +56,7 @@
     ";
   }
 
+  // Dynamically create about card
   function createContactCard($name, $position, $email, $image){
     echo "<div class='col-lg card'>
           <img src='$image' alt='$name' class='img-fluid card-img-top rounded-circle img-thumbnail' />
@@ -60,6 +66,7 @@
         </div>";
     }
 
+    // Dynamically create carousal item
     function createCarousalItem($src, $caption, $description, $activeTag){
       echo "
       <div class='carousel-item $activeTag'>

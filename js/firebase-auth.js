@@ -1,8 +1,3 @@
-// DEPENDANCY: JQuery
-// DEPENDANCY: firebase-app-google
-// DEPENDANCY: firebase-auth-google
-// DEPENDANCY: firebase-init
-
 const firebase_auth = firebase.auth();
 
 // Sign out an user

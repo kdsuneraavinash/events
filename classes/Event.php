@@ -1,4 +1,5 @@
 <?php
+// Event class to format event data
 class Event{
     public $eventName = null;
     public $organize = null;

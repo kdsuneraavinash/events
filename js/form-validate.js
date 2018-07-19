@@ -1,6 +1,3 @@
-// DEPENDANCY: jQuery
-// DEPENDANCY: firebase-auth
-
 /**
  * Validate for empty fields and invalid fields
  */
