@@ -27,6 +27,6 @@ function readNewDocument(doc) {
 }
 
 function doneReading() {
-    $("#loadingDataModel").hide();
     $("#events_content").show();
+    $("#loadingDataModel").hide();
 }
