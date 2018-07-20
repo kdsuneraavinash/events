@@ -58,7 +58,7 @@
 
   // Dynamically create about card
   function createContactCard($name, $position, $email, $image){
-    echo "<div class='col-lg card'>
+    echo "<div class='col-lg card slideanim'>
           <img src='$image' alt='$name' class='img-fluid card-img-top rounded-circle img-thumbnail' />
           <h4 class='card-title'>$name</h4>
           <h6 class='card-subtitle mb-2 text-muted'>$position</h6>

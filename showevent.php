@@ -95,18 +95,6 @@
     </div>
 
     <script>
-        // Taken from https://www.w3schools.com/bootstrap/bootstrap_theme_company.asp
-        $(window).scroll(function () {
-            $(".slideanim").each(function () {
-                var pos = $(this).offset().top;
-
-                var winTop = $(window).scrollTop();
-                if (pos < winTop + 600) {
-                    $(this).addClass("slide");
-                }
-            });
-        });
-
         $(document).ready(function () {
             loadIntoEventView('<?php echo $docID;?>');
         });

@@ -109,6 +109,7 @@ Title and Front Page
 }
 
 #back {
+    z-index: 9999;
     padding: 20px;
     position: fixed;
     background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));

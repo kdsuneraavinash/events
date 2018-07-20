@@ -5,30 +5,52 @@ Animations
 */
 
 /* Content Load Animation */
-@keyframes content-load{
-  from{
+
+@keyframes content-load {
+  from {
     opacity: 0;
     margin-top: 20%;
-  }to{
+  }
+  to {
     opacity: 1;
     margin-top: 0px;
   }
 }
 
-
 /* Loading Animation */
+
 @keyframes pulse {
   0% {
-   transform: scale(1, 1);
+    transform: scale(1, 1);
   }
-
   50% {
-   transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
   }
-
   100% {
-  transform: scale(1, 1);
+    transform: scale(1, 1);
   }
+}
+
+
+@keyframes slide {
+  0% {
+      opacity: 0;
+      transform: translateY(70%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0%);
+  }
+}
+
+.slideanim {
+  visibility: hidden;
+}
+
+.slide {
+  animation-name: slide;
+  animation-duration: 1s;
+  visibility: visible;
 }
 
 /*
@@ -45,7 +67,7 @@ html {
 body {
   padding-top: 120px;
   /* Background image and custom font */
-  background-image: url("../images/background.jpg");
+  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

@@ -16,7 +16,7 @@ var addedDocuments = 0;
 // Wrapped by firestore all event load function
 function readNewDocument(doc) {
     var data = doc.data();
-    card = "<div class='col-lg card'>" +
+    card = "<div class='col-lg card slideanim'>" +
         "<div class='event_image mb-2' style='background-image: url(" + data.images[0] + ");' "+
         "onclick=\"location.href='showevent.php?eventid=" + doc.id + "';\" >" +
         "</div>" +
@@ -39,4 +39,5 @@ function readNewDocument(doc) {
 function doneReading() {
     $("#events_content").show();
     $("#loadingDataModel").hide();
+    slideAnimation(1000);
 }

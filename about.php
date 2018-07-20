@@ -6,7 +6,7 @@
     <h2 class="card-title text-center">About Us</h2>
     <hr />
 
-    <div class="row">
+    <div class="row slideanim">
       <div class="col-lg text-center">
         <img id="logo_img" class="img-fluid" src="images/axys_logo.jpg" alt="Axys Logo" />
       </div>
@@ -22,9 +22,12 @@
       </div>
     </div>
 
-    <hr />
-    <h2 class="card-title text-center">Team Members</h2>
-    <hr />
+    <div class="slideanim">
+      <hr />
+      <h2 class="card-title text-center">Team Members</h2>
+      <hr />
+    </div>
+
 
     <div class="row">
       <?php

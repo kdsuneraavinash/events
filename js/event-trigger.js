@@ -52,3 +52,30 @@ function onImagePreviewClicked(elem) {
     $("#imagelink").attr('href', $(elem).prop('value'));
     console.log("#imagebox property set to " + $(elem).prop('value'));
 }
+
+/*
+ ************************************************************
+ * SLIDE IN ANIMATION
+ ************************************************************
+ */
+// Taken from https://www.w3schools.com/bootstrap/bootstrap_theme_company.asp
+$(window).scroll(function () {
+    slideAnimation(600);
+});
+
+function slideAnimation(triggerVal) {
+    $(".slideanim").each(function () {
+        var pos = $(this).offset().top;
+
+        var winTop = $(window).scrollTop();
+        if (pos < winTop + triggerVal) {
+            $(this).addClass("slide");
+        }
+    });
+}
+
+$(document).ready(
+    function () {
+        slideAnimation(1000);
+    }
+);
