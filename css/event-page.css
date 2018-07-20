@@ -178,6 +178,7 @@ Description
     padding: 1em;
     padding: 2em;
     color: #fff;
+    word-wrap: break-word;
 }
 
 /* 

@@ -26,6 +26,8 @@ function validate() {
       // Check for invalid date field
       if (!validateEmptyFields(timeControls)) return false;
     } else {
+      var startTime = $("#startTime");
+      var endTime = $("#endTime");
       // Change time fields
       startTime.val("00:00");
       endTime.val("23:59");

@@ -12,10 +12,15 @@ function loadIntoEventView(docID) {
 function applyDataToViewData(doc) {
     var data = doc.data();
     if (defined(data.eventName)) $("#eventName").text(data.eventName);
-    if (defined(data.description)) $("#description").text(data.description);
     if (defined(data.organizer)) $("#organizer").text(data.organizer);
     if (defined(data.location)) $("#location").text(data.location);
 
+
+    if (defined(data.description)) {
+        var text = data.description;
+        text = text.replace(/\r?\n/g, '<br />');
+        $("#description").html(text);
+    }
 
     if (defined(data.start)) {
         $("#startDate").text(formatDate(data.start.toDate()));
@@ -71,6 +76,6 @@ function formatDate(dateObj) {
     month[9] = "October";
     month[10] = "November";
     month[11] = "December";
-    date = date[1] + " " + month[date[0] - 1] + " " +  date[2];
+    date = date[1] + " " + month[date[0] - 1] + " " + date[2];
     return date
 }

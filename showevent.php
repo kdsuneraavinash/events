@@ -81,8 +81,8 @@
             </div>
         </div>
 
-        <div class="row text-center slideanim">
-            <p class="lead text-justify" id="description">
+        <div class="row text-justify slideanim">
+            <p class="lead w-100" id="description">
                 <p>
         </div>
 
