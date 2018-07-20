@@ -16,8 +16,8 @@
             </div>
         </div>
         <div>
-            <hr>
-            <p class="text-center"><small>No more Events to see. <a href="events.php">Click here</a> to refresh the page.
+            <hr />
+            <p class="text-center"><small>No more Events to see. <a href="events.php">Click here</a> to refresh the page.</small></p>
         </div>
     </div>
 </div>
