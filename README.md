@@ -57,16 +57,16 @@ We target most user with mobile phones so we needed our website to be responsive
 
 ## Adding an event
 
-When adding an the sequence of events is,
+When adding an event the sequence of events is,
 
 1. Checked if user is logged in, if not terminate.
 2. Validate form data.
-3. Make a `POST` to post.php with form information. This page will show a loading screen and send data to Firebase Firestore to be written to the database.
-4. Once that operation is succeeded user is redirected to showevent.php with a `GET` request to show the event.
+3. Make a `POST` to `post.php` with form information. This page will show a loading screen and send data to Firebase Firestore to be written to the database.
+4. Once that operation is succeeded user is redirected to `showevent.php` with a `GET` request to show the event.
 
 ## Showing an Event
 
-This is done by showevent.php and is separated from rest of website. Design used is also different and this is the only page which uses a custom header (as opposed to other pages including header.php) This page shows a event when it receives a get request with eventid. *showevent.php?eventid=52WKamujiDM0ZNuMYhqm* will show event with id `52WKamujiDM0ZNuMYhqm`. This uses a separate request from Firestore and this will cause the page to reload data already loaded in events.php and this needs to be FIXED.
+This is done by `showevent.php` and is separated from rest of website. Design used is also different and this is the only page which uses a custom header (as opposed to other pages including `header.php`) This page shows a event when it receives a get request with eventid. `*showevent.php?eventid=52WKamujiDM0ZNuMYhqm*` will show event with id `52WKamujiDM0ZNuMYhqm`. This uses a separate request from Firestore and this will cause the page to reload data already loaded in events.php and this needs to be fixed.
 
 ## Security
 
@@ -80,11 +80,11 @@ User authorization is done by Firebase by `javaScript`. For the sake of testing 
 
 Once Firebase-Auth initializes it will fire `onAuthStateChanged` event. Since user is not logged in it will identify user as Signed Out.
 
-Since user is not logged in, `javaScript` then sends a signal back to the server with `AJAX`. Server then checks `_SESSION` variables. If it indicates user is not logged in (expecting result), it returns with `session-not-present `. Authorization process ends here.
+Since user is not logged in, `javaScript` then sends a signal back to the server with `AJAX`. Server then checks `_SESSION` variables. If it indicates user is not logged in (expecting result), it returns with `session-not-present`. Authorization process ends here.
 
-However for some reason `_SESSION` indicates user is logged in (unexpecting) , server will delete session information and return `session-deleted-refresh `  message. Then `javaScript` will refresh the page. (Since server thought that the user was logged in when it sent the page, page layout might be different from what should be shown)
+However for some reason `_SESSION` indicates user is logged in (unexpecting) , server will delete session information and return `session-deleted-refresh`  message. Then `javaScript` will refresh the page. (Since server thought that the user was logged in when it sent the page, page layout might be different from what should be shown)
 
-Once the page refreshes, it will then again start the process. However now the server will certainly return `session-not-present `. So Authorization is ended.
+Once the page refreshes, it will then again start the process. However now the server will certainly return `session-not-present`. So Authorization is ended.
 
 ### User logs in
 
@@ -94,11 +94,11 @@ Once the page refreshes, it will then again start the process. However now the s
 
 **In this process user information is sent to `user_login/login.php` as a `POST`.**
 
-This will fire a `onAuthStateChanged` event and `javaScript` will send email, uid and display name (not implemented yet). 
+This will fire a `onAuthStateChanged` event and `javaScript` will send email, uid and display name (not implemented yet).
 
-Server will then check whether these info is  already present in `_SESSION`. If present it means user was already signed in. This will not happen if user just logged in. But when user refreshes a page when logged in, this will happen. If this happens server will send `session-already-set ` message. Authorization process ends here.
+Server will then check whether these info is  already present in `_SESSION`. If present it means user was already signed in. This will not happen if user just logged in. But when user refreshes a page when logged in, this will happen. If this happens server will send `session-already-set` message. Authorization process ends here.
 
-However `_SESSION` does not contain this info **OR** uid in `_SESSION` is different from uid sent, then Server will create add new data to `_SESSION` and send `session-set-refresh ` message. `javaScript` will refresh the page and this who;e process happens again. But now Server will return `session-already-set` message so Authorization will end here.
+However `_SESSION` does not contain this info **OR** uid in `_SESSION` is different from uid sent, then Server will create add new data to `_SESSION` and send `session-set-refresh` message. `javaScript` will refresh the page and this who;e process happens again. But now Server will return `session-already-set` message so Authorization will end here.
 
 **This process might be flawed, please inform if change needs to happen.** This was just a process I thought of so this would certainly be flawed. So feedback on this regard is highly appreciated.
 
@@ -108,7 +108,7 @@ Since we ask users to include images when creating a event, we have to store the
 
 ## Firebase Integration
 
-[Firebase](https://firebase.google.com) Firestore and Firebase Auth was largely used in this project. 
+[Firebase](https://firebase.google.com) Firestore and Firebase Auth was largely used in this project.
 
 Each event would be stored in the Firestore in a Document named `events`.  Currently `mora-events-database-teamaxys` database is used to store data.  *API Keys are not included in this repository*. Document security is,
 
@@ -123,9 +123,9 @@ service cloud.firestore {
 }
 ```
 
-Anyone can read data but to write data, user must be signed in. **However these rules are used only in development and will be tightened afterwards.** 
+Anyone can read data but to write data, user must be signed in. **However these rules are used only in development and will be tightened afterwards.**
 
-Authorization is done by Firebase-Auth and accounts are created by teamaxys. **Website does not allow creating accounts.** Instead users are encouraged to send email to teamaxys to create a website for them. The reason is that all accounts have to verified accounts or someone can spam this website and app. When authorizing this does not store any additional information on users. Only `uid`, `email` and `password` is stored. 
+Authorization is done by Firebase-Auth and accounts are created by teamaxys. **Website does not allow creating accounts.** Instead users are encouraged to send email to teamaxys to create a website for them. The reason is that all accounts have to verified accounts or someone can spam this website and app. When authorizing this does not store any additional information on users. Only `uid`, `email` and `password` is stored.  
 
 ## Developer Console
 
