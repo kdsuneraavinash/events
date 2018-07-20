@@ -30,7 +30,7 @@
           break;
       }
 ?>
-  <script src="js/event_trigger.js"></script>
+  <script src="js/event-trigger.js"></script>
 
   </body>
 

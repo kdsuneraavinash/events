@@ -1,6 +1,5 @@
 // Load the docID into page - called after GET
 function loadIntoEventView(docID) {
-    $("#docID").text("Document ID: " + docID);
     $("#loadingDataModel").show();
     $("#showevent_content").hide();
     readDocument(docID, applyDataToViewData);
@@ -17,31 +16,25 @@ function applyDataToViewData(doc) {
     if (defined(data.organizer)) $("#organizer").text(data.organizer);
     if (defined(data.location)) $("#location").text(data.location);
 
-    if (defined(data.user)) $("#user").text(data.user);
 
-    if (defined(data.start) && defined(data.end)) $("#start").text(data.start.toDate());
-    if (defined(data.start) && defined(data.end)) $("#end").text(data.end.toDate());
-    if (defined(data.isAllDay)) $("#isAllDay").text(data.isAllDay ? "Yes" : "No");
-
-    if (defined(data.tags)) {
-        var tagsHTML = [];
-        for (i = 0; i < data.tags.length; i++) {
-            var item = "<kbd>" + data.tags[i] + "</kbd>"
-            tagsHTML.push(item);
-        }
-        var tags = tagsHTML.join(" ");
-        $("#tags").html(tags);
+    if (defined(data.start)) {
+        $("#startDate").text(formatDate(data.start.toDate()));
+        if (!data.isAllDay) $("#startTime").text(formatTime(data.start.toDate()));
+    }
+    if (defined(data.end)) {
+        $("#endDate").text(formatDate(data.end.toDate()));
+        if (!data.isAllDay) $("#endTime").text(formatTime(data.end.toDate()));
     }
 
     if (defined(data.images)) {
+        $('body').css('background-image', "linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(" + data.images[0] + ")");
+
         var imagesHTML = [];
         for (i = 0; i < data.images.length; i++) {
-            var item = " <button type='button' class='btn btn-outline-dark m-1 image-preview'" +
-                " value=" + data.images[i] + " onClick='onImagePreviewClicked(this)'  data-toggle='modal' data-target='#imageView'>" +
-                ((i == 0) ? "Cover Image" : ("Image " + i)) +
-                "</button>";
+            var item = '<div class="col-md-4 gallery slideanim" style="background-image:url(' + data.images[i] + ');" ' +
+                'onclick="window.open(\'' + data.images[i] + '\',\'_blank\');">' +
+                '</div>'
             imagesHTML.push(item);
-            data.tags[i] = "<kbd>" + data.tags[i] + "</kbd>";
         }
         var images = imagesHTML.join(" ");
         $("#images").html(images);
@@ -53,4 +46,31 @@ function applyDataToViewData(doc) {
 
 function defined(variable) {
     return (typeof variable !== 'undefined');
+}
+
+function formatTime(timeObj) {
+    var time = timeObj.toLocaleTimeString();
+    time = time.split(':');
+    var ampm = time[2].split(' ')[1];
+    return time[0] + ":" + time[1] + " " + ampm;
+}
+
+function formatDate(dateObj) {
+    var date = dateObj.toLocaleDateString();
+    date = date.split('/');
+    var month = new Array();
+    month[0] = "January";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
+    date = date[1] + " " + month[date[0] - 1] + " " +  date[2];
+    return date
 }

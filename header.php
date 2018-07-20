@@ -15,6 +15,9 @@
     <!-- Make mobile friendly-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mora Events</title>
+
+    <!-- TODO: Optimize adding stylesheets and scripts -->
+
     <!-- Add icon -->
     <link rel="icon" href="https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/calendar-512.png">
 
@@ -27,9 +30,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG"
       crossorigin="anonymous">
     <!-- Add Stylesheets -->
-    <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/stylesheet.css" />
-
+    
     <!-- JQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>

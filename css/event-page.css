@@ -1,0 +1,208 @@
+/*
+-----------------------------------------------
+Animations
+-----------------------------------------------
+*/
+
+/* Content Load Animation */
+
+@keyframes move-up-down {
+    from {
+        top: 85vh;
+    }
+    to {
+        top: 90vh;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Loading Animation */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+/* 
+-----------------------------------------------
+Main
+-----------------------------------------------
+*/
+
+body {
+    overflow-x: hidden;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/background.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#loading_data_image {
+    animation: pulse 1s linear infinite;
+}
+
+.slideanim {
+    visibility: hidden;
+}
+
+.slide {
+    animation-name: slide;
+    animation-duration: 1s;
+    visibility: visible;
+}
+
+/* 
+-----------------------------------------------
+Title and Front Page
+-----------------------------------------------
+*/
+
+#front-caption {
+    color: #ffffff;
+    width: 100vw;
+    height: 100vh;
+}
+
+.caption {
+    position: relative;
+    top: 40%;
+    padding: 20px;
+    font-size: 4em;
+    letter-spacing: 2px;
+}
+
+.arrows {
+    position: absolute;
+    top: 85vh;
+    left: 48%;
+    animation-name: move-up-down;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    font-size: 4em;
+}
+
+#back {
+    padding: 20px;
+    position: fixed;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+@media only screen and (max-width: 800px) {
+    .caption {
+        font-size: 2em;
+        top: 25%;
+    }
+    .arrows {
+        font-size: 2em;
+    }
+}
+
+/* 
+-----------------------------------------------
+Start and End Times
+-----------------------------------------------
+*/
+
+#boxes h2 {
+    color: #fff;
+    padding: 0.2em;
+    font-size: 1.8em;
+}
+
+#boxes i {
+    padding: 0.2em;
+    color: #fff;
+    font-size: 6em;
+}
+
+.start-time {
+    background-color: #005c9d66;
+}
+
+.end-time {
+    background-color: #0392cc66;
+}
+
+.location {
+    background-color: #00b1bb66;
+}
+
+.organizer {
+    background-color: #26408b66;
+}
+
+@media only screen and (max-width: 800px) {
+    #boxes i {
+        font-size: 3em;
+    }
+    #boxes h2 {
+        font-size: 1.2em;
+    }
+}
+
+/* 
+-----------------------------------------------
+Description
+-----------------------------------------------
+*/
+
+.lead {
+    padding: 1em;
+    padding: 2em;
+    color: #fff;
+}
+
+/* 
+-----------------------------------------------
+Images
+-----------------------------------------------
+*/
+
+.gallery {
+    background-size: cover;
+    height: 300px;
+    background-repeat: no-repeat;
+    opacity: 1;
+}
+
+.gallery:hover {
+    opacity: 0.6;
+}
+
+/* 
+-----------------------------------------------
+Footer
+-----------------------------------------------
+*/
+
+footer {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+}
