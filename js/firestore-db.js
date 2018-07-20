@@ -57,9 +57,10 @@ function readDocument(docID, wrappedExistFunction, wrappedNotExistFunction, wrap
     });
 }
 
-function defaultFirestoreErrorHandler(){
-    alert("Sorry but we couldn't retrieve needed information from the server. Unstable network connection might be the reason.\n" + 
-        "Please check your network connection\n" + 
-        "We will now redirect you to the Home page");
-        window.location.href = 'index.php';
+function defaultFirestoreErrorHandler() {
+    alert("Sorry but we couldn't retrieve needed information from the server.\n" +
+        "Unstable network connection might be the reason.\n" +
+        "Please check your network connection.\n\n" +
+        "We will now refresh the page.");
+    window.location.reload(false);
 }

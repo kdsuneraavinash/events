@@ -89,7 +89,7 @@
         <div class="row m-2" id="images">
         </div>
 
-        <footer class="container-fluid text-center py-2 bg-white mt-5" id="footer">
+        <footer class="container-fluid text-center py-2 bg-white" id="footer">
             &#9400; 2018 by teamaxys
         </footer>
     </div>
