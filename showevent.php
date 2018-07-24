@@ -43,7 +43,7 @@
         <?php include("error/no-javascript.html");?>
     </noscript>
 
-
+    <div class="blur"></div>
 
     <div id="showevent_content">
 
@@ -58,6 +58,11 @@
             <div class="caption text-center" id="eventName">
             </div>
             <span class="fas fa-angle-double-down arrows"></span>
+        </div>
+        
+        <div class="row text-justify slideanim" id="description-div">
+            <p class="lead w-100" id="description">
+                <p>
         </div>
 
         <div id="boxes" class="row text-center">
@@ -81,15 +86,13 @@
             </div>
         </div>
 
-        <div class="row text-justify slideanim">
-            <p class="lead w-100" id="description">
-                <p>
+        <div class="row" id="images">
         </div>
 
-        <div class="row m-2" id="images">
+        <div class="filler">
         </div>
 
-        <footer class="container-fluid text-center py-2 bg-white" id="footer">
+        <footer class="container-fluid text-center py-2" id="footer">
             &#9400; 2018 by teamaxys
         </footer>
     </div>
