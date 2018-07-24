@@ -7,7 +7,7 @@ This app and site is created by Team Axys.
 
 ![Index Page](/readme/ss_index.jpg)
 
-Index page has some placeholder text and containers that we intend to fill later.
+![Index Page](/readme/ss_index2.png)
 
 ------
 
