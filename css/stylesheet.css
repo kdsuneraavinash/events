@@ -31,15 +31,14 @@ Animations
   }
 }
 
-
 @keyframes slide {
   0% {
-      opacity: 0;
-      transform: translateY(70%);
+    opacity: 0;
+    transform: translateY(70%);
   }
   100% {
-      opacity: 1;
-      transform: translateY(0%);
+    opacity: 1;
+    transform: translateY(0%);
   }
 }
 
@@ -62,6 +61,7 @@ Content - Main Tags
 html {
   /* Show a Y scroll bar always to avoid navigation bar flikr */
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 body {
@@ -73,7 +73,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   /* Bottom margin to stop content from being hidden by footer */
-  padding-bottom: 120px;
+  padding-bottom: 45px;
 }
 
 /*
@@ -141,6 +141,103 @@ form .btn {
 
 /*
 -----------------------------------------------
+Index Page
+-----------------------------------------------
+*/
+
+.index-headimage {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://i1.wp.com/www.uplist.lk/wp-content/uploads/2018/01/university-of-moratuwa-graduate.jpg?ssl=1");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin-top: -150px;
+  min-height: 100vh;
+}
+
+.index-desc1,
+.index-desc2,
+.index-desc3,
+.index-desc4 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.index-desc1 {
+  background-color: #01131a;
+}
+
+.index-desc2 {
+  background-image: url("https://futuregenblog.files.wordpress.com/2015/09/1656261_444123082383146_142159052_n.jpg");
+  min-height: 30vh;
+  background-attachment: scroll;
+}
+
+.index-desc3 {
+  background-image: linear-gradient( #263238aa, #263238aa), url("https://news-cdn.softpedia.com/images/news2/Keyboard-Hotkeys-You-Need-For-Comfortable-Navigation-478884-3.jpg");
+  background-attachment: scroll;
+}
+
+.index-caption {
+  position: relative;
+  top: 35vh;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.index-caption h1 {
+  font-size: 2em;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.index-desc {
+  font-size: 1.5em;
+  padding: 10%;
+  letter-spacing: 2px;
+  font-weight: lighter;
+}
+
+#download {
+  background-color: #01131a;
+}
+
+#services {
+  background-color: #ffffffdd;
+  padding: 50px;
+}
+
+#services .row div div{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  .index-desc {
+    font-size: 1em;
+  }
+  .index-caption {
+    font-size: 1em;
+  }
+  .index-caption h1 {
+    font-size: 1.5em;
+  }
+  
+}
+
+
+.logo {
+  color: #b71c1c;
+  font-size: 5em;
+  margin: 20px;
+}
+
+/*
+-----------------------------------------------
 Content - ids
 -----------------------------------------------
 */
@@ -177,34 +274,14 @@ Navigation bar
 -----------------------------------------------
 */
 
-.navbar,
-.nav-link {
+.navbar {
   /* Navigationbar main properties */
-  background-color: #103f54;
-}
-
-.navbar-nav .active .nav-link {
-  /* Navigationbar links - active */
-  background-color: #fff !important;
-  color: #b71c1c !important;
-}
-
-.nav-link {
-  /* Navigationbar links */
-  transition: background-color 0.3s ease-in;
-  color: #ffffff !important;
-}
-
-.nav-link:hover {
-  /* Navigationbar links - hover */
-  background-color: #fff !important;
-  color: #103f54 !important;
+  background-color: #103f54ee;
 }
 
 .navbar-brand {
   /* Navigationbar brand */
   font-size: 2em !important;
-  color: #ffffff !important;
 }
 
 /*
@@ -216,4 +293,5 @@ Footer
 #footer {
   background-color: #103f54;
   color: #fff;
+  height: 45px
 }

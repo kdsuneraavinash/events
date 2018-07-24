@@ -1,75 +1,93 @@
 <?php include("header.php"); ?>
 
-<div class="container">
-  <div class="card p-3 content">
-    <h2>About</h2>
-    <hr/>
-    <div class="row">
-      <div class="col-lg" id="welcome_highlight">
-        <img id="welcome_img" class="img-fluid rounded my-2 w-100" src="https://picsum.photos/400/300/?25" alt="Welcome Image" />
+<div class="content">
+
+  <div class="container-fluid index-headimage">
+    <div class="text-center text-white index-caption slideanim">
+      <h1>Mora Events </h1>
+      <br/> Struggling to keep a track of your favourite events
+      <br/>happening at UOM?
+      <br/>Let us guide you through....
+      <br/>
+      <br/>
+      <button id="getstarted" class="btn btn-primary">Get Started</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="index-desc1 col-md text-justify text-white">
+      <div class="index-desc slideanim">
+        Over the years University of Moratuwa has produced a number of outstanding professionals who have made an immense contribution
+        to the nation. UOM further extends its service to the society by offering a wide rage extra curricular activities
+        and events for its under graduates which would ultimately build well balanced personalities.
       </div>
-      <div class="col-lg text-justify" id="welcome_text">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum sollicitudin ipsum vitae ornare. Fusce tincidunt rhoncus
-          efficitur. Sed tempus arcu eleifend dolor imperdiet eleifend. Mauris ac egestas mi. Nullam rhoncus, massa malesuada
-          hendrerit auctor, elit ipsum varius nulla, ut ultricies nisi ligula non lorem. Ut egestas nisl in mauris consectetur
-          semper. Praesent at mi libero. Quisque porttitor posuere dui, quis ullamcorper lacus posuere sit amet. Vivamus
-          quis metus neque. Ut dignissim aliquam mi a mattis. Duis laoreet dui eu volutpat fringilla. Proin rhoncus scelerisque
-          orci scelerisque euismod. Etiam sit amet neque vel nibh faucibus maximus. Vestibulum ac mi in odio aliquet viverra
-          non et leo. Sed dolor ligula.
-        </p>
-        <p>
-          et varius ac, pharetra ut mauris. Nunc fermentum tincidunt neque vel blandit. Curabitur vel orci dolor. Mauris at risus eu
-          metus egestas efficitur. Duis pulvinar leo sit amet dignissim hendrerit. Class aptent taciti sociosqu ad litora
-          torquent per conubia nostra, per inceptos himenaeos. Maecenas dapibus venenatis erat, ut feugiat purus pharetra
-          eget. Donec condimentum scelerisque mi, nec pretium libero tincidunt at. Aliquam vitae libero massa. Aliquam dignissim
-          ultricies pharetra. Quisque rutrum leo ut ex dapibus, et malesuada leo vehicula. ​
-        </p>
+    </div>
+    <div class="index-desc2 col-md slideanim">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="index-desc3 col-md text-justify text-white">
+      <div class="index-desc slideanime">
+        MoraEvents keeps you updated with various events, competitions and other programmes organized by the undergraduates of UOM.
+        Moreover it creates a platform where the organizers can actively interact with all the interested parties.
+      </div>
+    </div>
+  </div>
+
+  <?php
+  function buildServiceCard($icon, $title, $text){
+    echo "
+    <div class='col-lg-3 slideanim'>
+      <div>
+        <span class='fas $icon logo'></span>
+        <h4>$title</h4>
+        <p>$text</p>
+      </div>
+    </div>
+    ";
+  }
+  
+  ?>
+
+    <div id="services" class="container-fluid text-center">
+      <h2>FEATURES</h2>
+      <br>
+
+      <div class="row">
+        <?php buildServiceCard('fa-calendar-alt', 'TRACK EVENTS', 'Easily track new events') ?>
+        <?php buildServiceCard('fa-map-pin', 'PIN EVENTS', 'Pin an Event add reminders') ?>
+        <?php buildServiceCard('fa-broadcast-tower', 'REAL TIME', 'With real time updates') ?>
+        <?php buildServiceCard('fa-mobile', 'MOBILE APPS', 'Mobile apps in both iOS and Android') ?>
       </div>
     </div>
 
-    <hr />
-    <h2>Our App</h2>
-    <hr />
-    <div class="row">
-      <div class="col-lg-4 text-justify">
-        <p>
-          et varius ac, pharetra ut mauris. Nunc fermentum tincidunt neque vel blandit. Curabitur vel orci dolor. Mauris at risus eu
-          metus egestas efficitur. Duis pulvinar leo sit amet dignissim hendrerit. Class aptent taciti sociosqu ad litora
-          torquent per conubia nostra, per inceptos himenaeos. Maecenas dapibus venenatis erat, ut feugiat purus pharetra
-          eget. Donec condimentum scelerisque mi, nec pretium libero tincidunt at. Aliquam vitae libero massa. Aliquam dignissim
-          ultricies pharetra. Quisque rutrum leo ut ex dapibus, et malesuada leo vehicula. ​
-        </p>
-      </div>
-      <div class="col-lg-8">
-        <div id="carousel" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel" data-slide-to="1"></li>
-            <li data-target="#carousel" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            
-            <?php 
-              createCarousalItem("https://picsum.photos/800/600/?25", "First Image", "Describe First Image", "active");
-              createCarousalItem("https://picsum.photos/800/600/?32", "Second Image", "Describe Second Image", "");
-              createCarousalItem("https://picsum.photos/800/600/?76", "Third Image", "Describe Third Image", "");
-            ?>
-            
-          </div>
-          <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+    <div class="row text-center">
+      <div id="download" class="col-md text-white">
+        <div class="index-desc slideanime">
+          Download Apps for Free
+          <br/>
+          <br/>
+          <span>
+            <img src="images/download.png" alt="Download" class="img-fluid" />
+          </span>
         </div>
       </div>
     </div>
 
-  </div>
+
 </div>
+
+<script>
+  $('#getstarted').click(function() {
+    $('html, body').animate({
+          scrollTop: $('#download').offset().top
+        }, 900, function () {
+
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = '#download';
+        });
+  });
+</script>
 
 <?php include("footer.php"); ?>
