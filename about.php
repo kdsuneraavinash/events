@@ -22,6 +22,16 @@
       </div>
     </div>
 
+    <hr />
+    <div class="slideanim">
+      <p class="blockquote ">
+        Team Axys is a group of passionate young individuals who are trying to discover new horizons through technology. We have
+        already made our mark at UOM and now looking to extend our service to a wider community. Stay tuned for more of our
+        products.
+      </p>
+    </div>
+    <hr />
+
     <div class="slideanim">
       <hr />
       <h2 class="card-title text-center">Team Members</h2>

@@ -14,9 +14,9 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="index-desc1 col-md text-justify text-white">
-      <div class="index-desc slideanim">
+  <div class="row index-row-img">
+    <div class="index-desc1 col-md text-justify text-white slideanim">
+      <div class="index-desc">
         Over the years University of Moratuwa has produced a number of outstanding professionals who have made an immense contribution
         to the nation. UOM further extends its service to the society by offering a wide rage extra curricular activities
         and events for its under graduates which would ultimately build well balanced personalities.

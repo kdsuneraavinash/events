@@ -146,7 +146,7 @@ Index Page
 */
 
 .index-headimage {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://i1.wp.com/www.uplist.lk/wp-content/uploads/2018/01/university-of-moratuwa-graduate.jpg?ssl=1");
+  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -165,18 +165,18 @@ Index Page
   background-attachment: fixed;
 }
 
-.index-desc1 {
+.index-desc1, .index-row-img {
   background-color: #01131a;
 }
 
 .index-desc2 {
-  background-image: url("https://futuregenblog.files.wordpress.com/2015/09/1656261_444123082383146_142159052_n.jpg");
-  min-height: 30vh;
+  background-image: url("../images/moratuwa_uni.jpg");
   background-attachment: scroll;
+  min-height: 30vh;
 }
 
 .index-desc3 {
-  background-image: linear-gradient( #263238aa, #263238aa), url("https://news-cdn.softpedia.com/images/news2/Keyboard-Hotkeys-You-Need-For-Comfortable-Navigation-478884-3.jpg");
+  background-image: linear-gradient( #263238aa, #263238aa), url("../images/app_background.jpg");
   background-attachment: scroll;
 }
 
