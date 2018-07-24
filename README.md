@@ -5,13 +5,13 @@ This app and site is created by Team Axys.
 
 ## Screenshots
 
-![Index Page](/readme/ss_index.png)
+![Index Page](/readme/ss_index.jpg)
 
 Index page has some placeholder text and containers that we intend to fill later.
 
 ------
 
-![Events Page](/readme/ss_events.png)
+![Events Page](/readme/ss_events.jpg)
 
 Shows currently present events. (All events. Will implement querying  later.)
 
@@ -31,7 +31,7 @@ Form to add events to the database. Anyone can see this, but only those who have
 
 ------
 
-![About Page](/readme/ss_about.png)
+![About Page](/readme/ss_about.jpg)
 
 About us and contact our team
 
@@ -72,7 +72,7 @@ This is done by `showevent.php` and is separated from rest of website. Design us
 
 > Since this website does not include any sensitive data security is not a huge concern.
 
-User authorization is done by Firebase by `javaScript`. For the sake of testing we made Server to store Session information of users when logged in. Process is done as following.
+User authorization is done by Firebase by `javaScript`. ~~For the sake of testing we made Server to store Session information of users when logged in.~~  It is implemented so that it is easy to add a server side validation process. Current verification process is done as following.
 
 ### User is not logged in
 
@@ -85,6 +85,8 @@ Since user is not logged in, `javaScript` then sends a signal back to the server
 However for some reason `_SESSION` indicates user is logged in (unexpecting) , server will delete session information and return `session-deleted-refresh`  message. Then `javaScript` will refresh the page. (Since server thought that the user was logged in when it sent the page, page layout might be different from what should be shown)
 
 Once the page refreshes, it will then again start the process. However now the server will certainly return `session-not-present`. So Authorization is ended.
+
+When storing `_SESSION` we can implement in server side to check whether account details are correct.
 
 ### User logs in
 
@@ -137,7 +139,7 @@ Console logs are created whenever an important action is performed. (eg: Firebas
 
 ## Testing
 
-Visit [Test Site](https://kdsuneraavinash.000webhostapp.com) in order to view last uploaded version.
+Visit [Test Site](https://kdsuneraavinash.000webhostapp.com) in order to view last uploaded version. Note that this might not be the version in GitHub.
 
 ## Team Axys Members
 

@@ -11,6 +11,7 @@
         echo "session-already-set";
       }else{
         // Login a not logged in user or this user is different from logged in user
+        // Can use this part to verify user email and password in server side
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['displayName'] = $_POST['displayName'];
         $_SESSION['uid'] = $_POST['uid'];
