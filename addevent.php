@@ -10,6 +10,17 @@
     </h4>
     <hr />
 
+    <?php 
+    if (!isset($_SESSION['uid'])){
+      echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+            You are not logged in. You <strong>must</strong> be logged in in order to submit an event.
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+            </button>
+          </div>";
+    }
+    ?>
+
     <form onsubmit="return validate();" id="event_form" action="post.php" method="post">
 
       <!-- Event Name Text -->

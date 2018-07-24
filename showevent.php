@@ -43,8 +43,6 @@
         <?php include("error/no-javascript.html");?>
     </noscript>
 
-    <div class="blur"></div>
-
     <div id="showevent_content">
 
         <div id="back" class="container-fluid">
