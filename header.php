@@ -6,6 +6,19 @@
   require('public_functions.php');
 ?>
 
+  <!--
+    MoraEvents Site
+    ===============
+
+    Programmed and Designed by 
+    K. D. Sunera Avinash Chandrasiri
+    kdsuneraavinash@gmail.com
+    (c) 2018
+
+    On behalf of teamaxys
+    University of Moratuwa
+    -->
+
   <!DOCTYPE html>
   <html lang="en">
 
@@ -31,7 +44,7 @@
       crossorigin="anonymous">
     <!-- Add Stylesheets -->
     <link rel="stylesheet" href="css/stylesheet.css" />
-    
+
     <!-- JQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
