@@ -13,7 +13,7 @@ Animations
   }
   to {
     opacity: 1;
-    margin-top: 0px;
+    margin-top: 0;
   }
 }
 
@@ -67,11 +67,8 @@ html {
 body {
   padding-top: 120px;
   /* Background image and custom font */
-  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/background.jpg");
-  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/background.jpg") no-repeat fixed center;
   /* Bottom margin to stop content from being hidden by footer */
   padding-bottom: 45px;
 }
@@ -146,11 +143,8 @@ Index Page
 */
 
 .index-headimage {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/background.jpg");
-  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/background.jpg") no-repeat fixed center;
   margin-top: -150px;
   min-height: 100vh;
 }
@@ -159,10 +153,8 @@ Index Page
 .index-desc2,
 .index-desc3,
 .index-desc4 {
-  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: no-repeat fixed center;
 }
 
 .index-desc1, .index-row-img {
@@ -170,14 +162,12 @@ Index Page
 }
 
 .index-desc2 {
-  background-image: url("../images/moratuwa_uni.jpg");
-  background-attachment: scroll;
+  background: url("../images/moratuwa_uni.jpg") scroll;
   min-height: 30vh;
 }
 
 .index-desc3 {
-  background-image: linear-gradient( #263238, #263238), url("../images/app_background.jpg");
-  background-attachment: scroll;
+  background: linear-gradient(#263238, #263238), url("../images/app_background.jpg") scroll;
 }
 
 .index-caption {
@@ -275,12 +265,12 @@ Navigation bar
 */
 
 .navbar {
-  /* Navigationbar main properties */
+  /* Navigation bar main properties */
   background-color: #103f54;
 }
 
 .navbar-brand {
-  /* Navigationbar brand */
+  /* Navigation bar brand */
   font-size: 2em !important;
 }
 

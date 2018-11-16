@@ -3,6 +3,7 @@ js/api-keys.js
 
 # VS Code config
 .vscode
+.idea
 
 # File copy utility
 localtest.py

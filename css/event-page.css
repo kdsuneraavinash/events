@@ -57,9 +57,7 @@ Main
 
 body {
     overflow-x: hidden;
-    background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/background.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/background.jpg") no-repeat fixed;
     background-size: cover;
 }
 
@@ -165,7 +163,6 @@ Description
 }
 
 .lead {
-    padding: 1em;
     padding: 2em;
     color: #fff;
     word-wrap: break-word;
