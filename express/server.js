@@ -14,8 +14,7 @@ utils.enableCORS(app);
 app.use('/api/events', eventsRouter);
 app.use('/api/event', eventRouter);
 
-// app.use(express.static(path.join(__dirname, 'dist', 'angular-events')));
-app.use(express.static(path.join(__dirname, 'angular')));
+app.use(express.static(path.join(__dirname, 'angular', 'dist', 'angular-events')));
 app.get('/*', (req, res) => {
   res.sendFile(__dirname);
 });
