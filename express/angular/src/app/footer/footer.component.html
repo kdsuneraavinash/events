@@ -1,0 +1,15 @@
+<footer class="page-footer font-small black darken-3">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+          <a *ngFor="let footerIcon of footerIcons" class="{{footerIcon.className}}">
+            <mdb-icon fab icon="{{footerIcon.iconName}}" size="2x" class="white-text mr-md-5 mr-3"></mdb-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>

@@ -1,0 +1,50 @@
+#intro {
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='%23000000' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%23180d1c' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%23261431' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%23351947' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%23451e5e' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%23552277' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+
+  .mask {
+    height: 100vh;
+  }
+}
+
+.jumbo {
+  background-color: #000000;
+}
+
+.para {
+  font-size: 1.2em;
+}
+
+#services {
+  background-color: #ffffff;
+  padding: 50px;
+}
+
+#services .row div div {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  .index-desc {
+    font-size: 1em;
+  }
+
+  .index-caption {
+    font-size: 1em;
+  }
+
+  .index-caption h1 {
+    font-size: 1.5em;
+  }
+
+}
+
+.logo {
+  color: #b71c1c;
+  font-size: 5em;
+  margin: 20px;
+}

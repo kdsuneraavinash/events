@@ -1,0 +1,43 @@
+#event-loaded {
+  overflow-x: hidden;
+  background-attachment: fixed;
+  background-size: cover;
+
+  #intro {
+    text-shadow: 4px 4px #000;
+    overflow: hidden;
+    height: calc(100vh - 255px);
+    width: 100vw;
+  }
+
+  #description {
+    font-size: 1.2em;
+    color: white;
+    padding: 2em;
+    word-wrap: break-word;
+    font-weight: 300;
+    letter-spacing: 2px;
+    background-color: #01131a;
+  }
+
+  #boxes {
+    background-color: #000000cc;
+    min-height: 200px;
+  }
+
+  #boxes h2 {
+    padding: 0.2em;
+    font-size: 1.3em;
+    font-weight: 500;
+  }
+
+  @media only screen and (max-width: 800px) {
+    #boxes i {
+      font-size: 3em;
+    }
+
+    #boxes h2 {
+      font-size: 1.2em;
+    }
+  }
+}

@@ -11,5 +11,6 @@ localtest.py
 **/parsers
 
 **/node_modules
-
+**/dist
+**/bin
 **/.DS_Store
