@@ -1,37 +1,39 @@
 # Mora Events Site
 
+**Project created using php and firebase**
+
 Mora Events Site is a site created in order to add and view events, specially events in University of Moratuwa. This site has a parallel app.
 This app and site is created by Team Axys.
 
 ## Screenshots
 
-![Index Page](/readme/ss_index.jpg)
+![Index Page](readme/ss_index.jpg)
 
-![Index Page](/readme/ss_index2.png)
+![Index Page](readme/ss_index2.png)
 
 ------
 
-![Events Page](/readme/ss_events.jpg)
+![Events Page](readme/ss_events.jpg)
 
 Shows currently present events. (All events. Will implement querying  later.)
 
 ------
 
-![About Page](/readme/ss_showevent.png)
+![About Page](readme/ss_showevent.png)
 
-![About Page](/readme/ss_showevent2.png)
+![About Page](readme/ss_showevent2.png)
 
 Shows currently selected event details.
 
 ------
 
-![About Page](/readme/ss_addevent.png)
+![About Page](readme/ss_addevent.png)
 
 Form to add events to the database. Anyone can see this, but only those who have logged in can submit. Form is validated before submitting.
 
 ------
 
-![About Page](/readme/ss_about.jpg)
+![About Page](readme/ss_about.jpg)
 
 About us and contact our team
 
@@ -150,4 +152,4 @@ Visit [Test Site](https://kdsuneraavinash.000webhostapp.com) in order to view la
 - Uvindu Avishka
 - Ravikula Silva
 
-![Axys Logo](/readme/axys_logo.jpg)
+![Axys Logo](readme/axys_logo.jpg)
