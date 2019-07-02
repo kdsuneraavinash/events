@@ -8,5 +8,8 @@
 # File copy utility
 localtest.py
 
-# TODO: Imple,emt facebook event import
-parsers
+**/parsers
+
+**/node_modules
+
+**/.DS_Store
