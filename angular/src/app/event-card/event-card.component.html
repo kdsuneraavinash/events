@@ -1,0 +1,19 @@
+<mdb-card *ngIf="event" class="animated fadeIn">
+  <div class="view rgba-dark-slight waves-light overlay zoom" mdbWavesEffect>
+    <mdb-card-img src="{{event.coverImageUrl}}" alt="{{event.name}}">
+    </mdb-card-img>
+    <a routerLink="/event/{{event.id}}">
+      <div class="mask"></div>
+    </a>
+  </div>
+
+  <mdb-card-body>
+    <mdb-card-title>
+      <h4>{{event.name | uppercase}}</h4>
+    </mdb-card-title>
+    <mdb-card-text> {{event.description  | slice:0:100}}...
+    </mdb-card-text>
+
+    <a routerLink="/event/{{event.id}}" mdbBtn color="dark" mdbWavesEffect class="float-right">View</a>
+  </mdb-card-body>
+</mdb-card>

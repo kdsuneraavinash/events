@@ -1,0 +1,19 @@
+<!--Main Navigation-->
+<header>
+  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark black fixed-top">
+    <mdb-navbar-brand><a class="navbar-brand" href="#">Mora Events</a></mdb-navbar-brand>
+
+    <links>
+      <ul class="navbar-nav mr-auto">
+        <li *ngFor="let navbarLink of navbarLinks" class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="{{navbarLink.link}}">{{navbarLink.text}}
+          </a>
+        </li>
+      </ul>
+    </links>
+
+  </mdb-navbar>
+
+</header>
+
+<div style="height: 55px"></div>

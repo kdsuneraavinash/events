@@ -1,0 +1,13 @@
+<div id="event-loading" *ngIf="!events">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<div class="container" id="event-list">
+  <div *ngIf="events" class="px-3 my-5 row">
+    <div *ngFor="let event of events" class="col-sm">
+      <app-event-card [event]="event"></app-event-card>
+    </div>
+  </div>
+</div>

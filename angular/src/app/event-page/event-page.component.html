@@ -1,0 +1,43 @@
+<div id="event-loading" *ngIf="!event">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<div *ngIf="event" [style.backgroundImage]="'url('+ event.coverImageUrl +')'" id="event-loaded">
+
+  <div class="view" id="intro">
+    <div class="mask flex-center pattern-8">
+      <h1 class="white-text h1-responsive"><strong>{{event.name | uppercase}}</strong></h1>
+    </div>
+  </div>
+
+
+  <div id="boxes" class="row text-center py-3 text-white">
+    <div class="col-md start-time box wow fadeIn">
+      <i class="fas fa-hourglass-start fa-5x my-4"></i>
+      <h2 id="startDate">{{event.startDateTime | date:'fullDate'}}</h2>
+      <h2 id="startTime"></h2>
+    </div>
+    <div class="col-md end-time box wow fadeIn">
+      <i class="fas fa-hourglass-end fa-5x my-4"></i>
+      <h2 id="endDate">{{event.endDateTime | date:'fullDate'}}</h2>
+      <h2 id="endTime"></h2>
+    </div>
+    <div class="col-md location box wow fadeIn">
+      <i class="fas fa-map-marker-alt fa-5x my-4"></i>
+      <h2 id="location">{{event.venue}}</h2>
+    </div>
+    <div class="col-md organizer box wow fadeIn">
+      <i class="fas fa-sitemap  fa-5x my-4"></i>
+      <h2 id="organizer">{{event.organizer}}</h2>
+    </div>
+  </div>
+
+  <div id="description">
+    <p>{{event.description}}</p>
+  </div>
+
+
+
+</div>
