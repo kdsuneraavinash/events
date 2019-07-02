@@ -1,0 +1,40 @@
+name: event_app
+description: An app to notify you about events.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Add additional Icon set
+  font_awesome_flutter: ^7.1.0
+  # Library to view network images
+  cached_network_image: ^0.4.1
+  # Library to launch phone calls, messages and email.
+  url_launcher: ^3.0.2
+  # Redux architecture
+  flutter_redux: ^0.5.2
+# Bring Streams to Redux
+  redux_epics: ^0.10.0
+  # Persist app state
+  redux_persist_flutter: ^0.6.0-rc.1
+  # Firestore
+  cloud_firestore: 0.7.3
+  # Show notifications
+  firebase_messaging: ^1.0.4
+  # Flutter search bar
+  flutter_search_bar: ^2.0.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+# The following section is specific to Flutter.
+flutter:
+
+  # Material Icons font is so that we can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  assets:
+    - images/credits/axys.jpg
+ 
