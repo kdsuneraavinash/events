@@ -12,7 +12,6 @@ import 'package:event_app/redux_store/store.dart';
 ///
 /// https://pub.dartlang.org/packages/redux_persist_flutter#-readme-tab-
 Persistor<EventState> persistor = Persistor<EventState>(
-  // TODO: Save to documents folder if it is stable
   storage: FlutterStorage("my-app"), // Or use other engines
   decoder: EventState.fromJson,
 );

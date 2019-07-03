@@ -12,8 +12,6 @@ class EventLinks extends StatelessWidget {
   }
 
   /*
-    // TODO: Implement in Web
-
     return ListView(
       children: this.event.contact == null
           ? []
@@ -49,9 +47,8 @@ class LaunchButton extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                "${this.eventContact.getContactMethodString()} :\n${this
-                    .eventContact.contactLink} "
-                    "(${this.eventContact.contactPerson})",
+                "${this.eventContact.getContactMethodString()} :\n${this.eventContact.contactLink} "
+                "(${this.eventContact.contactPerson})",
                 style: Theme.of(context).textTheme.button,
               ),
             ),

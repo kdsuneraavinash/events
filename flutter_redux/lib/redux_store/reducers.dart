@@ -117,7 +117,6 @@ EventState clearNotificationsReducer(
 /// * load all events to allEvents
 /// * Filter flagged items which are only present in both
 /// (Remove flagged items which are not in new list)
-/// TODO: Optimize this to retrieve and change only document changes
 EventState firestoreEventsAddedReducer(
     EventState eventState, FirestoreDocumentsChanged action) {
   // Get all events

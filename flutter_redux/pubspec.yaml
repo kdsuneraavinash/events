@@ -6,7 +6,7 @@ dependencies:
     sdk: flutter
 
   # Add additional Icon set
-  font_awesome_flutter: ^7.1.0
+  font_awesome_flutter: ^8.4.0
   # Library to view network images
   cached_network_image: ^0.4.1
   # Library to launch phone calls, messages and email.

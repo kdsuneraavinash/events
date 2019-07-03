@@ -18,7 +18,6 @@ import 'package:event_app/screens/event_details.dart';
 /// Image will act as a Hero.
 /// When clicked on Time and Date, shows a calendar showing the date.
 /// User can add this event straight to Google Calendars from here.
-/// TODO: Implement Google Calendar event adding
 class EventCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -83,11 +82,9 @@ class EventCard extends StatelessWidget {
   /// Will show EventImageView and animates Banner as a Hero.
   /// Use Fade animation as transition.
   void _handleBannerOnTap(BuildContext context, Map<String, Event> eventList) {
-    TransitionMaker
-        .slideTransition(
-          destinationPageCall: () => EventDetails(eventList[this.eventID]),
-        )
-        .start(context);
+    TransitionMaker.slideTransition(
+      destinationPageCall: () => EventDetails(eventList[this.eventID]),
+    ).start(context);
   }
 
   EventCard(this.eventID);

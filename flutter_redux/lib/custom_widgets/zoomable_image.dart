@@ -33,6 +33,10 @@ class ZoomableImage extends StatefulWidget {
 
 // See /flutter/examples/layers/widgets/gestures.dart
 class _ZoomableImageState extends State<ZoomableImage> {
+  _ZoomableImageState() {
+    imageStreamListener = ImageStreamListener(_handleImageLoaded);
+  }
+
   ImageStream _imageStream;
   ui.Image _image;
   Size _imageSize;
@@ -117,23 +121,25 @@ class _ZoomableImageState extends State<ZoomableImage> {
     final Offset newOffset = d.focalPoint - normalizedOffset * newScale;
 
     double padding = 100.0;
-    double _boundMinX = _mediaQuery.size.width - _imageSize.width *_scale - padding;
+    double _boundMinX =
+        _mediaQuery.size.width - _imageSize.width * _scale - padding;
     double _boundMinY = 0.0 - padding;
     double _boundMaxX = 0.0 + padding;
-    double _boundMaxY = _mediaQuery.size.height -  _imageSize.height *_scale + padding;
+    double _boundMaxY =
+        _mediaQuery.size.height - _imageSize.height * _scale + padding;
     if (newOffset.dx < _boundMinX || newOffset.dy < _boundMinY) {
-      double _new_dx = math.max(_boundMinX, newOffset.dx);
-      double _new_dy = math.max(_boundMinY, newOffset.dy);
+      double _newDx = math.max(_boundMinX, newOffset.dx);
+      double _newDy = math.max(_boundMinY, newOffset.dy);
       setState(() {
-        _offset = Offset(_new_dx, _new_dy);
+        _offset = Offset(_newDx, _newDy);
       });
       return;
     }
     if (newOffset.dx > _boundMaxX || newOffset.dy > _boundMaxY) {
-      double _new_dx = math.min(_boundMaxX, newOffset.dx);
-      double _new_dy = math.min(_boundMaxY, newOffset.dy);
+      double _newDx = math.min(_boundMaxX, newOffset.dx);
+      double _newDy = math.min(_boundMaxY, newOffset.dy);
       setState(() {
-        _offset = Offset(_new_dx, _new_dy);
+        _offset = Offset(_newDx, _newDy);
       });
       return;
     }
@@ -192,10 +198,12 @@ class _ZoomableImageState extends State<ZoomableImage> {
     super.reassemble();
   }
 
+  ImageStreamListener imageStreamListener;
+
   void _resolveImage() {
     _imageStream = CachedNetworkImageProvider(widget.url)
         .resolve(createLocalImageConfiguration(context));
-    _imageStream.addListener(_handleImageLoaded);
+    _imageStream.addListener(imageStreamListener);
   }
 
   void _handleImageLoaded(ImageInfo info, bool synchronousCall) {
@@ -206,7 +214,7 @@ class _ZoomableImageState extends State<ZoomableImage> {
 
   @override
   void dispose() {
-    _imageStream.removeListener(_handleImageLoaded);
+    _imageStream.removeListener(imageStreamListener);
     super.dispose();
   }
 }

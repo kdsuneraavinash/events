@@ -108,7 +108,7 @@ class EventListWindow extends StatelessWidget {
     return AlertDialog(
       content: Text(
         "Please make sure that you are connected to internet. "
-            "Filter feature is available only in online mode",
+        "Filter feature is available only in online mode",
         style: Theme.of(context).textTheme.body1,
       ),
       contentPadding: EdgeInsets.all(16.0),
@@ -134,11 +134,9 @@ class EventListWindow extends StatelessWidget {
   /// Show credits window
   void _handleCreditsAction(BuildContext context) {
     Navigator.pop(context);
-    TransitionMaker
-        .slideTransition(
-          destinationPageCall: () => Credits(),
-        )
-        .start(context);
+    TransitionMaker.slideTransition(
+      destinationPageCall: () => Credits(),
+    ).start(context);
   }
 
   /// Show filter settings buttons and set the options.
@@ -157,12 +155,9 @@ class EventListWindow extends StatelessWidget {
     QueryOptions searchOptions = eventStore.state.searchOptions;
     // Shows the window and lets user choose options
     // Will wait until user closes the options box
-    searchOptions = await TransitionMaker
-        .slideTransition(
-          destinationPageCall: () =>
-              FilterOptions.fromEventStore(searchOptions),
-        )
-        .startAndWait(context);
+    searchOptions = await TransitionMaker.slideTransition(
+      destinationPageCall: () => FilterOptions.fromEventStore(searchOptions),
+    ).startAndWait(context);
     // searchOptions will be null if user pressed back button instead of Save
     if (searchOptions != null) {
       // User has pressed save.
@@ -175,21 +170,17 @@ class EventListWindow extends StatelessWidget {
   /// Show flagged events page
   void _handleFlaggedAction(BuildContext context) {
     Navigator.pop(context);
-    TransitionMaker
-        .slideTransition(
-          destinationPageCall: () => FlaggedEventManager(),
-        )
-        .start(context);
+    TransitionMaker.slideTransition(
+      destinationPageCall: () => FlaggedEventManager(),
+    ).start(context);
   }
 
   /// Show notifications page
   void _handleNotificationsAction(BuildContext context) {
     Navigator.pop(context);
-    TransitionMaker
-        .slideTransition(
-          destinationPageCall: () => EventNotificationsManager(),
-        )
-        .start(context);
+    TransitionMaker.slideTransition(
+      destinationPageCall: () => EventNotificationsManager(),
+    ).start(context);
   }
 }
 
@@ -211,8 +202,8 @@ Future<bool> _makeSureIsConnected() async {
   } finally {
     // Connecting failed
     // No internet
-    return false;
   }
+  return false;
 }
 
 /// Custom widget to enclose the whole widget tree with a search box

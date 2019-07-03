@@ -43,17 +43,17 @@ List<Event> getSortedEventList(String searchString, List<Event> eventList) {
 /// Similarity points are sum of percentages of euality
 /// of each permuation of pairs of words.
 List<double> _getTotalSimilarityPoints(String s, String t) {
-  List<String> s_words = s.split(" ");
-  List<String> t_words = t.split(" ");
-  double total_dist = 0.0;
-  for (String s_word in s_words) {
-    for (String t_word in t_words) {
+  List<String> sWords = s.split(" ");
+  List<String> tWords = t.split(" ");
+  double totalDist = 0.0;
+  for (String s_word in sWords) {
+    for (String t_word in tWords) {
       double dist = _levenshteinDistancePercentage(s_word, t_word);
       if (dist < 50) continue;
-      total_dist += dist;
+      totalDist += dist;
     }
   }
-  return [total_dist, _levenshteinDistancePercentage(s, t)];
+  return [totalDist, _levenshteinDistancePercentage(s, t)];
 }
 
 /// Get levenshteinDistance as persentage of longest
